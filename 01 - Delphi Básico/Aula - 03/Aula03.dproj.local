@@ -3,8 +3,8 @@
 	<Transactions>
     <Transaction>2025/01/02 21:43:23.000.399,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2025/01/03 12:38:17.000.340,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2025/01/03 12:40:54.000.809,C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Programação\Curso Delphi - Básico\fPrincipal.dfm</Transaction>
-    <Transaction>2025/01/03 12:40:54.000.809,C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Programação\Curso Delphi - Básico\fPrincipal.pas</Transaction>
-    <Transaction>2025/01/03 12:41:07.000.583,C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Programação\Curso Delphi - Básico\Aula03.dproj</Transaction>
+    <Transaction>2025/01/03 12:40:54.000.809,D:\Programação\Curso Delphi - Básico\fPrincipal.dfm=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2025/01/03 12:40:54.000.809,D:\Programação\Curso Delphi - Básico\fPrincipal.pas=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/01/03 12:41:07.000.583,D:\Programação\Curso Delphi - Básico\Aula03.dproj=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
   </Transactions>
 </BorlandProject>
