@@ -5,8 +5,8 @@
     <Transaction>2025/01/03 21:15:19.000.423,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2025/01/04 10:37:32.000.809,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2025/01/06 22:10:44.000.731,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2025/01/06 23:59:23.000.449,C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Execicios Delphi\fPrincipal.dfm</Transaction>
-    <Transaction>2025/01/06 23:59:23.000.449,C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Execicios Delphi\fPrincipal.pas</Transaction>
-    <Transaction>2025/01/06 23:59:30.000.296,C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Execicios Delphi\Exercicio01.dproj</Transaction>
+    <Transaction>2025/01/06 23:59:23.000.449,D:\Execicios Delphi\fPrincipal.pas=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/01/06 23:59:23.000.449,D:\Execicios Delphi\fPrincipal.dfm=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2025/01/06 23:59:30.000.296,D:\Execicios Delphi\Exercicio01.dproj=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
   </Transactions>
 </BorlandProject>
