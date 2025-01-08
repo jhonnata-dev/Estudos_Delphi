@@ -1,0 +1,67 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TfrmPrincipal = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    mmoListaParcelas: TMemo;
+    pnlMenu: TPanel;
+    btnGerarParcelas: TButton;
+    btnLimparCampos: TButton;
+    edtNumeroParcelas: TEdit;
+    Label1: TLabel;
+    edtValorParcela: TEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    edtDescricaoDaCompra: TEdit;
+    procedure btnLimparCamposClick(Sender: TObject);
+    procedure btnGerarParcelasClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmPrincipal.btnGerarParcelasClick(Sender: TObject);
+var
+  lNumeroParcelas : Integer;
+  I: Integer;
+begin
+
+  lNumeroParcelas := StrToIntDef(edtNumeroParcelas.Text, 1);
+
+  for I := 0 to lNumeroParcelas - 1 do
+  begin
+
+    mmoListaParcelas.Lines.Add(
+      'Número Parcela: ' + (I+1).ToString +
+      ' R$ Valor Parcela: ' + edtValorParcela.Text +
+      ' Descrição da Compra: ' + edtDescricaoDaCompra.Text
+      );
+
+  end;
+
+end;
+
+procedure TfrmPrincipal.btnLimparCamposClick(Sender: TObject);
+begin
+  edtNumeroParcelas.Text := EmptyStr;
+  edtValorParcela.Text := EmptyStr;
+  edtDescricaoDaCompra.text := emptyStr;
+  edtNumeroParcelas.SetFocus;
+end;
+
+end.
