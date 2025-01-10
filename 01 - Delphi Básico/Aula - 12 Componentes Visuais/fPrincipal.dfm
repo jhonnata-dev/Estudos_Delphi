@@ -211,6 +211,7 @@ object Form1: TForm1
     end
     object Fechar1: TMenuItem
       Caption = 'Fechar'
+      OnClick = Fechar1Click
     end
   end
 end

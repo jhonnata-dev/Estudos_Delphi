@@ -1,0 +1,59 @@
+unit fPesquisaProdutos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Grids,
+  Vcl.DBGrids, Vcl.ExtCtrls;
+
+type
+  TfrmPesquisaProdutos = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    edtPesquisar: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    cbxFiltro: TComboBox;
+    DBGrid1: TDBGrid;
+    Panel3: TPanel;
+    edtAdicionar: TButton;
+    edtEditar: TButton;
+    edtExcluir: TButton;
+    procedure edtAdicionarClick(Sender: TObject);
+    procedure edtEditarClick(Sender: TObject);
+    procedure edtAdicionarMouseUp(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPesquisaProdutos: TfrmPesquisaProdutos;
+
+implementation
+
+uses
+  fCadastroProdutos;
+
+{$R *.dfm}
+
+procedure TfrmPesquisaProdutos.edtAdicionarClick(Sender: TObject);
+begin
+  frmCadastroProdutos.Showmodal;
+end;
+
+procedure TfrmPesquisaProdutos.edtAdicionarMouseUp(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+begin
+  ShowMessage('Rolagem do mouse');
+end;
+
+procedure TfrmPesquisaProdutos.edtEditarClick(Sender: TObject);
+begin
+  frmCadastroProdutos.ShowModal;
+end;
+
+end.

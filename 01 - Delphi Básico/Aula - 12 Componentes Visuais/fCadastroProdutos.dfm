@@ -29,6 +29,7 @@ object frmCadastroProdutos: TfrmCadastroProdutos
     ParentFont = False
     TabOrder = 0
     StyleName = 'Windows'
+    ExplicitWidth = 622
   end
   object Panel2: TPanel
     Left = 0
@@ -37,8 +38,8 @@ object frmCadastroProdutos: TfrmCadastroProdutos
     Height = 412
     Align = alClient
     TabOrder = 1
-    ExplicitTop = 39
-    ExplicitHeight = 351
+    ExplicitWidth = 622
+    ExplicitHeight = 404
     object Label1: TLabel
       Left = 16
       Top = 35
@@ -66,8 +67,9 @@ object frmCadastroProdutos: TfrmCadastroProdutos
       Width = 201
       Height = 23
       TabOrder = 0
+      TextHint = 'Digite seu nome'
     end
-    object RadioGroup1: TRadioGroup
+    object rdgSituacaoProduto: TRadioGroup
       Left = 392
       Top = 35
       Width = 209
@@ -111,8 +113,9 @@ object frmCadastroProdutos: TfrmCadastroProdutos
     Height = 49
     Align = alBottom
     TabOrder = 2
-    ExplicitTop = 392
-    object Button1: TButton
+    ExplicitTop = 445
+    ExplicitWidth = 622
+    object btnSalvar: TButton
       AlignWithMargins = True
       Left = 545
       Top = 4
@@ -121,11 +124,10 @@ object frmCadastroProdutos: TfrmCadastroProdutos
       Align = alRight
       Caption = 'Salvar'
       TabOrder = 0
-      ExplicitLeft = 272
-      ExplicitTop = 16
-      ExplicitHeight = 25
+      OnClick = btnSalvarClick
+      ExplicitLeft = 543
     end
-    object Button2: TButton
+    object btnCancelar: TButton
       AlignWithMargins = True
       Left = 464
       Top = 4
@@ -134,9 +136,8 @@ object frmCadastroProdutos: TfrmCadastroProdutos
       Align = alRight
       Caption = 'Cancelar'
       TabOrder = 1
-      ExplicitLeft = 272
-      ExplicitTop = 16
-      ExplicitHeight = 25
+      OnClick = btnCancelarClick
+      ExplicitLeft = 462
     end
   end
 end

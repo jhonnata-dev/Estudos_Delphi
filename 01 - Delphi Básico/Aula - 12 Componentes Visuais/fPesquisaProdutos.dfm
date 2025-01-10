@@ -29,7 +29,7 @@ object frmPesquisaProdutos: TfrmPesquisaProdutos
     ParentFont = False
     TabOrder = 0
     StyleName = 'Windows'
-    ExplicitWidth = 663
+    ExplicitWidth = 750
   end
   object Panel2: TPanel
     Left = 0
@@ -38,8 +38,7 @@ object frmPesquisaProdutos: TfrmPesquisaProdutos
     Height = 72
     Align = alTop
     TabOrder = 1
-    ExplicitTop = 47
-    ExplicitWidth = 663
+    ExplicitWidth = 750
     object Label1: TLabel
       Left = 16
       Top = 11
@@ -101,7 +100,7 @@ object frmPesquisaProdutos: TfrmPesquisaProdutos
     Height = 41
     Align = alTop
     TabOrder = 3
-    ExplicitTop = 35
+    ExplicitWidth = 750
     object edtAdicionar: TButton
       AlignWithMargins = True
       Left = 4
@@ -112,9 +111,6 @@ object frmPesquisaProdutos: TfrmPesquisaProdutos
       Caption = 'Adicionar'
       TabOrder = 0
       OnClick = edtAdicionarClick
-      ExplicitLeft = 1
-      ExplicitTop = 1
-      ExplicitHeight = 39
     end
     object edtEditar: TButton
       AlignWithMargins = True
@@ -126,9 +122,6 @@ object frmPesquisaProdutos: TfrmPesquisaProdutos
       Caption = 'Editar'
       TabOrder = 1
       OnClick = edtEditarClick
-      ExplicitLeft = 121
-      ExplicitTop = 1
-      ExplicitHeight = 39
     end
     object edtExcluir: TButton
       AlignWithMargins = True
@@ -139,9 +132,6 @@ object frmPesquisaProdutos: TfrmPesquisaProdutos
       Align = alLeft
       Caption = 'Excluir'
       TabOrder = 2
-      ExplicitLeft = 249
-      ExplicitTop = 1
-      ExplicitHeight = 39
     end
   end
 end

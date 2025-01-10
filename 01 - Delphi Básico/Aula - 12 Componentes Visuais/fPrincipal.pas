@@ -26,6 +26,7 @@ type
     Cores1: TMenuItem;
     Image1: TImage;
     procedure Produtos1Click(Sender: TObject);
+    procedure Fechar1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -40,6 +41,11 @@ implementation
 {$R *.dfm}
 
 uses fPesquisaProdutos;
+
+procedure TForm1.Fechar1Click(Sender: TObject);
+begin
+  Application.Terminate;
+end;
 
 procedure TForm1.Produtos1Click(Sender: TObject);
 begin
