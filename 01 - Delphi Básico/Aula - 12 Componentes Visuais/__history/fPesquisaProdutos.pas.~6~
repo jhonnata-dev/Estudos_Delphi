@@ -1,0 +1,45 @@
+unit fPesquisaProdutos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Grids,
+  Vcl.DBGrids, Vcl.ExtCtrls;
+
+type
+  TfrmPesquisaProdutos = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    edtPesquisar: TEdit;
+    Label1: TLabel;
+    Label2: TLabel;
+    cbxFiltro: TComboBox;
+    DBGrid1: TDBGrid;
+    Panel3: TPanel;
+    edtAdicionar: TButton;
+    edtEditar: TButton;
+    edtExcluir: TButton;
+    procedure edtAdicionarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPesquisaProdutos: TfrmPesquisaProdutos;
+
+implementation
+
+uses
+  fCadastroProdutos;
+
+{$R *.dfm}
+
+procedure TfrmPesquisaProdutos.edtAdicionarClick(Sender: TObject);
+begin
+  frmCadastroProdutos.Showmodal;
+end;
+
+end.

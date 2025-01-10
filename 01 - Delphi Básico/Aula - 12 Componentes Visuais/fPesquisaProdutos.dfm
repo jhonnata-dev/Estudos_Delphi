@@ -1,0 +1,147 @@
+object frmPesquisaProdutos: TfrmPesquisaProdutos
+  Left = 0
+  Top = 0
+  Caption = 'Pesquisa de Produtos'
+  ClientHeight = 547
+  ClientWidth = 752
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Position = poScreenCenter
+  TextHeight = 15
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 752
+    Height = 41
+    Align = alTop
+    Caption = 'Pesquisa de Produtos'
+    Color = 5138078
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    StyleName = 'Windows'
+    ExplicitWidth = 663
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 82
+    Width = 752
+    Height = 72
+    Align = alTop
+    TabOrder = 1
+    ExplicitTop = 47
+    ExplicitWidth = 663
+    object Label1: TLabel
+      Left = 16
+      Top = 11
+      Width = 50
+      Height = 15
+      Caption = 'Pesquisar'
+    end
+    object Label2: TLabel
+      Left = 256
+      Top = 11
+      Width = 27
+      Height = 15
+      Caption = 'Filtro'
+    end
+    object edtPesquisar: TEdit
+      Left = 16
+      Top = 32
+      Width = 193
+      Height = 23
+      TabOrder = 0
+    end
+    object cbxFiltro: TComboBox
+      Left = 256
+      Top = 32
+      Width = 145
+      Height = 28
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ItemIndex = 0
+      ParentFont = False
+      TabOrder = 1
+      Text = 'Todos'
+      Items.Strings = (
+        'Todos'
+        'Ativos'
+        'Inativos')
+    end
+  end
+  object DBGrid1: TDBGrid
+    Left = 0
+    Top = 154
+    Width = 752
+    Height = 393
+    Align = alClient
+    TabOrder = 2
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 41
+    Width = 752
+    Height = 41
+    Align = alTop
+    TabOrder = 3
+    ExplicitTop = 35
+    object edtAdicionar: TButton
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 150
+      Height = 33
+      Align = alLeft
+      Caption = 'Adicionar'
+      TabOrder = 0
+      OnClick = edtAdicionarClick
+      ExplicitLeft = 1
+      ExplicitTop = 1
+      ExplicitHeight = 39
+    end
+    object edtEditar: TButton
+      AlignWithMargins = True
+      Left = 160
+      Top = 4
+      Width = 150
+      Height = 33
+      Align = alLeft
+      Caption = 'Editar'
+      TabOrder = 1
+      OnClick = edtEditarClick
+      ExplicitLeft = 121
+      ExplicitTop = 1
+      ExplicitHeight = 39
+    end
+    object edtExcluir: TButton
+      AlignWithMargins = True
+      Left = 316
+      Top = 4
+      Width = 150
+      Height = 33
+      Align = alLeft
+      Caption = 'Excluir'
+      TabOrder = 2
+      ExplicitLeft = 249
+      ExplicitTop = 1
+      ExplicitHeight = 39
+    end
+  end
+end
