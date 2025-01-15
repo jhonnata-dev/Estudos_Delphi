@@ -29,6 +29,7 @@ type
     function somar(pNumero1, pNumero2: Integer) : Integer;
     function subtrair(pNumero1, Pnumero2: Integer) : Integer;
     procedure limparCampos;
+
   public
     { Public declarations }
   end;
@@ -52,8 +53,6 @@ begin
   lblResultado.Caption :=
   'Soma: ' + IntToStr(somar(lNumero1, lNumero2)) + ' | ' +
   'Subtração: ' + IntToStr(subtrair(lNumero1, lNumero2));
-
-  limparCampos;
 
 end;
 

@@ -54,7 +54,6 @@ begin
       'Descrição da Compra: ' + edtDescricaoDaCompra.Text + sLineBreak +
       ''
       );
-
   end;
 end;
 

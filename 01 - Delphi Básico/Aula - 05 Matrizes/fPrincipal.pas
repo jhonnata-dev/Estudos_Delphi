@@ -94,10 +94,8 @@ begin
   for i := 0 to Length(minhaMatrizDinamica) -1 do
   begin
     mmoLista.Lines.Add(minhaMatrizDinamica[i, 0] + ' | ' +
-    minhaMatrizDinamica[i, 1]);
+    minhaMatrizDinamica[i, 1] + sLineBreak);
   end;
-
-
 end;
 
 end.

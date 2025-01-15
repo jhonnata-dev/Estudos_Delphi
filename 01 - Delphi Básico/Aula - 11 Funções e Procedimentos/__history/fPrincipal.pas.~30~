@@ -1,0 +1,105 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    pnlResultado: TPanel;
+    pnlTitulo: TPanel;
+    Panel3: TPanel;
+    Panel4: TPanel;
+    btnSomar: TButton;
+    btnSubtrair: TButton;
+    btnExibirSomaSubtracao: TButton;
+    edtNumero1: TEdit;
+    edtNumero2: TEdit;
+    Label2: TLabel;
+    Label3: TLabel;
+    lblResultado: TLabel;
+    procedure btnSomarClick(Sender: TObject);
+    procedure btnSubtrairClick(Sender: TObject);
+    procedure btnExibirSomaSubtracaoClick(Sender: TObject);
+  private
+    { Private declarations }
+
+    function somar(pNumero1, pNumero2: Integer) : Integer;
+    function subtrair(pNumero1, Pnumero2: Integer) : Integer;
+    procedure limparCampos;
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnExibirSomaSubtracaoClick(Sender: TObject);
+var
+  lNumero1: Integer;
+  lNumero2: Integer;
+begin
+
+  lNumero1 := StrToIntDef(edtNumero1.Text, 0);
+  lNumero2 := StrToIntDef(edtNumero2.Text, 0);
+
+  lblResultado.Caption :=
+  'Soma: ' + IntToStr(somar(lNumero1, lNumero2)) + ' | ' +
+  'Subtração: ' + IntToStr(subtrair(lNumero1, lNumero2));
+
+  limparCampos;
+
+end;
+
+procedure TForm1.btnSomarClick(Sender: TObject);
+var
+  lNumero1: Integer;
+  lNumero2: Integer;
+begin
+
+  lNumero1 := StrToIntDef(edtNumero1.Text, 0);
+  lNumero2 := StrToIntDef(edtNumero2.Text, 0);
+
+  lblResultado.Caption := 'Soma = ' + IntToStr(somar(lNumero1, lNumero2));
+  limparCampos;
+
+end;
+
+procedure TForm1.btnSubtrairClick(Sender: TObject);
+var
+  lNumero1: Integer;
+  lNumero2: Integer;
+begin
+
+  lNumero1 := StrToIntDef(edtNumero1.Text, 0);
+  lNumero2 := StrToIntDef(edtNumero2.Text, 0);
+
+  lblResultado.Caption := 'Subtração = ' + IntToStr(subtrair(lNumero1, lNumero2));
+  limparCampos;
+
+end;
+
+procedure TForm1.limparCampos;
+begin
+  edtNumero1.Clear;
+  edtNumero2.Clear;
+  edtNumero1.SetFocus;
+end;
+
+function TForm1.somar(pNumero1, pNumero2: Integer): Integer;
+begin
+  Result := pNumero1 + pNumero2;
+end;
+
+function TForm1.subtrair(pNumero1, Pnumero2: Integer): Integer;
+begin
+  Result := pNumero1 - pNumero2;
+end;
+
+end.

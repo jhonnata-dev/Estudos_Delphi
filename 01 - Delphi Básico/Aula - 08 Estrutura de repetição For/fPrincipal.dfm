@@ -20,9 +20,7 @@ object frmPrincipal: TfrmPrincipal
     Align = alTop
     Caption = 'Aula 08 - For - Sistema de Parcelas'
     TabOrder = 0
-    ExplicitLeft = 232
-    ExplicitTop = 320
-    ExplicitWidth = 185
+    ExplicitWidth = 622
   end
   object Panel2: TPanel
     Left = 0
@@ -37,6 +35,7 @@ object frmPrincipal: TfrmPrincipal
     Font.Style = []
     ParentFont = False
     TabOrder = 1
+    ExplicitWidth = 622
     object Label1: TLabel
       Left = 16
       Top = 19
@@ -62,7 +61,7 @@ object frmPrincipal: TfrmPrincipal
       Left = 16
       Top = 42
       Width = 129
-      Height = 31
+      Height = 25
       NumbersOnly = True
       TabOrder = 0
     end
@@ -70,14 +69,14 @@ object frmPrincipal: TfrmPrincipal
       Left = 210
       Top = 42
       Width = 129
-      Height = 31
+      Height = 25
       TabOrder = 1
     end
     object edtDescricaoDaCompra: TEdit
       Left = 378
       Top = 42
       Width = 223
-      Height = 31
+      Height = 25
       TabOrder = 2
     end
   end
@@ -90,10 +89,8 @@ object frmPrincipal: TfrmPrincipal
     Lines.Strings = (
       'mmoListaParcelas')
     TabOrder = 2
-    ExplicitLeft = 216
-    ExplicitTop = 384
-    ExplicitWidth = 185
-    ExplicitHeight = 89
+    ExplicitWidth = 622
+    ExplicitHeight = 472
   end
   object pnlMenu: TPanel
     Left = 0
@@ -102,7 +99,7 @@ object frmPrincipal: TfrmPrincipal
     Height = 52
     Align = alTop
     TabOrder = 3
-    ExplicitTop = 384
+    ExplicitWidth = 622
     object btnGerarParcelas: TButton
       AlignWithMargins = True
       Left = 4
@@ -119,9 +116,6 @@ object frmPrincipal: TfrmPrincipal
       ParentFont = False
       TabOrder = 0
       OnClick = btnGerarParcelasClick
-      ExplicitLeft = 1
-      ExplicitTop = 1
-      ExplicitHeight = 56
     end
     object btnLimparCampos: TButton
       AlignWithMargins = True
@@ -139,9 +133,6 @@ object frmPrincipal: TfrmPrincipal
       ParentFont = False
       TabOrder = 1
       OnClick = btnLimparCamposClick
-      ExplicitLeft = 201
-      ExplicitTop = 1
-      ExplicitHeight = 56
     end
   end
 end

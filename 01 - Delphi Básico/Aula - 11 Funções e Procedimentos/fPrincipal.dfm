@@ -28,12 +28,12 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 0
     StyleName = 'Windows'
-    ExplicitTop = 312
+    ExplicitTop = 273
     ExplicitWidth = 669
     object lblResultado: TLabel
       Left = 264
       Top = 24
-      Width = 113
+      Width = 94
       Height = 28
       Alignment = taCenter
       Caption = 'Resultado'
@@ -67,7 +67,7 @@ object Form1: TForm1
     Color = clSilver
     ParentBackground = False
     TabOrder = 2
-    ExplicitHeight = 247
+    ExplicitHeight = 208
     object Label3: TLabel
       Left = 112
       Top = 49
@@ -123,7 +123,7 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 3
     ExplicitLeft = 310
-    ExplicitHeight = 247
+    ExplicitHeight = 208
     object btnSomar: TButton
       Left = 16
       Top = 72
