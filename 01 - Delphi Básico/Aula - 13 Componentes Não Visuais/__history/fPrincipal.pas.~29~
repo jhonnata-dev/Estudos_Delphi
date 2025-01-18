@@ -12,17 +12,17 @@ uses
 type
   TForm1 = class(TForm)
     Panel1: TPanel;
+    Panel2: TPanel;
     Panel3: TPanel;
+    btnDesabilitarTimer: TButton;
+    btnExemploTabelaMemoria: TButton;
+    btnHabilitarTimer: TButton;
     tmrMensagem: TTimer;
     memLista: TFDMemTable;
     memListaCodigo: TIntegerField;
     memListaNome: TStringField;
-    dtsLista: TDataSource;
-    Panel2: TPanel;
-    btnDesabilitarTimer: TButton;
-    btnExemploTabelaMemoria: TButton;
-    btnHabilitarTimer: TButton;
     grdLista: TDBGrid;
+    dtsLista: TDataSource;
     procedure FormCreate(Sender: TObject);
     procedure btnDesabilitarTimerClick(Sender: TObject);
     procedure btnHabilitarTimerClick(Sender: TObject);

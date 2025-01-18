@@ -29,7 +29,16 @@ object Form1: TForm1
     ParentFont = False
     TabOrder = 0
     StyleName = 'Windows'
-    ExplicitWidth = 624
+  end
+  object Panel3: TPanel
+    Left = 0
+    Top = 605
+    Width = 693
+    Height = 20
+    Align = alBottom
+    Color = clGray
+    ParentBackground = False
+    TabOrder = 1
   end
   object Panel2: TPanel
     Left = 0
@@ -37,10 +46,7 @@ object Form1: TForm1
     Width = 693
     Height = 556
     Align = alClient
-    TabOrder = 1
-    ExplicitTop = 43
-    ExplicitWidth = 624
-    ExplicitHeight = 493
+    TabOrder = 2
     object btnDesabilitarTimer: TButton
       Left = 64
       Top = 104
@@ -100,18 +106,6 @@ object Form1: TForm1
       TitleFont.Style = []
     end
   end
-  object Panel3: TPanel
-    Left = 0
-    Top = 605
-    Width = 693
-    Height = 20
-    Align = alBottom
-    Color = clGray
-    ParentBackground = False
-    TabOrder = 2
-    ExplicitTop = 542
-    ExplicitWidth = 624
-  end
   object tmrMensagem: TTimer
     Enabled = False
     Interval = 3000
@@ -139,7 +133,7 @@ object Form1: TForm1
   end
   object dtsLista: TDataSource
     DataSet = memLista
-    Left = 512
-    Top = 296
+    Left = 504
+    Top = 256
   end
 end
