@@ -4,7 +4,11 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls,
+  FireDAC.Stan.Intf, FireDAC.Stan.Option, FireDAC.Stan.Param,
+  FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf, FireDAC.DApt.Intf,
+  FireDAC.Stan.Async, FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet,
+  FireDAC.Comp.Client;
 
 type
   TForm1 = class(TForm)
@@ -18,6 +22,9 @@ type
     Label3: TLabel;
     Button1: TButton;
     Panel3: TPanel;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,5 +37,45 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+
+  try
+
+    edtResultado.Text :=
+      IntToStr(
+        StrToInt(edtPrimeiroValor.Text) + StrToInt(edtSegundoValor.Text)
+      );
+
+  finally
+    Panel3.Caption := 'Foi finalizada a tentativa de cálculo';
+  end;
+
+
+
+
+
+
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+var
+  query: TFDQuery;
+begin
+
+  query := TFDQuery.Create(nil);
+  try
+
+    query.Close;
+    query.SQL.Clear;
+    query.SQL.Add('select * from tabela');
+    query.Open;
+
+  finally
+    query.Free;
+  end;
+
+end;
 
 end.

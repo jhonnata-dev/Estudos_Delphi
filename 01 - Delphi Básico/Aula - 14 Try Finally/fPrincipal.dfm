@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   Caption = 'Delphi B'#225'sico - Aula 14 - Try Finally'
   ClientHeight = 404
-  ClientWidth = 624
+  ClientWidth = 608
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,7 +14,7 @@ object Form1: TForm1
   object panel1: TPanel
     Left = 0
     Top = 0
-    Width = 624
+    Width = 608
     Height = 49
     Align = alTop
     Caption = 'Delphi b'#225'sico - Aula 14 - Try Finally'
@@ -25,27 +25,34 @@ object Form1: TForm1
     Font.Style = []
     ParentFont = False
     TabOrder = 0
+    ExplicitWidth = 624
   end
   object Panel2: TPanel
     Left = 0
     Top = 49
-    Width = 624
+    Width = 608
     Height = 355
     Align = alClient
     TabOrder = 1
+    ExplicitLeft = 8
     ExplicitTop = 55
     object Label1: TLabel
       Left = 8
       Top = 61
       Width = 99
       Height = 21
+      BiDiMode = bdLeftToRight
       Caption = 'Primeiro valor'
+      Color = clWhite
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -16
       Font.Name = 'Segoe UI'
       Font.Style = []
+      ParentBiDiMode = False
+      ParentColor = False
       ParentFont = False
+      StyleName = 'Windows'
     end
     object Label2: TLabel
       Left = 240
@@ -113,8 +120,8 @@ object Form1: TForm1
       TabOrder = 2
     end
     object Button1: TButton
-      Left = 220
-      Top = 168
+      Left = 8
+      Top = 165
       Width = 197
       Height = 57
       Caption = 'Somar'
@@ -125,15 +132,37 @@ object Form1: TForm1
       Font.Style = []
       ParentFont = False
       TabOrder = 3
+      OnClick = Button1Click
     end
-    object Panel3: TPanel
-      Left = 8
-      Top = 280
-      Width = 585
-      Height = 41
-      Color = 8421440
-      ParentBackground = False
+    object Button2: TButton
+      Left = 240
+      Top = 164
+      Width = 197
+      Height = 58
+      Caption = 'Button2'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 4
+      OnClick = Button2Click
     end
+  end
+  object Panel3: TPanel
+    Left = 8
+    Top = 344
+    Width = 585
+    Height = 41
+    Color = 8421440
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 2
   end
 end

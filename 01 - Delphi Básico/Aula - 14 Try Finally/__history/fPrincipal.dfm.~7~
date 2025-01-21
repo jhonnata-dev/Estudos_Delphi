@@ -1,0 +1,158 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Delphi B'#225'sico - Aula 14 - Try Finally'
+  ClientHeight = 404
+  ClientWidth = 608
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 608
+    Height = 49
+    Align = alTop
+    Caption = 'Delphi b'#225'sico - Aula 14 - Try Finally'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    ExplicitWidth = 624
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 49
+    Width = 608
+    Height = 355
+    Align = alClient
+    TabOrder = 1
+    ExplicitTop = 55
+    object Label1: TLabel
+      Left = 8
+      Top = 61
+      Width = 99
+      Height = 21
+      BiDiMode = bdLeftToRight
+      Caption = 'Primeiro valor'
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentBiDiMode = False
+      ParentColor = False
+      ParentFont = False
+      StyleName = 'Windows'
+    end
+    object Label2: TLabel
+      Left = 240
+      Top = 61
+      Width = 101
+      Height = 21
+      Caption = 'Segundo valor'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label3: TLabel
+      Left = 448
+      Top = 61
+      Width = 69
+      Height = 21
+      Caption = 'Resultado'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+    end
+    object lblMensagem: TLabel
+      Left = 288
+      Top = 274
+      Width = 3
+      Height = 15
+    end
+    object edtPrimeiroValor: TEdit
+      Left = 8
+      Top = 88
+      Width = 145
+      Height = 29
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+    end
+    object edtSegundoValor: TEdit
+      Left = 240
+      Top = 88
+      Width = 145
+      Height = 29
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+    end
+    object edtResultado: TEdit
+      Left = 448
+      Top = 88
+      Width = 145
+      Height = 29
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+    end
+    object Button1: TButton
+      Left = 212
+      Top = 157
+      Width = 197
+      Height = 57
+      Caption = 'Somar'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -20
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      OnClick = Button1Click
+    end
+  end
+  object Panel3: TPanel
+    Left = 8
+    Top = 344
+    Width = 585
+    Height = 41
+    Color = 8421440
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 2
+  end
+end
