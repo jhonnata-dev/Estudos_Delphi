@@ -1,0 +1,93 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    Panel1: TPanel;
+    Panel3: TPanel;
+    Panel2: TPanel;
+    btnCriarLista: TButton;
+    btnCarregarLista: TButton;
+    mmoLista: TMemo;
+    btnSalvarLista: TButton;
+    procedure btnCriarListaClick(Sender: TObject);
+    procedure btnCarregarListaClick(Sender: TObject);
+    procedure btnSalvarListaClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnCarregarListaClick(Sender: TObject);
+var
+  lListaFrutasMercado: TStringList;
+begin
+
+  lListaFrutasMercado := TStringList.Create;
+  try
+
+    lListaFrutasMercado.LoadFromFile('C:\Users\jplay\Documents\lista_de_frutas_mercado.txt');
+    mmoLista.Text := UTF8ToString(lListaFrutasMercado.Text);
+
+  finally
+    lListaFrutasMercado.Free;
+  end;
+
+end;            
+
+procedure TForm1.btnCriarListaClick(Sender: TObject);
+var
+  lListaFrutas: TStringList;
+begin
+
+  lListaFrutas := TStringList.Create;
+  try
+
+    lListaFrutas.Sorted := True;
+
+    lListaFrutas.Add('Maça');
+    lListaFrutas.Add('Limão');
+    lListaFrutas.Add('Banana');
+    lListaFrutas.Add('Abacaxi');
+    lListaFrutas.Add('Tangerina');
+    lListaFrutas.Add('Melancia');
+
+    lListaFrutas.Sort;
+
+    //lListaFrutas.Clear;
+
+    //lListaFrutas.Insert(1, 'Morango');
+
+    //lListaFrutas.Delete(3);
+
+    mmoLista.Clear;
+    mmoLista.Text := lListaFrutas.Text;
+    mmoLista.Lines.Add('');
+
+    mmoLista.Lines.Add('Index do abacaxi: ' + lListaFrutas.IndexOf('Abacaxi').ToString);
+
+  finally
+    lListaFrutas.Free;
+  end;
+
+end;
+
+end.procedure TForm1.btnSalvarListaClick(Sender: TObject);
+begin
+
+end;
+
+
