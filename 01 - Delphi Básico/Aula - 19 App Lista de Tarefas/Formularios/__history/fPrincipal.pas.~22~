@@ -1,0 +1,76 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.ExtCtrls, Vcl.Imaging.pngimage, Vcl.WinXCalendars, Vcl.StdCtrls,
+  Vcl.WinXPickers, Vcl.DBCtrls;
+
+type
+  TfrmPrincipal = class(TForm)
+    pnlTitulo: TPanel;
+    pnlMenuAcoes: TPanel;
+    pnlInformacoes: TPanel;
+    pnlRodape: TPanel;
+    grdTarefas: TDBGrid;
+    pnlDescricaoTarefa: TPanel;
+    imgBotaoFechar: TImage;
+    imgBotaoExcluir: TImage;
+    imgBotaoIncluir: TImage;
+    Image1: TImage;
+    clpData: TCalendarPicker;
+    Label1: TLabel;
+    rdgSituacao: TRadioGroup;
+    tmpTempoEstimado: TTimePicker;
+    Label2: TLabel;
+    mmoDescricao: TMemo;
+    Label3: TLabel;
+    pnlMenuSalvar: TPanel;
+    imgBotaoCancelar: TImage;
+    imgBotaoSalvar: TImage;
+    Label4: TLabel;
+    DBMemoDescricao: TDBMemo;
+    procedure FormShow(Sender: TObject);
+    procedure imgBotaoIncluirClick(Sender: TObject);
+  private
+    { Private declarations }
+
+    procedure ModoConsulta;
+    procedure ModoCadastro;
+
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+{ TfrmPrincipal }
+
+procedure TfrmPrincipal.FormShow(Sender: TObject);
+begin
+  ModoConsulta;
+end;
+
+procedure TfrmPrincipal.imgBotaoIncluirClick(Sender: TObject);
+begin
+  ModoCadastro;
+end;
+
+procedure TfrmPrincipal.ModoCadastro;
+begin
+  pnlInformacoes.Visible := True;
+end;
+
+procedure TfrmPrincipal.ModoConsulta;
+begin
+  pnlInformacoes.Visible := False;
+end;
+
+end.

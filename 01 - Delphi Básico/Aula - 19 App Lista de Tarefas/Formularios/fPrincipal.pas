@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
-  Vcl.ExtCtrls;
+  Vcl.ExtCtrls, Vcl.Imaging.pngimage, Vcl.WinXCalendars, Vcl.StdCtrls,
+  Vcl.WinXPickers, Vcl.DBCtrls;
 
 type
   TfrmPrincipal = class(TForm)
@@ -15,10 +16,33 @@ type
     pnlRodape: TPanel;
     grdTarefas: TDBGrid;
     pnlDescricaoTarefa: TPanel;
-    pnlMenuSalvar: TPanel;
+    imgBotaoFechar: TImage;
+    imgBotaoExcluir: TImage;
+    imgBotaoIncluir: TImage;
     Image1: TImage;
+    clpData: TCalendarPicker;
+    Label1: TLabel;
+    rdgSituacao: TRadioGroup;
+    tmpTempoEstimado: TTimePicker;
+    Label2: TLabel;
+    mmoDescricao: TMemo;
+    Label3: TLabel;
+    pnlMenuSalvar: TPanel;
+    imgBotaoCancelar: TImage;
+    imgBotaoSalvar: TImage;
+    Label4: TLabel;
+    DBMemoDescricao: TDBMemo;
+    procedure FormShow(Sender: TObject);
+    procedure imgBotaoIncluirClick(Sender: TObject);
+    procedure grdTarefasDblClick(Sender: TObject);
+    procedure imgBotaoSalvarClick(Sender: TObject);
+    procedure imgBotaoCancelarClick(Sender: TObject);
   private
     { Private declarations }
+
+    procedure ModoConsulta;
+    procedure ModoCadastro;
+
   public
     { Public declarations }
   end;
@@ -29,5 +53,44 @@ var
 implementation
 
 {$R *.dfm}
+
+{ TfrmPrincipal }
+
+procedure TfrmPrincipal.FormShow(Sender: TObject);
+begin
+  ModoConsulta;
+end;
+
+procedure TfrmPrincipal.grdTarefasDblClick(Sender: TObject);
+begin
+  ModoCadastro;
+end;
+
+procedure TfrmPrincipal.imgBotaoCancelarClick(Sender: TObject);
+begin
+  ModoConsulta;
+end;
+
+procedure TfrmPrincipal.imgBotaoIncluirClick(Sender: TObject);
+begin
+  ModoCadastro;
+end;
+
+procedure TfrmPrincipal.imgBotaoSalvarClick(Sender: TObject);
+begin
+  ModoConsulta;
+end;
+
+procedure TfrmPrincipal.ModoCadastro;
+begin
+  pnlMenuAcoes.Visible := False;
+  pnlInformacoes.Visible := True;
+end;
+
+procedure TfrmPrincipal.ModoConsulta;
+begin
+  pnlMenuAcoes.Visible := True;
+  pnlInformacoes.Visible := False;
+end;
 
 end.

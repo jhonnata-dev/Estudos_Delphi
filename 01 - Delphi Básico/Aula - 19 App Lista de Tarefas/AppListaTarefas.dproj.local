@@ -4,9 +4,9 @@
     <Transaction>2025/01/02 21:43:23.000.399,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2025/01/03 21:15:19.000.423,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2025/01/04 10:37:32.000.809,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2025/01/27 10:25:21.007,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2025/01/27 10:45:36.547,D:\Programação\Cursos Delphi\01 - Delphi Básico\Aula - 19 App Lista de Tarefas\Formularios\fPrincipal.pas=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2025/01/27 10:45:36.547,D:\Programação\Cursos Delphi\01 - Delphi Básico\Aula - 19 App Lista de Tarefas\Formularios\fPrincipal.dfm=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
-    <Transaction>2025/01/27 10:49:28.050,D:\Programação\Cursos Delphi\01 - Delphi Básico\Aula - 19 App Lista de Tarefas\AppListaTarefas.dproj=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2025/01/27 10:25:21.000.007,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/01/27 10:45:36.000.547,C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Programação\Cursos Delphi\01 - Delphi Básico\Aula - 19 App Lista de Tarefas\Formularios\fPrincipal.dfm</Transaction>
+    <Transaction>2025/01/27 10:45:36.000.547,C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Programação\Cursos Delphi\01 - Delphi Básico\Aula - 19 App Lista de Tarefas\Formularios\fPrincipal.pas</Transaction>
+    <Transaction>2025/01/27 10:49:28.000.050,C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Programação\Cursos Delphi\01 - Delphi Básico\Aula - 19 App Lista de Tarefas\AppListaTarefas.dproj</Transaction>
   </Transactions>
 </BorlandProject>
