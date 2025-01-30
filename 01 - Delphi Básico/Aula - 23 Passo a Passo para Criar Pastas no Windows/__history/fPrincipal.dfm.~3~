@@ -1,0 +1,71 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Delphi B'#225'sico - Aula 23 - Criando Pastas'
+  ClientHeight = 295
+  ClientWidth = 550
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 550
+    Height = 57
+    Align = alTop
+    Caption = 'Delphi B'#225'sico - Aula 23 - Criando Pastas'
+    Color = 8388672
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    StyleName = 'Windows'
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 57
+    Width = 550
+    Height = 238
+    Align = alClient
+    TabOrder = 1
+    ExplicitTop = 63
+    object btnCriarPasta: TButton
+      Left = 152
+      Top = 48
+      Width = 250
+      Height = 50
+      Caption = 'Criar pasta'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = btnCriarPastaClick
+    end
+    object btnForcarCriacaoPasta: TButton
+      Left = 152
+      Top = 107
+      Width = 250
+      Height = 50
+      Caption = 'For'#231'ar cria'#231#227'o da pasta'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      OnClick = btnForcarCriacaoPastaClick
+    end
+  end
+end

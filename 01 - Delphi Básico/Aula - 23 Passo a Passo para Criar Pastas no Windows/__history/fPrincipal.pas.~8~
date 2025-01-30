@@ -1,0 +1,56 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    btnCriarPasta: TButton;
+    btnForcarCriacaoPasta: TButton;
+    btnVerificarDiretorio: TButton;
+    procedure btnCriarPastaClick(Sender: TObject);
+    procedure btnForcarCriacaoPastaClick(Sender: TObject);
+    procedure btnVerificarDiretorioClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnCriarPastaClick(Sender: TObject);
+begin
+
+  CreateDir('D:\Execicios Delphi\arquivos');
+
+end;
+
+procedure TForm1.btnForcarCriacaoPastaClick(Sender: TObject);
+begin
+
+  ForceDirectories('D:\Exercicio\arquivos');
+
+end;
+
+procedure TForm1.btnVerificarDiretorioClick(Sender: TObject);
+begin
+
+  if DirectoryExists('D:\Execicios Delphi') then
+  begin
+    ShowMessage('O diretório já existe');
+  end;
+
+end;
+
+end.
