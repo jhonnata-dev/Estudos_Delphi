@@ -41,6 +41,7 @@ type
     procedure imgBotaoSalvarClick(Sender: TObject);
     procedure imgBotaoCancelarClick(Sender: TObject);
     procedure imgBotaoExcluirClick(Sender: TObject);
+    procedure imgBotaoFecharClick(Sender: TObject);
   private
     { Private declarations }
 
@@ -85,12 +86,39 @@ end;
 
 procedure TfrmPrincipal.imgBotaoCancelarClick(Sender: TObject);
 begin
+  dtmPrincipal.memTarefas.Cancel;
   ModoConsulta;
 end;
 
 procedure TfrmPrincipal.imgBotaoExcluirClick(Sender: TObject);
 begin
-  dtmPrincipal.memTarefas.Delete;
+
+  if MessageDlg('Deseja realmente excluir essa tarefa? ',
+                 TMsgDlgType.mtWarning,
+                 [TMsgDlgBtn.mbYes, TMsgDlgBtn.mbNo],
+                 0,
+                 TMsgDlgBtn.mbNo,
+                 ['Sim', 'Não']
+                 ) = mrYes then
+
+  begin
+    dtmPrincipal.memTarefas.Delete;
+  end;
+end;
+
+procedure TfrmPrincipal.imgBotaoFecharClick(Sender: TObject);
+begin
+    if MessageDlg('Deseja realmente fechar o sistema? ',
+                 TMsgDlgType.mtWarning,
+                 [TMsgDlgBtn.mbYes, TMsgDlgBtn.mbNo],
+                 0,
+                 TMsgDlgBtn.mbNo,
+                 ['Sim', 'Não']
+                 ) = mrYes then
+
+  begin
+    Application.Terminate;
+  end;
 end;
 
 procedure TfrmPrincipal.imgBotaoIncluirClick(Sender: TObject);
@@ -103,19 +131,34 @@ end;
 procedure TfrmPrincipal.imgBotaoSalvarClick(Sender: TObject);
 begin
 
-  case FOperacao of
-    opIncluir: dtmPrincipal.memTarefas.Insert;
-    opEditar: dtmPrincipal.memTarefas.Edit;
+  if Trim(mmoDescricao.Text) = '' then
+  begin
+    raise Exception.Create('Erro! O campo descrição é de preenchimento obrigatório.');
   end;
 
-  dtmPrincipal.memTarefasData.AsDateTime := clpData.Date;
-  dtmPrincipal.memTarefasSituacao.AsInteger := rdgSituacao.ItemIndex;
-  dtmPrincipal.memTarefasTempoEstimado.AsDateTime := tmpTempoEstimado.Time;
-  dtmPrincipal.memTarefasDescricao.AsString := mmoDescricao.Text;
+  try
 
-  dtmPrincipal.memTarefas.Post;
+    case FOperacao of
+      opIncluir: dtmPrincipal.memTarefas.Insert;
+      opEditar: dtmPrincipal.memTarefas.Edit;
+    end;
 
-  ModoConsulta;
+    dtmPrincipal.memTarefasData.AsDateTime := clpData.Date;
+    dtmPrincipal.memTarefasSituacao.AsInteger := rdgSituacao.ItemIndex;
+    dtmPrincipal.memTarefasTempoEstimado.AsDateTime := tmpTempoEstimado.Time;
+    dtmPrincipal.memTarefasDescricao.AsString := mmoDescricao.Text;
+
+    dtmPrincipal.memTarefas.Post;
+
+    ModoConsulta;
+
+  except on E: Exception do
+  begin
+    dtmPrincipal.memTarefas.Cancel;
+    ShowMessage('Erro ao tentar salvar a tarefa! ' + sLineBreak +
+                E.Message);
+  end;
+  end;
 end;
 
 procedure TfrmPrincipal.LimparCampos;

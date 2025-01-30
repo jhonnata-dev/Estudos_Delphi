@@ -15,8 +15,15 @@ type
     memTarefasTempoEstimado: TTimeField;
     memTarefasDescricao: TStringField;
     memTarefasId: TIntegerField;
+    procedure DataModuleCreate(Sender: TObject);
+    procedure memTarefasBeforePost(DataSet: TDataSet);
+    procedure memTarefasSituacaoGetText(Sender: TField; var Text: string;
+      DisplayText: Boolean);
   private
     { Private declarations }
+
+    FId: Integer;
+
   public
     { Public declarations }
   end;
@@ -29,5 +36,39 @@ implementation
 {%CLASSGROUP 'Vcl.Controls.TControl'}
 
 {$R *.dfm}
+
+procedure TdtmPrincipal.DataModuleCreate(Sender: TObject);
+begin
+  FId := 0;
+end;
+
+procedure TdtmPrincipal.memTarefasBeforePost(DataSet: TDataSet);
+begin
+
+  if memTarefas.State = dsInsert then
+  begin
+    Inc(FId);
+    memTarefasId.AsInteger := FId;
+  end;
+end;
+
+procedure TdtmPrincipal.memTarefasSituacaoGetText(Sender: TField;
+  var Text: string; DisplayText: Boolean);
+begin
+
+  if memTarefas.IsEmpty then
+  begin
+    Exit;
+  end;
+
+  case Sender.AsInteger of
+    0:
+      Text := 'Pendente';
+
+    1:
+      Text := 'Realizado';
+  end;
+
+end;
 
 end.

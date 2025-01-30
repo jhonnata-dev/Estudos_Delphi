@@ -1,6 +1,7 @@
 object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
+  BorderIcons = [biMinimize, biMaximize]
   Caption = 'frmPrincipal'
   ClientHeight = 775
   ClientWidth = 1033
@@ -1355,6 +1356,7 @@ object frmPrincipal: TfrmPrincipal
         3C4644001122E43122028810218F1111408408798CFF0778E45469063919D300
         00000049454E44AE426082}
       Proportional = True
+      OnClick = imgBotaoFecharClick
       ExplicitLeft = 126
       ExplicitTop = 48
       ExplicitHeight = 60
@@ -4538,6 +4540,7 @@ object frmPrincipal: TfrmPrincipal
     Font.Height = -15
     Font.Name = 'Segoe UI'
     Font.Style = []
+    ParentBackground = False
     ParentFont = False
     ParentShowHint = False
     ShowHint = False
@@ -4551,7 +4554,17 @@ object frmPrincipal: TfrmPrincipal
       Align = alTop
       Alignment = taCenter
       Caption = 'Descri'#231#227'o da tarefa'
-      ExplicitWidth = 129
+      Color = 6974058
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      StyleName = 'Windows'
+      ExplicitWidth = 134
     end
     object DBMemoDescricao: TDBMemo
       AlignWithMargins = True
@@ -4560,6 +4573,8 @@ object frmPrincipal: TfrmPrincipal
       Width = 506
       Height = 236
       Align = alClient
+      DataField = 'Descricao'
+      DataSource = dtsTarefas
       TabOrder = 0
     end
   end
