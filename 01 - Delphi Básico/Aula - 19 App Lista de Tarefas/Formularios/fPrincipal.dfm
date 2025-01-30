@@ -3,7 +3,7 @@ object frmPrincipal: TfrmPrincipal
   Top = 0
   Caption = 'frmPrincipal'
   ClientHeight = 775
-  ClientWidth = 955
+  ClientWidth = 1033
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object frmPrincipal: TfrmPrincipal
   object pnlTitulo: TPanel
     Left = 0
     Top = 0
-    Width = 955
+    Width = 1033
     Height = 65
     Align = alTop
     BevelOuter = bvNone
@@ -31,7 +31,6 @@ object frmPrincipal: TfrmPrincipal
     ParentFont = False
     TabOrder = 0
     StyleName = 'Windows'
-    ExplicitWidth = 968
     object Image1: TImage
       Left = 360
       Top = 8
@@ -756,7 +755,7 @@ object frmPrincipal: TfrmPrincipal
   object pnlMenuAcoes: TPanel
     Left = 0
     Top = 65
-    Width = 955
+    Width = 1033
     Height = 60
     Align = alTop
     BevelOuter = bvNone
@@ -770,7 +769,6 @@ object frmPrincipal: TfrmPrincipal
     ShowHint = False
     TabOrder = 1
     StyleName = 'Windows'
-    ExplicitWidth = 968
     object imgBotaoFechar: TImage
       AlignWithMargins = True
       Left = 135
@@ -2778,6 +2776,7 @@ object frmPrincipal: TfrmPrincipal
         326F261EDA2CC5A08910CA27F22622D16DE02BD95631E09DAD78991E85125BFF
         0FFF50E97AD88743CC0000000049454E44AE426082}
       Proportional = True
+      OnClick = imgBotaoExcluirClick
       ExplicitLeft = 66
       ExplicitTop = -41
       ExplicitHeight = 60
@@ -3744,23 +3743,25 @@ object frmPrincipal: TfrmPrincipal
   object pnlInformacoes: TPanel
     Left = 0
     Top = 125
-    Width = 955
+    Width = 1033
     Height = 356
     Align = alTop
     BevelOuter = bvNone
+    Color = clSilver
     Font.Charset = DEFAULT_CHARSET
-    Font.Color = clWindowText
+    Font.Color = clBlack
     Font.Height = -15
     Font.Name = 'Segoe UI'
     Font.Style = []
+    ParentBackground = False
     ParentFont = False
     ParentShowHint = False
     ShowHint = False
     TabOrder = 2
     StyleName = 'Windows'
-    ExplicitLeft = -3
-    ExplicitTop = 119
-    ExplicitWidth = 968
+    DesignSize = (
+      1033
+      356)
     object Label1: TLabel
       Left = 3
       Top = 21
@@ -3840,25 +3841,30 @@ object frmPrincipal: TfrmPrincipal
     object mmoDescricao: TMemo
       Left = 282
       Top = 48
-      Width = 601
+      Width = 735
       Height = 233
+      Anchors = [akLeft, akTop, akRight]
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = []
       Lines.Strings = (
         'mmoDescricao')
+      ParentFont = False
       TabOrder = 3
+      StyleName = 'Windows'
     end
     object pnlMenuSalvar: TPanel
       AlignWithMargins = True
       Left = 3
       Top = 293
-      Width = 949
+      Width = 1027
       Height = 60
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 4
       StyleName = 'Windows'
-      ExplicitLeft = 0
-      ExplicitTop = 296
-      ExplicitWidth = 955
       object imgBotaoCancelar: TImage
         AlignWithMargins = True
         Left = 69
@@ -4475,21 +4481,20 @@ object frmPrincipal: TfrmPrincipal
   object pnlRodape: TPanel
     Left = 0
     Top = 743
-    Width = 955
+    Width = 1033
     Height = 32
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 3
     StyleName = 'Windows'
-    ExplicitTop = 808
-    ExplicitWidth = 968
   end
   object grdTarefas: TDBGrid
     Left = 0
     Top = 481
-    Width = 609
+    Width = 521
     Height = 262
     Align = alLeft
+    DataSource = dtsTarefas
     TabOrder = 4
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
@@ -4497,11 +4502,34 @@ object frmPrincipal: TfrmPrincipal
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
     OnDblClick = grdTarefasDblClick
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'Id'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Data'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Situacao'
+        Width = 129
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'TempoEstimado'
+        Width = 235
+        Visible = True
+      end>
   end
   object pnlDescricaoTarefa: TPanel
-    Left = 609
+    Left = 521
     Top = 481
-    Width = 346
+    Width = 512
     Height = 262
     Align = alClient
     BevelOuter = bvNone
@@ -4515,32 +4543,29 @@ object frmPrincipal: TfrmPrincipal
     ShowHint = False
     TabOrder = 5
     StyleName = 'Windows'
-    ExplicitLeft = 513
-    ExplicitTop = 493
-    ExplicitWidth = 455
-    ExplicitHeight = 315
     object Label4: TLabel
       Left = 0
       Top = 0
-      Width = 346
+      Width = 512
       Height = 20
       Align = alTop
       Alignment = taCenter
       Caption = 'Descri'#231#227'o da tarefa'
-      ExplicitLeft = 144
-      ExplicitTop = 112
       ExplicitWidth = 129
     end
     object DBMemoDescricao: TDBMemo
       AlignWithMargins = True
       Left = 3
       Top = 23
-      Width = 340
+      Width = 506
       Height = 236
       Align = alClient
       TabOrder = 0
-      ExplicitLeft = 6
-      ExplicitTop = 26
     end
+  end
+  object dtsTarefas: TDataSource
+    DataSet = dtmPrincipal.memTarefas
+    Left = 408
+    Top = 424
   end
 end

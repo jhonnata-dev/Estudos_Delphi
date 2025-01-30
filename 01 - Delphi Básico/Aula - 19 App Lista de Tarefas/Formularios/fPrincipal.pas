@@ -8,6 +8,8 @@ uses
   Vcl.ExtCtrls, Vcl.Imaging.pngimage, Vcl.WinXCalendars, Vcl.StdCtrls,
   Vcl.WinXPickers, Vcl.DBCtrls;
 
+type TOperacao = (opIncluir, opEditar);
+
 type
   TfrmPrincipal = class(TForm)
     pnlTitulo: TPanel;
@@ -32,16 +34,21 @@ type
     imgBotaoSalvar: TImage;
     Label4: TLabel;
     DBMemoDescricao: TDBMemo;
+    dtsTarefas: TDataSource;
     procedure FormShow(Sender: TObject);
     procedure imgBotaoIncluirClick(Sender: TObject);
     procedure grdTarefasDblClick(Sender: TObject);
     procedure imgBotaoSalvarClick(Sender: TObject);
     procedure imgBotaoCancelarClick(Sender: TObject);
+    procedure imgBotaoExcluirClick(Sender: TObject);
   private
     { Private declarations }
 
+    FOperacao: TOperacao;
+
     procedure ModoConsulta;
     procedure ModoCadastro;
+    procedure LimparCampos;
 
   public
     { Public declarations }
@@ -54,15 +61,25 @@ implementation
 
 {$R *.dfm}
 
+uses dPrincipal;
+
 { TfrmPrincipal }
 
 procedure TfrmPrincipal.FormShow(Sender: TObject);
 begin
+  dtmPrincipal.memTarefas.CreateDataSet;
   ModoConsulta;
 end;
 
 procedure TfrmPrincipal.grdTarefasDblClick(Sender: TObject);
 begin
+
+  FOperacao             := opEditar;
+  clpData.Date          := dtmPrincipal.memTarefasData.AsDateTime;
+  rdgSituacao.ItemIndex := dtmPrincipal.memTarefasSituacao.AsInteger;
+  tmpTempoEstimado.Time := dtmPrincipal.memTarefasTempoEstimado.AsDateTime;
+  mmoDescricao.Text     := dtmPrincipal.memTarefasDescricao.AsString;
+
   ModoCadastro;
 end;
 
@@ -71,25 +88,53 @@ begin
   ModoConsulta;
 end;
 
+procedure TfrmPrincipal.imgBotaoExcluirClick(Sender: TObject);
+begin
+  dtmPrincipal.memTarefas.Delete;
+end;
+
 procedure TfrmPrincipal.imgBotaoIncluirClick(Sender: TObject);
 begin
+  FOperacao := opIncluir;
+  LimparCampos;
   ModoCadastro;
 end;
 
 procedure TfrmPrincipal.imgBotaoSalvarClick(Sender: TObject);
 begin
+
+  case FOperacao of
+    opIncluir: dtmPrincipal.memTarefas.Insert;
+    opEditar: dtmPrincipal.memTarefas.Edit;
+  end;
+
+  dtmPrincipal.memTarefasData.AsDateTime := clpData.Date;
+  dtmPrincipal.memTarefasSituacao.AsInteger := rdgSituacao.ItemIndex;
+  dtmPrincipal.memTarefasTempoEstimado.AsDateTime := tmpTempoEstimado.Time;
+  dtmPrincipal.memTarefasDescricao.AsString := mmoDescricao.Text;
+
+  dtmPrincipal.memTarefas.Post;
+
   ModoConsulta;
+end;
+
+procedure TfrmPrincipal.LimparCampos;
+begin
+  clpData.Date          := Now;
+  rdgSituacao.ItemIndex := 0;
+  tmpTempoEstimado.Time := StrToTime('01:00');
+  mmoDescricao.Lines.Clear;
 end;
 
 procedure TfrmPrincipal.ModoCadastro;
 begin
-  pnlMenuAcoes.Visible := False;
+  pnlMenuAcoes.Visible   := False;
   pnlInformacoes.Visible := True;
 end;
 
 procedure TfrmPrincipal.ModoConsulta;
 begin
-  pnlMenuAcoes.Visible := True;
+  pnlMenuAcoes.Visible   := True;
   pnlInformacoes.Visible := False;
 end;
 
