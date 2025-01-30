@@ -1,0 +1,55 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    btnApagarArquivo: TButton;
+    FileOpenDialog1: TFileOpenDialog;
+    procedure btnApagarArquivoClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnApagarArquivoClick(Sender: TObject);
+var
+  lFile: String;
+begin
+
+  lFile := 'D:\Exercicio\arquivosimagem1.bmp';
+
+  if DirectoryExists(lFile) then
+  begin
+
+    if DeleteFile(lFile) then
+    begin
+      ShowMessage('Arquivo excluido com sucesso: ' + lFile);
+    end
+    else
+    begin
+      ShowMessage('Falha ao tentar excluir o o arquivo: ' + lFile);
+    end;
+
+  end
+  else
+  begin
+    ShowMessage('Arquivo não encontrado: ' + lFile);
+  end;
+end;
+
+end.
