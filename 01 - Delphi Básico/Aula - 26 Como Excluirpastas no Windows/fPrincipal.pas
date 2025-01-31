@@ -36,7 +36,7 @@ begin
 
     // excluindo pasta com arquivos
     try
-
+    // o "True" foi adicionado como parâmetro assim permitindo que os arquivos e subpastas tambem sejam excluidos
       TDirectory.Delete(edtCaminho.Text, True);
       ShowMessage('Pasta excluida com sucesso!');
         
