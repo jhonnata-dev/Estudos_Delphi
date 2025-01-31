@@ -1,0 +1,57 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, System.IOUtils;
+
+type
+  TForm1 = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    btnApagarPastaVazia: TButton;
+    btnApagarPastaComArquivos: TButton;
+    Label1: TLabel;
+    edtCaminho: TEdit;
+    procedure btnApagarPastaVaziaClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnApagarPastaVaziaClick(Sender: TObject);
+begin
+
+  if TDirectory.Exists(edtCaminho.Text) then
+  begin
+
+    // excluindo pasta vazia
+    try
+
+      TDirectory.Delete(edtCaminho.Text);
+      ShowMessage('Pasta excluida com sucesso!');
+        
+    except on E: Exception do
+      ShowMessage('Erro ao tentar excluir pasta: ' + sLineBreak +
+                  E.Message)
+    end;
+
+  end
+  else
+  begin
+    ShowMessage('Pasta não encontrada, por gentilexa conferir e tentar novamente.');
+  end;
+
+end;
+
+end.
+                                                                       
