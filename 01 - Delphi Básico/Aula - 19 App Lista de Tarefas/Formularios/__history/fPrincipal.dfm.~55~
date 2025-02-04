@@ -1,6 +1,7 @@
 object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
+  BorderIcons = [biMinimize, biMaximize]
   Caption = 'frmPrincipal'
   ClientHeight = 775
   ClientWidth = 1033
@@ -31,7 +32,7 @@ object frmPrincipal: TfrmPrincipal
     ParentFont = False
     TabOrder = 0
     StyleName = 'Windows'
-    ExplicitWidth = 955
+    ExplicitWidth = 1031
     object Image1: TImage
       Left = 360
       Top = 8
@@ -770,7 +771,7 @@ object frmPrincipal: TfrmPrincipal
     ShowHint = False
     TabOrder = 1
     StyleName = 'Windows'
-    ExplicitWidth = 955
+    ExplicitWidth = 1031
     object imgBotaoFechar: TImage
       AlignWithMargins = True
       Left = 135
@@ -1357,6 +1358,7 @@ object frmPrincipal: TfrmPrincipal
         3C4644001122E43122028810218F1111408408798CFF0778E45469063919D300
         00000049454E44AE426082}
       Proportional = True
+      OnClick = imgBotaoFecharClick
       ExplicitLeft = 126
       ExplicitTop = 48
       ExplicitHeight = 60
@@ -2778,6 +2780,7 @@ object frmPrincipal: TfrmPrincipal
         326F261EDA2CC5A08910CA27F22622D16DE02BD95631E09DAD78991E85125BFF
         0FFF50E97AD88743CC0000000049454E44AE426082}
       Proportional = True
+      OnClick = imgBotaoExcluirClick
       ExplicitLeft = 66
       ExplicitTop = -41
       ExplicitHeight = 60
@@ -3760,7 +3763,7 @@ object frmPrincipal: TfrmPrincipal
     ShowHint = False
     TabOrder = 2
     StyleName = 'Windows'
-    ExplicitWidth = 955
+    ExplicitWidth = 1031
     DesignSize = (
       1033
       356)
@@ -3856,6 +3859,7 @@ object frmPrincipal: TfrmPrincipal
       ParentFont = False
       TabOrder = 3
       StyleName = 'Windows'
+      ExplicitWidth = 733
     end
     object pnlMenuSalvar: TPanel
       AlignWithMargins = True
@@ -3867,7 +3871,7 @@ object frmPrincipal: TfrmPrincipal
       BevelOuter = bvNone
       TabOrder = 4
       StyleName = 'Windows'
-      ExplicitWidth = 949
+      ExplicitWidth = 1025
       object imgBotaoCancelar: TImage
         AlignWithMargins = True
         Left = 69
@@ -4490,7 +4494,8 @@ object frmPrincipal: TfrmPrincipal
     BevelOuter = bvNone
     TabOrder = 3
     StyleName = 'Windows'
-    ExplicitWidth = 955
+    ExplicitTop = 735
+    ExplicitWidth = 1031
   end
   object grdTarefas: TDBGrid
     Left = 0
@@ -4542,13 +4547,14 @@ object frmPrincipal: TfrmPrincipal
     Font.Height = -15
     Font.Name = 'Segoe UI'
     Font.Style = []
+    ParentBackground = False
     ParentFont = False
     ParentShowHint = False
     ShowHint = False
     TabOrder = 5
     StyleName = 'Windows'
-    ExplicitLeft = 609
-    ExplicitWidth = 346
+    ExplicitWidth = 510
+    ExplicitHeight = 254
     object Label4: TLabel
       Left = 0
       Top = 0
@@ -4557,7 +4563,17 @@ object frmPrincipal: TfrmPrincipal
       Align = alTop
       Alignment = taCenter
       Caption = 'Descri'#231#227'o da tarefa'
-      ExplicitWidth = 129
+      Color = 6974058
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = -15
+      Font.Name = 'Segoe UI'
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      StyleName = 'Windows'
+      ExplicitWidth = 134
     end
     object DBMemoDescricao: TDBMemo
       AlignWithMargins = True
@@ -4566,8 +4582,11 @@ object frmPrincipal: TfrmPrincipal
       Width = 506
       Height = 236
       Align = alClient
+      DataField = 'Descricao'
+      DataSource = dtsTarefas
       TabOrder = 0
-      ExplicitWidth = 340
+      ExplicitWidth = 504
+      ExplicitHeight = 228
     end
   end
   object dtsTarefas: TDataSource

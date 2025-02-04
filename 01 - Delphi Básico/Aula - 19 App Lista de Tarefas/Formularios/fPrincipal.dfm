@@ -32,6 +32,7 @@ object frmPrincipal: TfrmPrincipal
     ParentFont = False
     TabOrder = 0
     StyleName = 'Windows'
+    ExplicitWidth = 1031
     object Image1: TImage
       Left = 360
       Top = 8
@@ -770,6 +771,7 @@ object frmPrincipal: TfrmPrincipal
     ShowHint = False
     TabOrder = 1
     StyleName = 'Windows'
+    ExplicitWidth = 1031
     object imgBotaoFechar: TImage
       AlignWithMargins = True
       Left = 135
@@ -3761,6 +3763,7 @@ object frmPrincipal: TfrmPrincipal
     ShowHint = False
     TabOrder = 2
     StyleName = 'Windows'
+    ExplicitWidth = 1031
     DesignSize = (
       1033
       356)
@@ -3856,6 +3859,7 @@ object frmPrincipal: TfrmPrincipal
       ParentFont = False
       TabOrder = 3
       StyleName = 'Windows'
+      ExplicitWidth = 733
     end
     object pnlMenuSalvar: TPanel
       AlignWithMargins = True
@@ -3867,6 +3871,7 @@ object frmPrincipal: TfrmPrincipal
       BevelOuter = bvNone
       TabOrder = 4
       StyleName = 'Windows'
+      ExplicitWidth = 1025
       object imgBotaoCancelar: TImage
         AlignWithMargins = True
         Left = 69
@@ -4489,11 +4494,13 @@ object frmPrincipal: TfrmPrincipal
     BevelOuter = bvNone
     TabOrder = 3
     StyleName = 'Windows'
+    ExplicitTop = 735
+    ExplicitWidth = 1031
   end
   object grdTarefas: TDBGrid
     Left = 0
     Top = 481
-    Width = 521
+    Width = 585
     Height = 262
     Align = alLeft
     DataSource = dtsTarefas
@@ -4529,9 +4536,9 @@ object frmPrincipal: TfrmPrincipal
       end>
   end
   object pnlDescricaoTarefa: TPanel
-    Left = 521
+    Left = 585
     Top = 481
-    Width = 512
+    Width = 448
     Height = 262
     Align = alClient
     BevelOuter = bvNone
@@ -4546,10 +4553,13 @@ object frmPrincipal: TfrmPrincipal
     ShowHint = False
     TabOrder = 5
     StyleName = 'Windows'
+    ExplicitLeft = 0
+    ExplicitWidth = 1033
+    ExplicitHeight = 512
     object Label4: TLabel
       Left = 0
       Top = 0
-      Width = 512
+      Width = 448
       Height = 20
       Align = alTop
       Alignment = taCenter
@@ -4570,12 +4580,14 @@ object frmPrincipal: TfrmPrincipal
       AlignWithMargins = True
       Left = 3
       Top = 23
-      Width = 506
+      Width = 442
       Height = 236
       Align = alClient
       DataField = 'Descricao'
       DataSource = dtsTarefas
       TabOrder = 0
+      ExplicitWidth = 504
+      ExplicitHeight = 228
     end
   end
   object dtsTarefas: TDataSource
