@@ -4553,9 +4553,8 @@ object frmPrincipal: TfrmPrincipal
     ShowHint = False
     TabOrder = 5
     StyleName = 'Windows'
-    ExplicitLeft = 0
-    ExplicitWidth = 1033
-    ExplicitHeight = 512
+    ExplicitWidth = 446
+    ExplicitHeight = 254
     object Label4: TLabel
       Left = 0
       Top = 0
@@ -4586,7 +4585,7 @@ object frmPrincipal: TfrmPrincipal
       DataField = 'Descricao'
       DataSource = dtsTarefas
       TabOrder = 0
-      ExplicitWidth = 504
+      ExplicitWidth = 440
       ExplicitHeight = 228
     end
   end

@@ -86,6 +86,7 @@ end;
 
 procedure TfrmPrincipal.imgBotaoCancelarClick(Sender: TObject);
 begin
+  dtmPrincipal.memTarefas.Cancel;
   ModoConsulta;
 end;
 
@@ -143,7 +144,7 @@ begin
     end;
 
     dtmPrincipal.memTarefasData.AsDateTime := clpData.Date;
-    dtmPrincipal.memTarefasSituacao.AsInteger := 'A';
+    dtmPrincipal.memTarefasSituacao.AsInteger := rdgSituacao.ItemIndex;
     dtmPrincipal.memTarefasTempoEstimado.AsDateTime := tmpTempoEstimado.Time;
     dtmPrincipal.memTarefasDescricao.AsString := mmoDescricao.Text;
 
@@ -152,8 +153,11 @@ begin
     ModoConsulta;
 
   except on E: Exception do
+  begin
+    dtmPrincipal.memTarefas.Cancel;
     ShowMessage('Erro ao tentar salvar a tarefa! ' + sLineBreak +
                 E.Message);
+  end;
   end;
 end;
 
