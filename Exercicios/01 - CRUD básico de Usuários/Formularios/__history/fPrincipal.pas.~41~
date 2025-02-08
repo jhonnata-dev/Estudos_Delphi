@@ -1,0 +1,132 @@
+unit fPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Imaging.pngimage;
+
+type TOperacao = (opIncluir, opEditar);
+
+type
+  TForm1 = class(TForm)
+    pnlTitulo: TPanel;
+    pnlForm: TPanel;
+    pnlOpcoes: TPanel;
+    DBGusuarios: TDBGrid;
+    edtNome: TEdit;
+    edtEmail: TEdit;
+    cbxIdade: TComboBox;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    dtsUsuarios: TDataSource;
+    imgBotaoExcluir: TImage;
+    imgBotaoSalvar: TImage;
+    imgBotaoEditar: TImage;
+    procedure FormShow(Sender: TObject);
+    procedure imgBotaoSalvarClick(Sender: TObject);
+    procedure imgBotaoExcluirClick(Sender: TObject);
+    procedure imgBotaoEditarClick(Sender: TObject);
+  private
+    { Private declarations }
+
+    FOperacao: TOperacao;
+    procedure limparCampos;
+
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+uses dPrincipal;
+
+procedure TForm1.FormShow(Sender: TObject);
+var
+  i: Integer;
+begin
+
+  for i := 0 to 120 do
+  begin
+    cbxIdade.Items.Add(i.ToString);
+  end;
+
+  cbxIdade.ItemIndex := 0;
+
+end;
+
+procedure TForm1.imgBotaoEditarClick(Sender: TObject);
+begin
+
+  FOperacao := opEditar;
+  edtNome.Text := dtmPrincipal.memUsuariosNome.AsString;
+  edtEmail.Text := dtmPrincipal.memUsuariosEmail.AsString;
+  cbxIdade.ItemIndex := dtmPrincipal.memUsuariosIdade.AsInteger;
+
+end;
+
+procedure TForm1.imgBotaoExcluirClick(Sender: TObject);
+begin
+
+  if MessageDlg('Deseja realmente excluir esse usuário?',
+                TMsgDlgType.mtWarning,
+                [TMsgDlgBtn.mbYes, TMsgDlgBtn.mbNo],
+                0,
+                TMsgDlgBtn.mbNo,
+                ['Sim', 'Não']
+                ) = mrYes then
+  begin
+    dtmPrincipal.memUsuarios.Delete;
+  end;
+
+end;
+
+procedure TForm1.imgBotaoSalvarClick(Sender: TObject);
+begin
+
+  try
+    if (edtNome.Text = EmptyStr) or (edtEmail.Text = EmptyStr) then
+    begin
+      ShowMessage('Preencha todos os campos corretamente!');
+    end
+    else
+    begin
+
+      dtmPrincipal.memUsuarios.Open;
+
+      case FOperacao of
+        opIncluir: dtmPrincipal.memUsuarios.Insert;
+        opEditar: dtmPrincipal.memUsuarios.Edit;
+      end;
+      dtmPrincipal.memUsuarios.Open;
+
+      dtmPrincipal.memUsuariosNome.AsString  := edtNome.Text;
+      dtmPrincipal.memUsuariosEmail.AsString := edtEmail.Text;
+      dtmPrincipal.memUsuariosIdade.AsInteger := cbxIdade.ItemIndex;
+
+      dtmPrincipal.memUsuarios.Post;
+
+    end;
+
+  except on E: Exception do
+    ShowMessage('Ocorreu um erro: ' + E.Message);
+  end;
+end;
+
+procedure TForm1.limparCampos;
+begin
+
+  edtNome.Clear;
+  edtEmail.Clear;
+  cbxIdade.ItemIndex := 0;
+
+end;
+
+end.

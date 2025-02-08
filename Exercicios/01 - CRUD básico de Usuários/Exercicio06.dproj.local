@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/01/02 21:43:23.000.399,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/01/03 21:15:19.000.423,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/01/04 10:37:32.000.809,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/02/06 18:48:16.000.745,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/02/07 00:26:58.000.398,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/02/07 00:27:19.000.841,D:\Exercicios\Exercicios Delphi\Exercicio - 06\Formularios\fPrincipal.dfm=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2025/02/07 00:27:19.000.841,D:\Exercicios\Exercicios Delphi\Exercicio - 06\Formularios\fPrincipal.pas=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/02/07 00:27:28.000.995,D:\Exercicios\Exercicios Delphi\Exercicio - 06\Exercicio06.dproj=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2025/02/07 00:49:42.000.042,=D:\Exercicios\Exercicios Delphi\Exercicio - 06\Unit1.pas</Transaction>
+    <Transaction>2025/02/07 00:50:02.000.953,D:\Exercicios\Exercicios Delphi\Exercicio - 06\Unit1.pas=D:\Exercicios\Exercicios Delphi\Exercicio - 06\DataModules\dPrincipal.pas</Transaction>
+    <Transaction>2025/02/07 00:50:02.000.953,D:\Exercicios\Exercicios Delphi\Exercicio - 06\Unit1.dfm=D:\Exercicios\Exercicios Delphi\Exercicio - 06\DataModules\dPrincipal.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

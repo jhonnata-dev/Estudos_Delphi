@@ -1,0 +1,29 @@
+object dtmPrincipal: TdtmPrincipal
+  Height = 480
+  Width = 640
+  object memUsuarios: TFDMemTable
+    FetchOptions.AssignedValues = [evMode]
+    FetchOptions.Mode = fmAll
+    ResourceOptions.AssignedValues = [rvSilentMode]
+    ResourceOptions.SilentMode = True
+    UpdateOptions.AssignedValues = [uvCheckRequired, uvAutoCommitUpdates]
+    UpdateOptions.CheckRequired = False
+    UpdateOptions.AutoCommitUpdates = True
+    Left = 40
+    Top = 8
+    object memUsuariosId: TIntegerField
+      FieldName = 'Id'
+    end
+    object memUsuariosNome: TStringField
+      FieldName = 'Nome'
+      Size = 45
+    end
+    object memUsuariosEmail: TStringField
+      FieldName = 'Email'
+      Size = 50
+    end
+    object memUsuariosIdade: TIntegerField
+      FieldName = 'Idade'
+    end
+  end
+end
