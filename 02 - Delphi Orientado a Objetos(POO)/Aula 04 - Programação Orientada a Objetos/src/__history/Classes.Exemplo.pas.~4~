@@ -1,0 +1,37 @@
+unit Classes.Exemplo;
+
+interface
+
+type
+  TExemplo = class
+  private
+    { private declarations visivel para a classe e classes amigas}
+    FPrivado: string;
+    FPublicada: string;
+    procedure SetPublicada(const Value: string);
+
+  protected
+    { protected declarations visivel para a classe, classes amigas e tambémos herdeiros da classe}
+    FProtegido: string;
+
+  public
+    { public declarations visivel a qualquer um que referencie a classe}
+    FPublico: string;
+
+  published
+    { published declarations visivel e publicado no object inspector}
+    property Publicada: string read FPublicada write SetPublicada;
+
+  end;
+
+
+implementation
+
+{ TExemplo }
+
+procedure TExemplo.SetPublicada(const Value: string);
+begin
+  FPublicada := Value;
+end;
+
+end.

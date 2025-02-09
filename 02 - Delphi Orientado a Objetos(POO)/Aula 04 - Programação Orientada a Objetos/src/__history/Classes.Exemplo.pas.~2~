@@ -1,0 +1,21 @@
+unit Classes.Exemplo;
+
+interface
+
+type
+  TExemplo = class
+  private
+    { private declarations visivel para a classe e classes amigas}
+  protected
+    { protected declarations visivel para a classe, classes amigas e tambémos herdeiros da classe}
+  public
+    { public declarations visivel a qualquer um que referencie a classe}
+
+  published
+    { published declarations visivel e publicado no object inspector}
+  end;
+
+
+implementation
+
+end.
