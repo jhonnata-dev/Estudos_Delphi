@@ -1,0 +1,51 @@
+unit Principal;
+
+interface
+
+  // Classe mãe
+  type TPessoa = class
+    Nome: string;
+    Telefone: string;
+  end;
+
+  // A classe TCliente está herdando a classe TPessoa
+  type TCliente = class(TPessoa)
+    CNPJ: string;
+    RazaoSocial: string;
+  end;
+
+  // A classe TUsuario está herdando a classe TPessoa
+  type TUsuario = class(TPessoa)
+    NomeAcesso: string;
+    Senha: string;
+  end;
+
+  // A classe TUsuario está herdando a classe TPessoa
+  type TAdministrador = class(TUsuario)
+    procedure Excluir; // metódo excluir
+    procedure Inserir; // metódo inserir
+  end;
+
+implementation
+
+//initialization
+
+//finalization
+
+{ TAdministrador }
+
+procedure TAdministrador.Excluir;
+begin
+
+end;
+
+procedure TAdministrador.Inserir;
+begin
+
+end;
+
+end.
+
+
+
+

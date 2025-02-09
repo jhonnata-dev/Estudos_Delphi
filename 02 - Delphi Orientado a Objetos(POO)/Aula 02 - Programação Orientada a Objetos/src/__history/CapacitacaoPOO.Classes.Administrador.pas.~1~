@@ -1,0 +1,12 @@
+unit CapacitacaoPOO.Classes.Administrador;
+
+interface
+  // A classe TUsuario está herdando a classe TPessoa
+  type TAdministrador = class(TUsuario)
+    procedure Excluir; // metódo excluir
+    procedure Inserir; // metódo inserir
+  end;
+
+implementation
+
+end.
