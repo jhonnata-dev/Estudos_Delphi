@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/01/02 21:43:23.000.399,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/01/03 21:15:19.000.423,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/01/04 10:37:32.000.809,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/02/06 18:48:16.000.745,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/02/12 20:02:48.000.299,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/02/12 20:04:19.000.611,C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Programação\Cursos Delphi\02 - Delphi Orientado a Objetos(POO)\Aula 11 - Programação Orientada a objetos\src\Forms.FormPrincipal.dfm</Transaction>
+    <Transaction>2025/02/12 20:04:19.000.611,C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Programação\Cursos Delphi\02 - Delphi Orientado a Objetos(POO)\Aula 11 - Programação Orientada a objetos\src\Forms.FormPrincipal.pas</Transaction>
+    <Transaction>2025/02/12 20:04:35.000.297,C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Programação\Cursos Delphi\02 - Delphi Orientado a Objetos(POO)\Aula 11 - Programação Orientada a objetos\Aula11.dproj</Transaction>
+    <Transaction>2025/02/12 20:04:39.000.529,=D:\Programação\Cursos Delphi\02 - Delphi Orientado a Objetos(POO)\Aula 11 - Programação Orientada a objetos\Unit1.pas</Transaction>
+    <Transaction>2025/02/12 20:04:54.000.213,D:\Programação\Cursos Delphi\02 - Delphi Orientado a Objetos(POO)\Aula 11 - Programação Orientada a objetos\Unit1.pas=D:\Programação\Cursos Delphi\02 - Delphi Orientado a Objetos(POO)\Aula 11 - Programação Orientada a objetos\src\Classes.Exemplo.pas</Transaction>
+  </Transactions>
+</BorlandProject>
