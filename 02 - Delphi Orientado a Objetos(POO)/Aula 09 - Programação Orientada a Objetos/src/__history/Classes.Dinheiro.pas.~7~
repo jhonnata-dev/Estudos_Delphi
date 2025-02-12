@@ -1,0 +1,31 @@
+unit Classes.Dinheiro;
+
+interface
+
+uses Classes.Pagamento;
+
+type TDinheiro = class(TPagamento)
+     private
+       { private declarations }
+     protected
+       { protected declarations }
+     public
+       { public declarations }
+
+     published
+       { published declarations }
+
+       function zagar : string;
+
+     end;
+
+implementation
+
+{ TDinheiro }
+
+function TDinheiro.zagar: string;
+begin
+  Result := 'Dentro de dinheiro';
+end;
+
+end.

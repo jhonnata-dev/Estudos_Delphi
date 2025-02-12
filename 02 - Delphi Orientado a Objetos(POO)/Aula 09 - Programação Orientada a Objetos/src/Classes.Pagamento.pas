@@ -1,0 +1,39 @@
+unit Classes.Pagamento;
+
+interface
+
+type TPagamento = class
+     private
+    FValor: double;
+    FMensagem: string;
+    procedure SetMensagem(const Value: string);
+    procedure SetValor(const Value: double);
+       { private declarations }
+     protected
+       { protected declarations }
+     public
+       { public declarations }
+
+     published
+       { published declarations }
+       property Valor : double read FValor write SetValor;
+       property Mensagem : string read FMensagem write SetMensagem;
+
+       function Pagar : string; virtual; abstract;
+     end;
+
+implementation
+
+{ TMyClass }
+
+procedure TPagamento.SetMensagem(const Value: string);
+begin
+  FMensagem := Value;
+end;
+
+procedure TPagamento.SetValor(const Value: double);
+begin
+  FValor := Value;
+end;
+
+end.

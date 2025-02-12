@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/01/02 21:43:23.000.399,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/01/03 21:15:19.000.423,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/01/04 10:37:32.000.809,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/02/06 18:48:16.000.745,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/02/12 14:56:05.000.838,=C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2025/02/12 14:57:16.000.485,C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.dfm=D:\Programação\Cursos Delphi\02 - Delphi Orientado a Objetos(POO)\Aula 09 - Programação Orientada a Objetos\src\View.Principal.dfm</Transaction>
+    <Transaction>2025/02/12 14:57:16.000.485,C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Unit1.pas=D:\Programação\Cursos Delphi\02 - Delphi Orientado a Objetos(POO)\Aula 09 - Programação Orientada a Objetos\src\View.Principal.pas</Transaction>
+    <Transaction>2025/02/12 14:57:33.000.219,C:\Users\jplay\Documents\Embarcadero\Studio\Projects\Project1.dproj=D:\Programação\Cursos Delphi\02 - Delphi Orientado a Objetos(POO)\Aula 09 - Programação Orientada a Objetos\ExemploPagamentos.dproj</Transaction>
+    <Transaction>2025/02/12 14:57:42.000.958,=D:\Programação\Cursos Delphi\02 - Delphi Orientado a Objetos(POO)\Aula 09 - Programação Orientada a Objetos\Unit1.pas</Transaction>
+    <Transaction>2025/02/12 15:06:08.000.144,D:\Programação\Cursos Delphi\02 - Delphi Orientado a Objetos(POO)\Aula 09 - Programação Orientada a Objetos\Unit1.pas=D:\Programação\Cursos Delphi\02 - Delphi Orientado a Objetos(POO)\Aula 09 - Programação Orientada a Objetos\src\Classes.Pagamento.pas</Transaction>
+    <Transaction>2025/02/12 15:06:49.000.215,=D:\Programação\Cursos Delphi\02 - Delphi Orientado a Objetos(POO)\Aula 09 - Programação Orientada a Objetos\Unit1.pas</Transaction>
+    <Transaction>2025/02/12 15:10:00.000.911,D:\Programação\Cursos Delphi\02 - Delphi Orientado a Objetos(POO)\Aula 09 - Programação Orientada a Objetos\Unit1.pas=D:\Programação\Cursos Delphi\02 - Delphi Orientado a Objetos(POO)\Aula 09 - Programação Orientada a Objetos\src\Classes.Dinheiro.pas</Transaction>
+  </Transactions>
+</BorlandProject>
