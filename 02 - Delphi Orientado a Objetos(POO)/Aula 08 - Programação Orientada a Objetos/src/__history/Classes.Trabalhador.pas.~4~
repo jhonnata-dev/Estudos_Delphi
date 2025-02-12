@@ -1,0 +1,31 @@
+unit Classes.Trabalhador;
+
+interface
+
+type TTrabalhador = class
+     private
+    FSalario: double;
+    procedure SetSalario(const Value: double);
+       { private declarations }
+     protected
+       { protected declarations }
+     public
+       { public declarations }
+       property Salario : double read FSalario write SetSalario;
+
+       function CalcularSalario(ASalarioMinimo, Indexador : double) : double;
+
+     published
+       { published declarations }
+     end;
+
+implementation
+
+{ TTrabalhador }
+
+procedure TTrabalhador.SetSalario(const Value: double);
+begin
+  FSalario := Value;
+end;
+
+end.
