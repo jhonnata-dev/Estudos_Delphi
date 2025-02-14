@@ -1,0 +1,21 @@
+unit Classes.Audio;
+
+interface
+
+uses Classes.Midia;
+
+type TAudio = class(TMidia)
+     private
+       { private declarations }
+     protected
+       { protected declarations }
+     public
+       { public declarations }
+
+     published
+       { published declarations }
+     end;
+
+implementation
+
+end.
