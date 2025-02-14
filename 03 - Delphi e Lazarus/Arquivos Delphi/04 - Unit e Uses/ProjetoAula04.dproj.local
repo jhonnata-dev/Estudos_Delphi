@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/02/14 11:10:53.000.977,=D:\Programas e Apps\Delphi 12\Unit1.pas</Transaction>
+    <Transaction>2025/02/14 19:42:20.000.606,=D:\Programas e Apps\Delphi 12\Unit1.pas</Transaction>
+    <Transaction>2025/02/14 19:44:03.000.781,D:\Programas e Apps\Delphi 12\Unit1.dfm=D:\Programação\Cursos Delphi\03 - Delphi e Lazarus\Arquivos Delphi\04 - Unit e Uses\uAula04.dfm</Transaction>
+    <Transaction>2025/02/14 19:44:03.000.781,D:\Programas e Apps\Delphi 12\Unit1.pas=D:\Programação\Cursos Delphi\03 - Delphi e Lazarus\Arquivos Delphi\04 - Unit e Uses\uAula04.pas</Transaction>
+    <Transaction>2025/02/14 19:44:11.000.798,D:\Programas e Apps\Delphi 12\Project1.dproj=D:\Programação\Cursos Delphi\03 - Delphi e Lazarus\Arquivos Delphi\04 - Unit e Uses\ProjetoAula04.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
