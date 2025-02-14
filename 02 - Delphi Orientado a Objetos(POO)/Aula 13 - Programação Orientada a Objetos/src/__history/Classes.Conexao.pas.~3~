@@ -1,0 +1,32 @@
+unit Classes.Conexao;
+
+interface
+
+type
+  TCOnexao = class
+  private
+    FEnderecoBD: string;
+    procedure SetEnderecoBD(const Value: string);
+    { private declarations }
+  protected
+    { protected declarations }
+  public
+    { public declarations }
+    class function VerificaBD : boolean;
+
+  published
+    { published declarations }
+    property EnderecoBD: string read FEnderecoBD write SetEnderecoBD;
+
+  end;
+
+implementation
+
+{ TCOnexao }
+
+procedure TCOnexao.SetEnderecoBD(const Value: string);
+begin
+  FEnderecoBD := Value;
+end;
+
+end.
