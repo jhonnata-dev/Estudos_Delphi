@@ -1,0 +1,63 @@
+unit uAula16;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    rdgTipoDeArray: TRadioGroup;
+    edtTamanho: TEdit;
+    Label1: TLabel;
+    mmoResultado: TMemo;
+    btnCriar: TButton;
+    procedure btnCriarClick(Sender: TObject);
+  private
+    { Private declarations }
+    vetor: array of integer;
+    matriz: array of array of integer;
+    tamanho: integer;
+
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnCriarClick(Sender: TObject);
+var
+  i, j : Integer;
+  s : String;
+begin
+  tamanho := StrToInt(edtTamanho.Text);
+  mmoResultado.Lines.Clear;
+  Randomize;
+
+  if (rdgTipoDeArray.ItemIndex = 0) then
+  begin
+    SetLength(vetor, tamanho); // cria o vetor dinamicamente
+    for i := Low(vetor) to High(vetor) do
+    begin
+      vetor[i] := random(100);    { o primeiro "%2d" será substituido pelo "i" }
+      mmoResultado.Lines.Add(Format('vetor[%2d] = %2d', [i, vetor[i]]));
+                                  { o segundo "%2d" será substituido pelo "vetor[i]" }
+    end;
+  end
+  else
+  begin
+    SetLength(matriz, tamanho);
+
+  end;
+
+
+
+end;
+
+end.

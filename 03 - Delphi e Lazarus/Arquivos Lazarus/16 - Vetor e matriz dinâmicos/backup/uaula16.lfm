@@ -1,0 +1,73 @@
+object Form1: TForm1
+  Left = 238
+  Height = 531
+  Top = 245
+  Width = 663
+  Caption = 'Form1'
+  ClientHeight = 531
+  ClientWidth = 663
+  LCLVersion = '3.8.0.0'
+  object rdgTipoDeArray: TRadioGroup
+    Left = 40
+    Height = 105
+    Top = 24
+    Width = 585
+    AutoFill = True
+    Caption = 'Selecionar o tipo de array'
+    ChildSizing.LeftRightSpacing = 6
+    ChildSizing.EnlargeHorizontal = crsHomogenousChildResize
+    ChildSizing.EnlargeVertical = crsHomogenousChildResize
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 2
+    ClientHeight = 85
+    ClientWidth = 581
+    Columns = 2
+    Items.Strings = (
+      'Unidimensional (vetor)'
+      'Bidimensional (matriz)'
+    )
+    OnClick = rdgTipoDeArrayClick
+    TabOrder = 0
+  end
+  object edtTamanho: TEdit
+    Left = 40
+    Height = 23
+    Top = 184
+    Width = 80
+    TabOrder = 1
+    Text = 'edtTamanho'
+  end
+  object lblTamanho: TLabel
+    Left = 40
+    Height = 15
+    Top = 160
+    Width = 49
+    Caption = 'Tamanho'
+  end
+  object btnCriar: TButton
+    Left = 144
+    Height = 25
+    Top = 184
+    Width = 91
+    Caption = 'Criar'
+    TabOrder = 2
+    OnClick = btnCriarClick
+  end
+  object btnLimpar: TButton
+    Left = 264
+    Height = 25
+    Top = 184
+    Width = 75
+    Caption = 'Limpar'
+    TabOrder = 3
+  end
+  object mmoResultado: TMemo
+    Left = 40
+    Height = 258
+    Top = 232
+    Width = 585
+    TabOrder = 4
+  end
+end
