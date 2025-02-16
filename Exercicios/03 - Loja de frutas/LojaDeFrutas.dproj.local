@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2025/02/14 11:10:53.000.977,=D:\Programas e Apps\Delphi 12\Unit1.pas</Transaction>
+    <Transaction>2025/02/15 10:59:04.000.348,=D:\Programas e Apps\Delphi 12\Unit1.pas</Transaction>
+    <Transaction>2025/02/16 17:12:36.000.970,=D:\Programas e Apps\Delphi 12\Unit1.pas</Transaction>
+    <Transaction>2025/02/16 17:13:00.000.859,D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\uPrincipal.pas=D:\Programas e Apps\Delphi 12\Unit1.pas</Transaction>
+    <Transaction>2025/02/16 17:13:00.000.859,D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\uPrincipal.dfm=D:\Programas e Apps\Delphi 12\Unit1.dfm</Transaction>
+    <Transaction>2025/02/16 17:13:54.000.985,D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\LojaDeFrutas.dproj=D:\Programas e Apps\Delphi 12\Project1.dproj</Transaction>
+    <Transaction>2025/02/16 17:41:06.000.528,=D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\Unit2.pas</Transaction>
+    <Transaction>2025/02/16 17:47:57.000.815,D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\src\uAdicionarFrutas.dfm=D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\Unit2.dfm</Transaction>
+    <Transaction>2025/02/16 17:47:57.000.815,D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\src\uAdicionarFrutas.pas=D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\Unit2.pas</Transaction>
+    <Transaction>2025/02/16 18:08:57.000.296,=D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\Unit3.pas</Transaction>
+    <Transaction>2025/02/16 18:10:13.000.813,D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\Unit3.pas=D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\src\uListaFrutas.pas</Transaction>
+    <Transaction>2025/02/16 18:10:13.000.813,D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\Unit3.dfm=D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\src\uListaFrutas.dfm</Transaction>
+    <Transaction>2025/02/16 18:10:37.000.998,=D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\Unit1.pas</Transaction>
+    <Transaction>2025/02/16 18:11:02.000.413,=D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\Unit1.pas</Transaction>
+    <Transaction>2025/02/16 18:11:34.000.312,D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\Unit1.pas=D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\src\dtmListaFrutas.pas</Transaction>
+    <Transaction>2025/02/16 18:11:34.000.312,D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\Unit1.dfm=D:\Programação\Cursos Delphi\Exercicios\03 - Loja de frutas\src\dtmListaFrutas.dfm</Transaction>
+  </Transactions>
+</BorlandProject>

@@ -1,0 +1,63 @@
+object Form2: TForm2
+  Left = 0
+  Top = 0
+  Caption = 'Adicioanr Frutas'
+  ClientHeight = 640
+  ClientWidth = 784
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+  object pnlBanner: TPanel
+    Left = 0
+    Top = 0
+    Width = 784
+    Height = 73
+    Align = alTop
+    BevelOuter = bvNone
+    Caption = 'Adicionar Frutas'
+    Color = 4227072
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -20
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 0
+    StyleName = 'Windows'
+  end
+  object pnlPrincipal: TPanel
+    Left = 0
+    Top = 73
+    Width = 784
+    Height = 526
+    Align = alClient
+    BevelOuter = bvNone
+    Color = 3421289
+    ParentBackground = False
+    TabOrder = 1
+  end
+  object pnlRodape: TPanel
+    Left = 0
+    Top = 599
+    Width = 784
+    Height = 41
+    Align = alBottom
+    BevelOuter = bvNone
+    Caption = 'By Jhonnata'
+    Color = 4227072
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWhite
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = []
+    ParentBackground = False
+    ParentFont = False
+    TabOrder = 2
+    StyleName = 'Windows'
+  end
+end

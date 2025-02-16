@@ -1,0 +1,40 @@
+unit uPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Imaging.pngimage,
+  Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    pnlBanner: TPanel;
+    pnlRodape: TPanel;
+    pnlPrincipal: TPanel;
+    Image1: TImage;
+    btnAdicionarFruta: TButton;
+    btnListaDeFrutas: TButton;
+    procedure btnAdicionarFrutaClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+uses
+  uAdicionarFrutas;
+
+procedure TForm1.btnAdicionarFrutaClick(Sender: TObject);
+begin
+  ShowModal(uAdicionarFrutas);
+end;
+
+end.
