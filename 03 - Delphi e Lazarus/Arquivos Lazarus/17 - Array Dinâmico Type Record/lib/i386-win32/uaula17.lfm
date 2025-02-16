@@ -1,0 +1,111 @@
+object Form1: TForm1
+  Left = 256
+  Height = 541
+  Top = 145
+  Width = 610
+  Caption = 'Form1'
+  ClientHeight = 541
+  ClientWidth = 610
+  LCLVersion = '3.8.0.0'
+  object Panel1: TPanel
+    Left = 0
+    Height = 120
+    Top = 0
+    Width = 610
+    Align = alTop
+    ClientHeight = 120
+    ClientWidth = 610
+    TabOrder = 0
+    object edtAluno: TEdit
+      Left = 8
+      Height = 23
+      Top = 24
+      Width = 472
+      TabOrder = 0
+      TextHint = 'Digite o nome do aluno...'
+    end
+    object BitBtn1: TBitBtn
+      Left = 496
+      Height = 24
+      Top = 24
+      Width = 96
+      DefaultCaption = True
+      Kind = bkClose
+      ModalResult = 11
+      TabOrder = 1
+    end
+    object edtPrimeiraNota: TEdit
+      Left = 8
+      Height = 23
+      Top = 80
+      Width = 104
+      TabOrder = 2
+      Text = '0'
+    end
+    object btnGravarAluno: TButton
+      Left = 248
+      Height = 25
+      Top = 80
+      Width = 96
+      Caption = 'btnGravarAluno'
+      TabOrder = 3
+      OnClick = btnGravarAlunoClick
+    end
+    object edtSegundaNota: TEdit
+      Left = 128
+      Height = 23
+      Top = 80
+      Width = 104
+      TabOrder = 4
+      Text = '0'
+    end
+    object Label1: TLabel
+      Left = 8
+      Height = 15
+      Top = 8
+      Width = 34
+      Caption = 'Label1'
+    end
+    object Label2: TLabel
+      Left = 8
+      Height = 15
+      Top = 64
+      Width = 34
+      Caption = 'Label2'
+    end
+    object Label3: TLabel
+      Left = 128
+      Height = 15
+      Top = 64
+      Width = 34
+      Caption = 'Label3'
+    end
+    object btnLerAlunos: TButton
+      Left = 360
+      Height = 25
+      Top = 80
+      Width = 120
+      Caption = 'Ler Alunos'
+      TabOrder = 5
+      OnClick = btnLerAlunosClick
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 421
+    Top = 120
+    Width = 610
+    Align = alClient
+    ClientHeight = 421
+    ClientWidth = 610
+    TabOrder = 1
+    object mmoRegistro: TMemo
+      Left = 1
+      Height = 419
+      Top = 1
+      Width = 608
+      Align = alClient
+      TabOrder = 0
+    end
+  end
+end
