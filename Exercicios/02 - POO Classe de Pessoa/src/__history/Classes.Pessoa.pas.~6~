@@ -1,0 +1,49 @@
+unit Classes.Pessoa;
+
+interface
+
+type
+  TPessoa = class
+  private
+    FPessoa: string;
+    FCPF: String;
+    FIdade: Integer;
+    procedure SetCPF(const Value: String);
+    procedure SetIdade(const Value: Integer);
+    procedure SetPessoa(const Value: string);
+    { private declarations }
+
+  protected
+    { protected declarations }
+
+  public
+    { public declarations }
+    property Pessoa: string read FPessoa write SetPessoa;
+    property Idade: Integer read FIdade write SetIdade;
+    property CPF: String read FCPF write SetCPF;
+
+  published
+    { published declarations }
+
+  end;
+
+implementation
+
+{ TPessoa }
+
+procedure TPessoa.SetCPF(const Value: String);
+begin
+  FCPF := Value;
+end;
+
+procedure TPessoa.SetIdade(const Value: Integer);
+begin
+  FIdade := Value;
+end;
+
+procedure TPessoa.SetPessoa(const Value: string);
+begin
+  FPessoa := Value;
+end;
+
+end.
