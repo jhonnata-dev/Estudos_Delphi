@@ -3,12 +3,15 @@ unit uPrincipal;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons;
 
 type
   TfrmPrincipal = class(TForm)
+    BitBtn1: TBitBtn;
     procedure FormShow(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -22,7 +25,15 @@ implementation
 
 {$R *.dfm}
 
-uses uSplash;
+uses uSplash, uHerancaBase;
+
+procedure TfrmPrincipal.BitBtn1Click(Sender: TObject);
+begin
+  frmHerancaBase := TfrmHerancaBase.Create(self);
+  frmHerancaBase.ShowModal;
+  frmHerancaBase.Release;
+
+end;
 
 procedure TfrmPrincipal.FormShow(Sender: TObject);
 begin

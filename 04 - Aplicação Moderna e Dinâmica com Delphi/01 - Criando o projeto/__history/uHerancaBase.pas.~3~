@@ -1,0 +1,41 @@
+unit uHerancaBase;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Imaging.pngimage,
+  Vcl.StdCtrls;
+
+type
+  TfrmHerancaBase = class(TForm)
+    pnlHeader: TPanel;
+    pnlHeaderLineTop: TPanel;
+    pnlHeaderLineLeft: TPanel;
+    pnlHeaderLineRight: TPanel;
+    pnlFormLineLeft: TPanel;
+    pnlFormLineRight: TPanel;
+    pnlFormLineBotom: TPanel;
+    imgBtnClose: TImage;
+    pnlHeaderLineGray: TPanel;
+    lblTitulo: TLabel;
+    procedure imgBtnCloseClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmHerancaBase: TfrmHerancaBase;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmHerancaBase.imgBtnCloseClick(Sender: TObject);
+begin
+  Close;
+end;
+
+end.

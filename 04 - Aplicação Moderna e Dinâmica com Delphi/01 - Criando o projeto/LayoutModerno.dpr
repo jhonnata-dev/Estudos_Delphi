@@ -3,7 +3,8 @@ program LayoutModerno;
 uses
   Vcl.Forms,
   uPrincipal in 'uPrincipal.pas' {frmPrincipal},
-  uSplash in 'uSplash.pas' {Form1};
+  uSplash in 'uSplash.pas' {frmSplash},
+  uHerancaBase in 'uHerancaBase.pas' {frmHerancaBase};
 
 {$R *.res}
 
@@ -11,6 +12,7 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmSplash, frmSplash);
+  Application.CreateForm(TfrmHerancaBase, frmHerancaBase);
   Application.Run;
 end.

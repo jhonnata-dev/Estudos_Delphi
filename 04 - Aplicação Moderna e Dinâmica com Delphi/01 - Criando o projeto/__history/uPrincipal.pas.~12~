@@ -1,0 +1,49 @@
+unit uPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons;
+
+type
+  TfrmPrincipal = class(TForm)
+    BitBtn1: TBitBtn;
+    procedure FormShow(Sender: TObject);
+    procedure BitBtn1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses uSplash, uTelaBase;
+
+procedure TfrmPrincipal.BitBtn1Click(Sender: TObject);
+begin
+  frmTelaBase := TfrmTelaBase.Create(self);
+
+end;
+
+procedure TfrmPrincipal.FormShow(Sender: TObject);
+begin
+  frmSplash := TfrmSplash.Create(self);
+  frmSplash.Show;
+  frmSplash.Refresh;
+  Sleep(5000);
+
+  if Assigned(frmSplash) then
+  begin
+    frmSplash.Free;
+  end;
+end;
+
+end.
