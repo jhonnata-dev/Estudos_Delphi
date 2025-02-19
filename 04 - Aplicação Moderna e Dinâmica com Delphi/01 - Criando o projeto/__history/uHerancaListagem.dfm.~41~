@@ -71,6 +71,9 @@ inherited frmHerancaListagem: TfrmHerancaListagem
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
+      DesignSize = (
+        1012
+        70)
       object lblPesquisarPor: TLabel
         Left = 6
         Top = 19
@@ -109,31 +112,37 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         Top = 27
         Width = 100
         Height = 36
+        Anchors = [akTop, akRight]
         ImageIndex = 1
         Images = imgButtons
         TabOrder = 2
+        OnClick = btnNovoClick
         OnMouseEnter = btnNovoMouseEnter
         OnMouseLeave = btnNovoMouseLeave
       end
       object btnModificar: TBitBtn
-        Left = 792
+        Left = 794
         Top = 27
         Width = 100
         Height = 36
+        Anchors = [akTop, akRight]
         ImageIndex = 3
         Images = imgButtons
         TabOrder = 3
         OnMouseEnter = btnModificarMouseEnter
+        OnMouseLeave = btnModificarMouseLeave
       end
       object btnApagar: TBitBtn
         Left = 906
         Top = 27
         Width = 100
         Height = 36
+        Anchors = [akTop, akRight]
         ImageIndex = 9
         Images = imgButtons
         TabOrder = 4
         OnMouseEnter = btnApagarMouseEnter
+        OnMouseLeave = btnApagarMouseLeave
       end
     end
     object pnlFormPrincipalBottom: TPanel
@@ -144,6 +153,9 @@ inherited frmHerancaListagem: TfrmHerancaListagem
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 1
+      DesignSize = (
+        1012
+        50)
       object pnlLineTop: TPanel
         Left = 0
         Top = 0
@@ -156,8 +168,8 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         TabOrder = 0
       end
       object DBNavigator1: TDBNavigator
-        Left = -1
-        Top = 12
+        Left = 6
+        Top = 11
         Width = 224
         Height = 25
         VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
@@ -168,9 +180,13 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         Top = 7
         Width = 100
         Height = 36
+        Anchors = [akTop, akRight]
         ImageIndex = 11
         Images = imgButtons
         TabOrder = 2
+        OnClick = btnFecharClick
+        OnMouseEnter = btnFecharMouseEnter
+        OnMouseLeave = btnFecharMouseLeave
       end
     end
     object grdListagem: TDBGrid

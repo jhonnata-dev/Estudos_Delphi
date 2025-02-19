@@ -90,17 +90,5 @@ object frmPrincipal: TfrmPrincipal
       ExplicitTop = 1
       ExplicitWidth = 606
     end
-    object pgcPrincipal: TPageControl
-      Left = 10
-      Top = 10
-      Width = 588
-      Height = 528
-      ActivePage = tbsMenu
-      Align = alClient
-      TabOrder = 4
-      object tbsMenu: TTabSheet
-        Caption = 'MENU'
-      end
-    end
   end
 end

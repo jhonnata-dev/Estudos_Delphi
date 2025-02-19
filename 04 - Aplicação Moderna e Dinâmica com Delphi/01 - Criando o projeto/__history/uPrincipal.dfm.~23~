@@ -47,9 +47,8 @@ object frmPrincipal: TfrmPrincipal
       Left = 0
       Top = 10
       Width = 10
-      Height = 528
+      Height = 538
       Align = alLeft
-      BevelOuter = bvNone
       TabOrder = 0
       ExplicitLeft = 208
       ExplicitTop = 253
@@ -59,9 +58,8 @@ object frmPrincipal: TfrmPrincipal
       Left = 598
       Top = 10
       Width = 10
-      Height = 528
+      Height = 538
       Align = alRight
-      BevelOuter = bvNone
       TabOrder = 1
       ExplicitLeft = 1
       ExplicitTop = 1
@@ -73,34 +71,9 @@ object frmPrincipal: TfrmPrincipal
       Width = 608
       Height = 10
       Align = alTop
-      BevelOuter = bvNone
       TabOrder = 2
       ExplicitLeft = 588
       ExplicitWidth = 548
-    end
-    object pnlPrincipalCenterBottom: TPanel
-      Left = 0
-      Top = 538
-      Width = 608
-      Height = 10
-      Align = alBottom
-      BevelOuter = bvNone
-      TabOrder = 3
-      ExplicitLeft = 1
-      ExplicitTop = 1
-      ExplicitWidth = 606
-    end
-    object pgcPrincipal: TPageControl
-      Left = 10
-      Top = 10
-      Width = 588
-      Height = 528
-      ActivePage = tbsMenu
-      Align = alClient
-      TabOrder = 4
-      object tbsMenu: TTabSheet
-        Caption = 'MENU'
-      end
     end
   end
 end

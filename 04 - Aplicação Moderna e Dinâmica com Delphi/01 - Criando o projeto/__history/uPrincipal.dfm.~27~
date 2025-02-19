@@ -95,12 +95,12 @@ object frmPrincipal: TfrmPrincipal
       Top = 10
       Width = 588
       Height = 528
-      ActivePage = tbsMenu
       Align = alClient
       TabOrder = 4
-      object tbsMenu: TTabSheet
-        Caption = 'MENU'
-      end
+      ExplicitLeft = 160
+      ExplicitTop = 176
+      ExplicitWidth = 289
+      ExplicitHeight = 193
     end
   end
 end

@@ -112,11 +112,12 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         ImageIndex = 1
         Images = imgButtons
         TabOrder = 2
+        OnClick = btnNovoClick
         OnMouseEnter = btnNovoMouseEnter
         OnMouseLeave = btnNovoMouseLeave
       end
       object btnModificar: TBitBtn
-        Left = 792
+        Left = 800
         Top = 27
         Width = 100
         Height = 36
@@ -124,6 +125,7 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         Images = imgButtons
         TabOrder = 3
         OnMouseEnter = btnModificarMouseEnter
+        OnMouseLeave = btnModificarMouseLeave
       end
       object btnApagar: TBitBtn
         Left = 906
@@ -133,6 +135,8 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         ImageIndex = 9
         Images = imgButtons
         TabOrder = 4
+        OnMouseEnter = btnApagarMouseEnter
+        OnMouseLeave = btnApagarMouseLeave
       end
     end
     object pnlFormPrincipalBottom: TPanel
@@ -155,8 +159,8 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         TabOrder = 0
       end
       object DBNavigator1: TDBNavigator
-        Left = -1
-        Top = 12
+        Left = 6
+        Top = 11
         Width = 224
         Height = 25
         VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
@@ -170,6 +174,9 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         ImageIndex = 11
         Images = imgButtons
         TabOrder = 2
+        OnClick = btnFecharClick
+        OnMouseEnter = btnFecharMouseEnter
+        OnMouseLeave = btnFecharMouseLeave
       end
     end
     object grdListagem: TDBGrid
