@@ -1,0 +1,80 @@
+unit uHerancaBase;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Imaging.pngimage,
+  Vcl.StdCtrls, System.ImageList, Vcl.ImgList, Vcl.Buttons;
+
+type
+  TfrmHerancaBase = class(TForm)
+    pnlHeader: TPanel;
+    pnlHeaderLineTop: TPanel;
+    pnlHeaderLineLeft: TPanel;
+    pnlHeaderLineRight: TPanel;
+    pnlFormLineLeft: TPanel;
+    pnlFormLineRight: TPanel;
+    pnlFormLineBotom: TPanel;
+    pnlHeaderLineGray: TPanel;
+    lblTitulo: TLabel;
+    imgBtnClose: TImage;
+    imgButtons: TImageList;
+    procedure imgBtnCloseClick(Sender: TObject);
+    procedure pnlHeaderMouseDown(Sender: TObject; Button: TMouseButton;
+      Shift: TShiftState; X, Y: Integer);
+    procedure FormShow(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure ButtonMouseEnter(Sender: TObject; ImageIndex: Integer);
+    procedure ButtonMouseLeave(Sender: Tobject; ImageIndex: Integer);
+  end;
+
+var
+  frmHerancaBase: TfrmHerancaBase;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmHerancaBase.FormShow(Sender: TObject);
+begin
+  if Self.Caption <> EmptyStr then
+  begin
+    lblTitulo.Caption := Self.Caption;
+  end;
+
+end;
+
+procedure TfrmHerancaBase.imgBtnCloseClick(Sender: TObject);
+begin
+  Close;
+end;
+
+procedure TfrmHerancaBase.pnlHeaderMouseDown(Sender: TObject;
+  Button: TMouseButton; Shift: TShiftState; X, Y: Integer);
+const
+  SC_DRAGMOVE = $F012;
+begin
+  if Button = mbLeft then
+  begin
+    ReleaseCapture;
+    self.Perform(WM_SYSCOMMAND, SC_DRAGMOVE, 0);
+  end;
+end;
+
+procedure TfrmHerancaBase.ButtonMouseEnter(Sender: TObject; ImageIndex: Integer);
+begin
+  (Sender as TBitBtn).ImageIndex := ImageIndex;
+  (Sender as TBitBtn).Cursor := crHandPoint;
+end;
+
+procedure TfrmHerancaBase.ButtonMouseLeave(Sender: Tobject; ImageIndex: Integer);
+begin
+  (Sender as TBitBtn).ImageIndex := ImageIndex;
+  (Sender as TBitBtn).Cursor := crHandPoint;
+end;
+
+end.

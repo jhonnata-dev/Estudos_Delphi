@@ -1,0 +1,53 @@
+unit uHerancaListagem;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uHerancaBase, Vcl.Imaging.pngimage,
+  Vcl.ExtCtrls, Vcl.StdCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.Mask,
+  System.ImageList, Vcl.ImgList, Vcl.Buttons, Vcl.DBCtrls;
+
+type
+  TfrmHerancaListagem = class(TfrmHerancaBase)
+    pnlFormPrincipal: TPanel;
+    pnlFormPrincipalTop: TPanel;
+    pnlFormPrincipalBottom: TPanel;
+    grdListagem: TDBGrid;
+    pnlLineBottom: TPanel;
+    pnlLineTop: TPanel;
+    mskPesquisar: TMaskEdit;
+    lblPesquisarPor: TLabel;
+    btnNovo: TBitBtn;
+    btnModificar: TBitBtn;
+    btnApagar: TBitBtn;
+    DBNavigator1: TDBNavigator;
+    btnFechar: TBitBtn;
+    procedure btnNovoMouseEnter(Sender: TObject);
+    procedure btnNovoMouseLeave(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmHerancaListagem: TfrmHerancaListagem;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmHerancaListagem.btnNovoMouseEnter(Sender: TObject);
+begin
+  inherited;
+  ButtonMouseEnter(Sender, 0);
+end;
+
+procedure TfrmHerancaListagem.btnNovoMouseLeave(Sender: TObject);
+begin
+  inherited;
+  ButtonMouseEnter(Sender, 1);
+end;
+
+end.

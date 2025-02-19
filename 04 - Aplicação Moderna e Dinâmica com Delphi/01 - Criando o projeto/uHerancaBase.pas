@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Imaging.pngimage,
-  Vcl.StdCtrls;
+  Vcl.StdCtrls, System.ImageList, Vcl.ImgList, Vcl.Buttons;
 
 type
   TfrmHerancaBase = class(TForm)
@@ -19,6 +19,7 @@ type
     pnlHeaderLineGray: TPanel;
     lblTitulo: TLabel;
     imgBtnClose: TImage;
+    imgButtons: TImageList;
     procedure imgBtnCloseClick(Sender: TObject);
     procedure pnlHeaderMouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
@@ -27,6 +28,8 @@ type
     { Private declarations }
   public
     { Public declarations }
+    procedure ButtonMouseEnter(Sender: TObject; ImageIndex: Integer);
+    procedure ButtonMouseLeave(Sender: Tobject; ImageIndex: Integer);
   end;
 
 var
@@ -60,8 +63,18 @@ begin
     ReleaseCapture;
     self.Perform(WM_SYSCOMMAND, SC_DRAGMOVE, 0);
   end;
+end;
 
+procedure TfrmHerancaBase.ButtonMouseEnter(Sender: TObject; ImageIndex: Integer);
+begin
+  (Sender as TBitBtn).ImageIndex := ImageIndex;
+  (Sender as TBitBtn).Cursor := crHandPoint;
+end;
 
+procedure TfrmHerancaBase.ButtonMouseLeave(Sender: Tobject; ImageIndex: Integer);
+begin
+  (Sender as TBitBtn).ImageIndex := ImageIndex;
+  (Sender as TBitBtn).Cursor := crDefault;
 end;
 
 end.
