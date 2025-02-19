@@ -112,6 +112,7 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         ImageIndex = 1
         Images = imgButtons
         TabOrder = 2
+        OnClick = btnNovoClick
         OnMouseEnter = btnNovoMouseEnter
         OnMouseLeave = btnNovoMouseLeave
       end
@@ -173,6 +174,7 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         ImageIndex = 11
         Images = imgButtons
         TabOrder = 2
+        OnClick = btnFecharClick
         OnMouseEnter = btnFecharMouseEnter
         OnMouseLeave = btnFecharMouseLeave
       end

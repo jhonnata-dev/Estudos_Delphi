@@ -31,6 +31,8 @@ type
     procedure btnModificarMouseLeave(Sender: TObject);
     procedure btnApagarMouseLeave(Sender: TObject);
     procedure btnFecharMouseLeave(Sender: TObject);
+    procedure btnNovoClick(Sender: TObject);
+    procedure btnFecharClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -44,6 +46,8 @@ implementation
 
 {$R *.dfm}
 
+uses uHerancaCadastro;
+
 procedure TfrmHerancaListagem.btnApagarMouseEnter(Sender: TObject);
 begin
   inherited;
@@ -53,7 +57,13 @@ end;
 procedure TfrmHerancaListagem.btnApagarMouseLeave(Sender: TObject);
 begin
   inherited;
-  ButtonMouseEnter(Sender, 9);
+  ButtonMouseLeave(Sender, 9);
+end;
+
+procedure TfrmHerancaListagem.btnFecharClick(Sender: TObject);
+begin
+  inherited;
+  Close;
 end;
 
 procedure TfrmHerancaListagem.btnFecharMouseEnter(Sender: TObject);
@@ -65,7 +75,7 @@ end;
 procedure TfrmHerancaListagem.btnFecharMouseLeave(Sender: TObject);
 begin
   inherited;
-  ButtonMouseEnter(Sender, 11);
+  ButtonMouseLeave(Sender, 11);
 end;
 
 procedure TfrmHerancaListagem.btnModificarMouseEnter(Sender: TObject);
@@ -77,7 +87,16 @@ end;
 procedure TfrmHerancaListagem.btnModificarMouseLeave(Sender: TObject);
 begin
   inherited;
-  ButtonMouseEnter(Sender, 3);
+  ButtonMouseLeave(Sender, 3);
+end;
+
+procedure TfrmHerancaListagem.btnNovoClick(Sender: TObject);
+begin
+  inherited;
+  frmHerancaCadastro := TfrmHerancaCadastro.Create(Self);
+  frmHerancaCadastro.ShowModal;
+  frmHerancaCadastro.Release;
+
 end;
 
 procedure TfrmHerancaListagem.btnNovoMouseEnter(Sender: TObject);
@@ -89,7 +108,7 @@ end;
 procedure TfrmHerancaListagem.btnNovoMouseLeave(Sender: TObject);
 begin
   inherited;
-  ButtonMouseEnter(Sender, 1);
+  ButtonMouseLeave(Sender, 1);
 end;
 
 end.

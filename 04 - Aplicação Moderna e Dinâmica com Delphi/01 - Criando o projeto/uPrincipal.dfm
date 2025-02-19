@@ -14,11 +14,11 @@ object frmPrincipal: TfrmPrincipal
   OnShow = FormShow
   TextHeight = 15
   object BitBtn1: TBitBtn
-    Left = 280
-    Top = 232
-    Width = 75
+    Left = 112
+    Top = 144
+    Width = 123
     Height = 25
-    Caption = 'BitBtn1'
+    Caption = 'Teste Listagem'
     TabOrder = 0
     OnClick = BitBtn1Click
   end
