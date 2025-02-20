@@ -3,13 +3,14 @@ inherited frmHerancaListagem: TfrmHerancaListagem
   ClientHeight = 632
   ClientWidth = 1013
   StyleElements = [seFont, seClient, seBorder]
+  OnClose = FormClose
   ExplicitWidth = 1013
   ExplicitHeight = 632
   TextHeight = 15
   inherited pnlHeader: TPanel
     Width = 1013
     StyleElements = [seFont, seClient, seBorder]
-    ExplicitWidth = 1014
+    ExplicitWidth = 1013
     inherited lblTitulo: TLabel
       StyleElements = [seFont, seClient, seBorder]
     end
@@ -20,7 +21,7 @@ inherited frmHerancaListagem: TfrmHerancaListagem
     inherited pnlHeaderLineTop: TPanel
       Width = 1013
       StyleElements = [seFont, seClient, seBorder]
-      ExplicitWidth = 1014
+      ExplicitWidth = 1013
     end
     inherited pnlHeaderLineLeft: TPanel
       StyleElements = [seFont, seClient, seBorder]
@@ -28,12 +29,12 @@ inherited frmHerancaListagem: TfrmHerancaListagem
     inherited pnlHeaderLineRight: TPanel
       Left = 1012
       StyleElements = [seFont, seClient, seBorder]
-      ExplicitLeft = 1013
+      ExplicitLeft = 1012
     end
     inherited pnlHeaderLineGray: TPanel
       Width = 1182
       StyleElements = [seFont, seClient, seBorder]
-      ExplicitWidth = 1183
+      ExplicitWidth = 1182
     end
   end
   inherited pnlFormLineLeft: TPanel
@@ -45,7 +46,7 @@ inherited frmHerancaListagem: TfrmHerancaListagem
     Left = 1012
     Height = 596
     StyleElements = [seFont, seClient, seBorder]
-    ExplicitLeft = 1013
+    ExplicitLeft = 1012
     ExplicitHeight = 596
   end
   inherited pnlFormLineBotom: TPanel
@@ -53,7 +54,7 @@ inherited frmHerancaListagem: TfrmHerancaListagem
     Width = 1013
     StyleElements = [seFont, seClient, seBorder]
     ExplicitTop = 631
-    ExplicitWidth = 1014
+    ExplicitWidth = 1013
   end
   object pnlFormPrincipal: TPanel [4]
     Left = 1
@@ -63,7 +64,6 @@ inherited frmHerancaListagem: TfrmHerancaListagem
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 4
-    ExplicitWidth = 1012
     object pnlFormPrincipalTop: TPanel
       Left = 0
       Top = 0
@@ -72,7 +72,6 @@ inherited frmHerancaListagem: TfrmHerancaListagem
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitWidth = 1012
       DesignSize = (
         1011
         70)
@@ -99,7 +98,6 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         Color = clBlack
         ParentBackground = False
         TabOrder = 0
-        ExplicitWidth = 1012
       end
       object mskPesquisar: TMaskEdit
         Left = 6
@@ -122,7 +120,6 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         OnClick = btnNovoClick
         OnMouseEnter = btnNovoMouseEnter
         OnMouseLeave = btnNovoMouseLeave
-        ExplicitLeft = 678
       end
       object btnModificar: TBitBtn
         Left = 793
@@ -135,7 +132,6 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         TabOrder = 3
         OnMouseEnter = btnModificarMouseEnter
         OnMouseLeave = btnModificarMouseLeave
-        ExplicitLeft = 794
       end
       object btnApagar: TBitBtn
         Left = 905
@@ -148,7 +144,6 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         TabOrder = 4
         OnMouseEnter = btnApagarMouseEnter
         OnMouseLeave = btnApagarMouseLeave
-        ExplicitLeft = 906
       end
     end
     object pnlFormPrincipalBottom: TPanel
@@ -159,7 +154,6 @@ inherited frmHerancaListagem: TfrmHerancaListagem
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitWidth = 1012
       DesignSize = (
         1011
         50)
@@ -173,7 +167,6 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         Color = clBlack
         ParentBackground = False
         TabOrder = 0
-        ExplicitWidth = 1012
       end
       object DBNavigator1: TDBNavigator
         Left = 6
@@ -195,7 +188,6 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         OnClick = btnFecharClick
         OnMouseEnter = btnFecharMouseEnter
         OnMouseLeave = btnFecharMouseLeave
-        ExplicitLeft = 904
       end
     end
     object grdListagem: TDBGrid
