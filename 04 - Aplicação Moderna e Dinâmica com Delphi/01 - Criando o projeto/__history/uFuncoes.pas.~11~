@@ -1,0 +1,31 @@
+unit uFuncoes;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uHerancaBase, Vcl.Imaging.pngimage,
+  Vcl.ExtCtrls, Vcl.StdCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.Mask,
+  System.ImageList, Vcl.ImgList, Vcl.Buttons, Vcl.DBCtrls, Vcl.ComCtrls;
+
+  procedure CriarAba(aForm: TFormClass; aPageControl: TPageControl; aIndexImagem: Integer);
+
+implementation
+
+procedure CriarAba(aForm: TFormClass; aPageControl: TPageControl; aIndexImagem: Integer);
+var
+  TabSheet : TTabSheet;
+  Form : TForm;
+begin
+  Form := aForm.Create(nil);
+
+  TabSheet := TTabSheet.Create(nil);
+  TabSheet.PageControl := aPageControl;
+  TabSheet.Caption := Form.Caption;
+  TabSheet.ImageIndex := aIndexImagem;
+
+
+
+end;
+
+end.

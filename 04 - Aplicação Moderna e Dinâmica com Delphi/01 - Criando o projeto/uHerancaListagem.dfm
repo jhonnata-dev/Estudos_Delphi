@@ -1,5 +1,5 @@
 inherited frmHerancaListagem: TfrmHerancaListagem
-  Caption = 'frmHerancaListagem'
+  Caption = 'Digite o titulo da tela aqui'
   ClientHeight = 632
   ClientWidth = 1013
   StyleElements = [seFont, seClient, seBorder]
