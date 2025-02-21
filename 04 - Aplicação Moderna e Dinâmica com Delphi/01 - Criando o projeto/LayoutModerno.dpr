@@ -7,7 +7,8 @@ uses
   uHerancaBase in 'uHerancaBase.pas' {frmHerancaBase},
   uHerancaListagem in 'uHerancaListagem.pas' {frmHerancaListagem},
   uHerancaCadastro in 'uHerancaCadastro.pas' {frmHerancaCadastro},
-  uFuncoes in 'uFuncoes.pas';
+  uFuncoes in 'uFuncoes.pas',
+  uDtmConexao in 'uDtmConexao.pas' {dtmConexao: TDataModule};
 
 {$R *.res}
 

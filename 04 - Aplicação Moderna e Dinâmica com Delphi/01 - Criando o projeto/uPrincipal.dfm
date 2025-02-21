@@ -11,6 +11,8 @@ object frmPrincipal: TfrmPrincipal
   Font.Name = 'Segoe UI'
   Font.Style = []
   WindowState = wsMaximized
+  OnClose = FormClose
+  OnCreate = FormCreate
   OnShow = FormShow
   TextHeight = 15
   object pnlPrincipalLeft: TPanel
@@ -21,7 +23,6 @@ object frmPrincipal: TfrmPrincipal
     Align = alLeft
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitHeight = 540
     object BitBtn1: TBitBtn
       Left = 30
       Top = 64
@@ -40,8 +41,6 @@ object frmPrincipal: TfrmPrincipal
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitWidth = 606
-    ExplicitHeight = 540
     object pnlPrincipalCenterLeft: TPanel
       Left = 0
       Top = 10
@@ -50,7 +49,6 @@ object frmPrincipal: TfrmPrincipal
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitHeight = 520
     end
     object pnlPrincipalCenterRight: TPanel
       Left = 598
@@ -60,8 +58,6 @@ object frmPrincipal: TfrmPrincipal
       Align = alRight
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitLeft = 596
-      ExplicitHeight = 520
     end
     object pnlPrincipalCenterTop: TPanel
       Left = 0
@@ -71,7 +67,6 @@ object frmPrincipal: TfrmPrincipal
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitWidth = 606
     end
     object pnlPrincipalCenterBottom: TPanel
       Left = 0
@@ -81,8 +76,6 @@ object frmPrincipal: TfrmPrincipal
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitTop = 530
-      ExplicitWidth = 606
     end
     object pgcPrincipal: TPageControl
       Left = 10
@@ -92,8 +85,6 @@ object frmPrincipal: TfrmPrincipal
       ActivePage = tbsMenu
       Align = alClient
       TabOrder = 4
-      ExplicitWidth = 586
-      ExplicitHeight = 520
       object tbsMenu: TTabSheet
         Caption = 'MENU'
       end
