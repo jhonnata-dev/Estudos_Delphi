@@ -37,17 +37,12 @@ implementation
 
 {$R *.dfm}
 
-uses uSplash, uHerancaBase, uHerancaListagem, uFuncoes;
+uses uSplash, uHerancaBase, uFuncoes, uBancoListagem;
 
 procedure TfrmPrincipal.BitBtn1Click(Sender: TObject);
 begin
-  {
-  frmHerancaListagem := TfrmHerancaListagem.Create(self);
-  frmHerancaListagem.ShowModal;
-  frmHerancaListagem.Release;
-  }
 
-  CriarAba(TfrmHerancaListagem, pgcPrincipal, -1);
+  CriarAba(TfrmBancoListagem, pgcPrincipal, -1);
 
 end;
 

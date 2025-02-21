@@ -11,6 +11,9 @@ inherited frmHerancaListagem: TfrmHerancaListagem
     Width = 1013
     StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 1013
+    DesignSize = (
+      1013
+      35)
     inherited lblTitulo: TLabel
       StyleElements = [seFont, seClient, seBorder]
     end
@@ -199,6 +202,7 @@ inherited frmHerancaListagem: TfrmHerancaListagem
       BorderStyle = bsNone
       Ctl3D = True
       DataSource = DtsListagem
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
       ParentCtl3D = False
       TabOrder = 2
       TitleFont.Charset = DEFAULT_CHARSET
@@ -206,6 +210,7 @@ inherited frmHerancaListagem: TfrmHerancaListagem
       TitleFont.Height = -12
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
+      OnKeyDown = grdListagemKeyDown
     end
   end
   object QryListagem: TZQuery
