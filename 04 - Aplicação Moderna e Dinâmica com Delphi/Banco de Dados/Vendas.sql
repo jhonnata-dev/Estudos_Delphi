@@ -1,3 +1,5 @@
+USE dbLayoutModerno;
+
 CREATE TABLE Banco (
 	BancoId INT IDENTITY(1,1) NOT NULL,
 	CodBanco VARCHAR(03) UNIQUE NOT NULL,
