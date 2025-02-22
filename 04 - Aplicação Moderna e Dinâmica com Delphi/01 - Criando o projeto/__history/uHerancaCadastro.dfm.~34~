@@ -53,6 +53,7 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
         ImageIndex = 7
         Images = imgButtons
         TabOrder = 0
+        OnClick = btnCancelarClick
         OnMouseEnter = btnCancelarMouseEnter
         OnMouseLeave = btnCancelarMouseLeave
       end
@@ -79,6 +80,15 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
         OnMouseLeave = btnApagarMouseLeave
       end
     end
+    object Button1: TButton
+      Left = 448
+      Top = 184
+      Width = 75
+      Height = 25
+      Caption = 'Button1'
+      TabOrder = 1
+      OnClick = Button1Click
+    end
   end
   object Edit1: TEdit [5]
     Left = 304
@@ -90,7 +100,7 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
   end
   object Edit2: TEdit [6]
     Left = 304
-    Top = 237
+    Top = 245
     Width = 121
     Height = 23
     TabOrder = 6

@@ -1,6 +1,7 @@
 inherited frmHerancaCadastro: TfrmHerancaCadastro
   Caption = 'frmHerancaCadastro'
   StyleElements = [seFont, seClient, seBorder]
+  OnKeyDown = FormKeyDown
   TextHeight = 15
   inherited pnlHeader: TPanel
     StyleElements = [seFont, seClient, seBorder]
@@ -53,6 +54,7 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
         ImageIndex = 7
         Images = imgButtons
         TabOrder = 0
+        OnClick = btnCancelarClick
         OnMouseEnter = btnCancelarMouseEnter
         OnMouseLeave = btnCancelarMouseLeave
       end
@@ -64,6 +66,7 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
         ImageIndex = 5
         Images = imgButtons
         TabOrder = 1
+        OnClick = btnGravarClick
         OnMouseEnter = btnGravarMouseEnter
         OnMouseLeave = btnGravarMouseLeave
       end
@@ -75,22 +78,11 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
         ImageIndex = 9
         Images = imgButtons
         TabOrder = 2
+        OnClick = btnApagarClick
         OnMouseEnter = btnApagarMouseEnter
         OnMouseLeave = btnApagarMouseLeave
       end
     end
-  end
-  object DBGrid1: TDBGrid [5]
-    Left = 232
-    Top = 168
-    Width = 320
-    Height = 120
-    TabOrder = 5
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -12
-    TitleFont.Name = 'Segoe UI'
-    TitleFont.Style = []
   end
   inherited imgButtons: TImageList
     Left = 56

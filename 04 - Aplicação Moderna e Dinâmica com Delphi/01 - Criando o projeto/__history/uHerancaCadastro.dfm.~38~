@@ -53,6 +53,7 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
         ImageIndex = 7
         Images = imgButtons
         TabOrder = 0
+        OnClick = btnCancelarClick
         OnMouseEnter = btnCancelarMouseEnter
         OnMouseLeave = btnCancelarMouseLeave
       end
@@ -64,6 +65,7 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
         ImageIndex = 5
         Images = imgButtons
         TabOrder = 1
+        OnClick = btnGravarClick
         OnMouseEnter = btnGravarMouseEnter
         OnMouseLeave = btnGravarMouseLeave
       end
@@ -75,18 +77,10 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
         ImageIndex = 9
         Images = imgButtons
         TabOrder = 2
+        OnClick = btnApagarClick
         OnMouseEnter = btnApagarMouseEnter
         OnMouseLeave = btnApagarMouseLeave
       end
-    end
-    object DateTimePicker1: TDateTimePicker
-      Left = 488
-      Top = 256
-      Width = 186
-      Height = 23
-      Date = 45710.000000000000000000
-      Time = 0.686931435186124900
-      TabOrder = 1
     end
   end
   inherited imgButtons: TImageList

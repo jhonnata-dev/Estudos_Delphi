@@ -53,6 +53,7 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
         ImageIndex = 7
         Images = imgButtons
         TabOrder = 0
+        OnClick = btnCancelarClick
         OnMouseEnter = btnCancelarMouseEnter
         OnMouseLeave = btnCancelarMouseLeave
       end
@@ -64,6 +65,7 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
         ImageIndex = 5
         Images = imgButtons
         TabOrder = 1
+        OnClick = btnGravarClick
         OnMouseEnter = btnGravarMouseEnter
         OnMouseLeave = btnGravarMouseLeave
       end

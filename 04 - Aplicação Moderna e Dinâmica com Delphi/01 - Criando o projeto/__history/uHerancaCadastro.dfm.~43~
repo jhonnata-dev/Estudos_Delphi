@@ -1,6 +1,7 @@
 inherited frmHerancaCadastro: TfrmHerancaCadastro
   Caption = 'frmHerancaCadastro'
   StyleElements = [seFont, seClient, seBorder]
+  OnKeyDown = FormKeyDown
   TextHeight = 15
   inherited pnlHeader: TPanel
     StyleElements = [seFont, seClient, seBorder]
@@ -53,6 +54,7 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
         ImageIndex = 7
         Images = imgButtons
         TabOrder = 0
+        OnClick = btnCancelarClick
         OnMouseEnter = btnCancelarMouseEnter
         OnMouseLeave = btnCancelarMouseLeave
       end
@@ -64,6 +66,7 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
         ImageIndex = 5
         Images = imgButtons
         TabOrder = 1
+        OnClick = btnGravarClick
         OnMouseEnter = btnGravarMouseEnter
         OnMouseLeave = btnGravarMouseLeave
       end
@@ -75,17 +78,10 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
         ImageIndex = 9
         Images = imgButtons
         TabOrder = 2
+        OnClick = btnApagarClick
         OnMouseEnter = btnApagarMouseEnter
         OnMouseLeave = btnApagarMouseLeave
       end
-    end
-    object DateEdit1: TDateEdit
-      Left = 528
-      Top = 312
-      Width = 121
-      Height = 23
-      NumGlyphs = 2
-      TabOrder = 1
     end
   end
   inherited imgButtons: TImageList
@@ -93,6 +89,7 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
     Top = 72
   end
   object QryCadastro: TZQuery
+    AfterPost = QryCadastroAfterPost
     UpdateObject = updCadastro
     Params = <>
     Left = 224

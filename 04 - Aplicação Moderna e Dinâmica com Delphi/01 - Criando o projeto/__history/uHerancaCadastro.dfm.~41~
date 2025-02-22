@@ -1,6 +1,7 @@
 inherited frmHerancaCadastro: TfrmHerancaCadastro
   Caption = 'frmHerancaCadastro'
   StyleElements = [seFont, seClient, seBorder]
+  OnKeyDown = FormKeyDown
   TextHeight = 15
   inherited pnlHeader: TPanel
     StyleElements = [seFont, seClient, seBorder]
@@ -53,6 +54,7 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
         ImageIndex = 7
         Images = imgButtons
         TabOrder = 0
+        OnClick = btnCancelarClick
         OnMouseEnter = btnCancelarMouseEnter
         OnMouseLeave = btnCancelarMouseLeave
       end
@@ -64,6 +66,7 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
         ImageIndex = 5
         Images = imgButtons
         TabOrder = 1
+        OnClick = btnGravarClick
         OnMouseEnter = btnGravarMouseEnter
         OnMouseLeave = btnGravarMouseLeave
       end
@@ -75,18 +78,10 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
         ImageIndex = 9
         Images = imgButtons
         TabOrder = 2
+        OnClick = btnApagarClick
         OnMouseEnter = btnApagarMouseEnter
         OnMouseLeave = btnApagarMouseLeave
       end
-    end
-    object ComboEdit1: TComboEdit
-      Left = 520
-      Top = 208
-      Width = 121
-      Height = 23
-      NumGlyphs = 1
-      TabOrder = 1
-      Text = 'ComboEdit1'
     end
   end
   inherited imgButtons: TImageList
@@ -108,5 +103,18 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
     DataSet = QryCadastro
     Left = 496
     Top = 88
+  end
+  object ZConnection1: TZConnection
+    ControlsCodePage = cCP_UTF16
+    Catalog = ''
+    DisableSavepoints = False
+    HostName = ''
+    Port = 0
+    Database = ''
+    User = ''
+    Password = ''
+    Protocol = ''
+    Left = 376
+    Top = 216
   end
 end
