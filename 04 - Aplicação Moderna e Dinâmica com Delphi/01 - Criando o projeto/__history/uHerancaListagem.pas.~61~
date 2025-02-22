@@ -37,8 +37,17 @@ type
     procedure btnFecharClick(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormShow(Sender: TObject);
+    procedure grdListagemKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
+    procedure grdListagemTitleClick(Column: TColumn);
   private
     { Private declarations }
+    sIndexFieldNames: String;
+    sNomeColunaDisplay: String;
+    iColunaIndexada: Integer;
+
+    procedure MudarCorGridIndice;
+
   public
     { Public declarations }
   end;
@@ -51,6 +60,42 @@ implementation
 {$R *.dfm}
 
 uses uFuncoes, uPrincipal, uDtmConexao;
+
+procedure TfrmHerancaListagem.MudarCorGridIndice;
+var
+  i: Integer;
+  index: string;
+begin
+
+  if QryListagem.IndexFieldNames = EmptyStr then
+  begin
+    QryListagem.IndexFieldNames := sIndexFieldNames;
+  end;
+
+  index := QryListagem.IndexFieldNames;
+  index := StringReplace(index, ' Asc', '', [rfReplaceAll]);
+  index := StringReplace(index, ' Desc', '', [rfReplaceAll]);
+
+  for i := 0 to grdListagem.Columns.Count - 1 do
+  begin
+    if UpperCase(grdListagem.Columns[i].FieldName) = UpperCase(trim(index)) then
+    begin
+      grdListagem.Columns[i].Color := clBtnFace;
+      grdListagem.Columns[i].Title.Font.Color := clBlack;
+      grdListagem.Columns[i].Title.Color := clInfoBk; //$OOBOD2D7
+
+      lblPesquisarPor.Caption := 'Pesquisar por ' + grdListagem.Columns[i].Title.Caption;
+      sNomeColunaDisplay := grdListagem.Columns[i].FieldName;
+      iColunaIndexada := i;
+    end
+    else
+    begin
+      grdListagem.Columns[i].Color := clWhite;
+      grdListagem.Columns[i].Title.Font.Color := clBlack;
+      grdListagem.Columns[i].Title.Color := clBtnFace;
+    end;
+  end;
+end;
 
 procedure TfrmHerancaListagem.btnApagarMouseEnter(Sender: TObject);
 begin
@@ -116,17 +161,68 @@ end;
 
 procedure TfrmHerancaListagem.FormShow(Sender: TObject);
 begin
-  inherited;
+
   if (QryListagem.SQL.Text = EmptyStr) then
   begin
     MessageDlg('Não existe Introdução SQL no Componente',
                 TMsgDlgType.mtWarning,
                 [mbOK],
                 0);
-
     abort;
-
   end;
+
+  inherited;
+  { Adicionando valor a variável "sIndexFieldNames" que vai ser chamado dentro do
+	  método "MudarCorGridIndice" }
+  sIndexFieldNames := QryListagem.IndexFieldNames;
+
+  QryListagem.Open;
+
+  MudarCorGridIndice;
+
+end;
+
+procedure TfrmHerancaListagem.grdListagemKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  inherited;
+
+  // Bloqueia o CTRL + DEL
+  if (Shift = [ssCtrl]) and (Key = 46) then
+  begin
+     Key := 0;
+  end;
+
+end;
+
+procedure TfrmHerancaListagem.grdListagemTitleClick(Column: TColumn);
+var
+  i : Integer;
+begin
+  inherited;
+
+  iColunaIndexada := Column.Index;
+  QryListagem.IndexFieldNames := Column.FieldName;
+  lblPesquisarPor.Caption := 'Pesquisar por ' + Column.Title.Caption;
+  sNomeColunaDisplay := Column.FieldName;
+
+  for i := 0 to grdListagem.Columns.Count - 1 do
+  begin
+    if grdListagem.Columns[i] = Column then
+    begin
+      Column.Color := clBtnFace;
+      Column.Title.Color := clBtnFace;
+      Column.Title.Font.Color := clBlack;
+
+    end
+    else
+    begin
+      grdListagem.Columns[i].Color := clWhite;
+      grdListagem.Columns[i].Title.Font.Color := clBlack;
+      grdListagem.Columns[i].Title.Color := clBtnFace;
+    end;
+  end;
+
 end;
 
 end.

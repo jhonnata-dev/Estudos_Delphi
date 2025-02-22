@@ -65,7 +65,6 @@ inherited frmBancoListagem: TfrmBancoListagem
         item
           Expanded = False
           FieldName = 'CodBanco'
-          Width = 106
           Visible = True
         end
         item

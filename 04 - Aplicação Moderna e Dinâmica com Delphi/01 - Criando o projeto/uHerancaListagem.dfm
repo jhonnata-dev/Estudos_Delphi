@@ -110,6 +110,7 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         TabOrder = 1
         Text = ''
         TextHint = 'Digite sua pesquisa'
+        OnChange = mskPesquisarChange
       end
       object btnNovo: TBitBtn
         Left = 677
@@ -120,6 +121,7 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         ImageIndex = 1
         Images = imgButtons
         TabOrder = 2
+        OnClick = btnNovoClick
         OnMouseEnter = btnNovoMouseEnter
         OnMouseLeave = btnNovoMouseLeave
       end
@@ -156,6 +158,8 @@ inherited frmHerancaListagem: TfrmHerancaListagem
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitLeft = 6
+      ExplicitTop = 540
       DesignSize = (
         1011
         50)
@@ -211,6 +215,7 @@ inherited frmHerancaListagem: TfrmHerancaListagem
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
       OnKeyDown = grdListagemKeyDown
+      OnTitleClick = grdListagemTitleClick
     end
   end
   object QryListagem: TZQuery

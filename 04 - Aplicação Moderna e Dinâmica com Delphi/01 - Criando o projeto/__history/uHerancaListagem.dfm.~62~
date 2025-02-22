@@ -11,6 +11,9 @@ inherited frmHerancaListagem: TfrmHerancaListagem
     Width = 1013
     StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 1013
+    DesignSize = (
+      1013
+      35)
     inherited lblTitulo: TLabel
       StyleElements = [seFont, seClient, seBorder]
     end
@@ -107,6 +110,7 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         TabOrder = 1
         Text = ''
         TextHint = 'Digite sua pesquisa'
+        OnChange = mskPesquisarChange
       end
       object btnNovo: TBitBtn
         Left = 677
@@ -117,7 +121,6 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         ImageIndex = 1
         Images = imgButtons
         TabOrder = 2
-        OnClick = btnNovoClick
         OnMouseEnter = btnNovoMouseEnter
         OnMouseLeave = btnNovoMouseLeave
       end
@@ -154,6 +157,8 @@ inherited frmHerancaListagem: TfrmHerancaListagem
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitLeft = 6
+      ExplicitTop = 540
       DesignSize = (
         1011
         50)
@@ -173,6 +178,7 @@ inherited frmHerancaListagem: TfrmHerancaListagem
         Top = 11
         Width = 224
         Height = 25
+        DataSource = DtsListagem
         VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast]
         TabOrder = 1
       end
@@ -198,6 +204,8 @@ inherited frmHerancaListagem: TfrmHerancaListagem
       Align = alClient
       BorderStyle = bsNone
       Ctl3D = True
+      DataSource = DtsListagem
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgAlwaysShowSelection, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
       ParentCtl3D = False
       TabOrder = 2
       TitleFont.Charset = DEFAULT_CHARSET
@@ -205,14 +213,18 @@ inherited frmHerancaListagem: TfrmHerancaListagem
       TitleFont.Height = -12
       TitleFont.Name = 'Segoe UI'
       TitleFont.Style = []
+      OnKeyDown = grdListagemKeyDown
+      OnTitleClick = grdListagemTitleClick
     end
   end
   object QryListagem: TZQuery
+    Connection = dtmConexao.SQLConnection
     Params = <>
     Left = 432
     Top = 40
   end
   object DtsListagem: TDataSource
+    DataSet = QryListagem
     Left = 520
     Top = 40
   end

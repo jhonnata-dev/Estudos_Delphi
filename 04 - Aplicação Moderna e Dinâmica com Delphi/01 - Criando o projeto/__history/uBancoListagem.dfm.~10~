@@ -1,11 +1,14 @@
-inherited frmHerancaListagem1: TfrmHerancaListagem1
-  Caption = 'frmHerancaListagem1'
+inherited frmBancoListagem: TfrmBancoListagem
+  Caption = 'Cadastro de Banco'
   StyleElements = [seFont, seClient, seBorder]
   TextHeight = 15
   inherited pnlHeader: TPanel
     StyleElements = [seFont, seClient, seBorder]
     inherited lblTitulo: TLabel
+      Width = 102
+      Caption = 'Cadastro de Banco'
       StyleElements = [seFont, seClient, seBorder]
+      ExplicitWidth = 102
     end
     inherited pnlHeaderLineTop: TPanel
       StyleElements = [seFont, seClient, seBorder]
@@ -51,6 +54,59 @@ inherited frmHerancaListagem1: TfrmHerancaListagem1
       inherited DBNavigator1: TDBNavigator
         Hints.Strings = ()
       end
+    end
+    inherited grdListagem: TDBGrid
+      Columns = <
+        item
+          Expanded = False
+          FieldName = 'BancoId'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'CodBanco'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'DescBanco'
+          Visible = True
+        end
+        item
+          Expanded = False
+          FieldName = 'WebSite'
+          Visible = True
+        end>
+    end
+  end
+  inherited imgButtons: TImageList
+    Left = 152
+    Top = 208
+  end
+  inherited QryListagem: TZQuery
+    SQL.Strings = (
+      'SELECT *  FROM Banco')
+    object QryListagemBancoId: TZIntegerField
+      DisplayLabel = '#ID'
+      FieldName = 'BancoId'
+      ReadOnly = True
+    end
+    object QryListagemCodBanco: TZUnicodeStringField
+      DisplayLabel = 'Cod. Banco'
+      FieldName = 'CodBanco'
+      Required = True
+      Size = 3
+    end
+    object QryListagemDescBanco: TZUnicodeStringField
+      DisplayLabel = 'Descri'#231#227'o do Banco'
+      FieldName = 'DescBanco'
+      Required = True
+      Size = 50
+    end
+    object QryListagemWebSite: TZUnicodeStringField
+      DisplayLabel = 'Site'
+      FieldName = 'WebSite'
+      Size = 100
     end
   end
 end
