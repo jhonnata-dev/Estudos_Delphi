@@ -155,6 +155,7 @@
             <Form>frmBancoListagem</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="uEnum.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>
