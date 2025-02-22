@@ -5,7 +5,9 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uHerancaBase, System.ImageList,
-  Vcl.ImgList, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons;
+  Vcl.ImgList, Vcl.Imaging.pngimage, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Buttons,
+  Data.DB, ZSqlUpdate, ZAbstractRODataset, ZAbstractDataset, ZDataset, uEnum,
+  Vcl.Mask, Vcl.DBCtrls, RxToolEdit, Vcl.ComCtrls, Vcl.Grids, Vcl.DBGrids;
 
 type
   TfrmHerancaCadastro = class(TfrmHerancaBase)
@@ -14,16 +16,26 @@ type
     btnCancelar: TBitBtn;
     btnGravar: TBitBtn;
     btnApagar: TBitBtn;
+    QryCadastro: TZQuery;
+    updCadastro: TZUpdateSQL;
+    dtsCadastro: TDataSource;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Button1: TButton;
     procedure btnCancelarMouseEnter(Sender: TObject);
     procedure btnCancelarMouseLeave(Sender: TObject);
     procedure btnGravarMouseEnter(Sender: TObject);
     procedure btnGravarMouseLeave(Sender: TObject);
     procedure btnApagarMouseEnter(Sender: TObject);
     procedure btnApagarMouseLeave(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
+    EstadoDoCadastro : TEstadoCadastro;
+    procedure HabilitaDesabilitaTela(chave: boolean);
+
   end;
 
 var
@@ -67,6 +79,90 @@ procedure TfrmHerancaCadastro.btnGravarMouseLeave(Sender: TObject);
 begin
   inherited;
   ButtonMouseLeave(Sender, 5);
+end;
+
+procedure TfrmHerancaCadastro.Button1Click(Sender: TObject);
+begin
+  inherited;
+  HabilitaDesabilitaTela(False);
+end;
+
+procedure TfrmHerancaCadastro.HabilitaDesabilitaTela(chave: boolean);
+var
+  i: Integer;
+begin
+  for i := 0 to ComponentCount - 1 do begin
+    // 81 -> Utilizada para deixar o campo da tela desabilitado
+    //       Porém na telatem que ficar com ENABLE := FALSE
+    if (Components[i] is TDBedit) and (TDBEdit (Components[i]).Tag <> 81) then begin
+      TDBEdit(Components[i]).Enabled := chave;
+    end;
+
+    if (Components[i]) is TDBMemo then begin
+      TDBMemo(Components[i]).Enabled := chave;
+    end
+    
+    else if (Components[i]) is TDBImage then begin
+      TDBImage(Components[i]).Enabled := chave;
+    end
+    
+    else if (Components[i]) is TDBListBox then begin
+      TDBListBox(Components[i]).Enabled := chave;
+    end
+
+    else if (Components[i]) is TDBComboBox then begin
+      TDBComboBox(Components[i]).Enabled := chave;
+    end
+
+    else if (Components[i]) is TDBCheckBox then begin
+      TDBCheckBox(Components[i]).Enabled := chave;
+    end
+
+    else if (Components[i]) is TDBRadioGroup then begin
+      TDBRadioGroup(Components[i]).Enabled := chave;
+    end
+
+    else if (Components[i]) is TDBLookupComboBox then begin
+      TDBLookupComboBox(Components[i]).Enabled := chave;
+    end
+
+    else if (Components[i]) is TDBRichEdit then begin
+      TDBRichEdit(Components[i]).Enabled := chave;
+    end
+
+    else if (Components[i]) is TDateEdit then begin
+      TDateEdit(Components[i]).Enabled := chave;
+    end
+
+    else if (Components[i]) is TDateTimePicker then begin
+      TDateTimePicker(Components[i]).Enabled := chave;
+    end
+
+    else if (Components[i]) is TComboEdit then begin
+      TComboEdit(Components[i]).Enabled := chave;
+    end
+
+    else if (Components[i]) is TComboBox then begin
+      TComboBox(Components[i]).Enabled := chave;
+    end
+
+    else if (Components[i]) is TDBGrid then begin
+      TDBGrid(Components[i]).Enabled := chave;
+    end
+
+    else if (Components[i]) is TMaskEdit then begin
+      TMaskEdit(Components[i]).Enabled := chave;
+    end
+
+    else if (Components[i]) is TEdit then begin
+      TEdit(Components[i]).Enabled := chave;
+    end
+
+    else if (Components[i]) is TDateEdit then begin
+      TDateEdit(Components[i]).Enabled := chave;
+    end;
+  
+  end;
 end;
 
 end.

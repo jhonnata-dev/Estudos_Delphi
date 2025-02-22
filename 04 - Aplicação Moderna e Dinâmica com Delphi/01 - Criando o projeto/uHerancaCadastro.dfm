@@ -79,5 +79,50 @@ inherited frmHerancaCadastro: TfrmHerancaCadastro
         OnMouseLeave = btnApagarMouseLeave
       end
     end
+    object Button1: TButton
+      Left = 448
+      Top = 184
+      Width = 75
+      Height = 25
+      Caption = 'Button1'
+      TabOrder = 1
+      OnClick = Button1Click
+    end
+  end
+  object Edit1: TEdit [5]
+    Left = 304
+    Top = 192
+    Width = 121
+    Height = 23
+    TabOrder = 5
+    Text = 'Edit1'
+  end
+  object Edit2: TEdit [6]
+    Left = 304
+    Top = 245
+    Width = 121
+    Height = 23
+    TabOrder = 6
+    Text = 'Edit1'
+  end
+  inherited imgButtons: TImageList
+    Left = 56
+    Top = 72
+  end
+  object QryCadastro: TZQuery
+    UpdateObject = updCadastro
+    Params = <>
+    Left = 224
+    Top = 80
+  end
+  object updCadastro: TZUpdateSQL
+    UseSequenceFieldForRefreshSQL = False
+    Left = 376
+    Top = 80
+  end
+  object dtsCadastro: TDataSource
+    DataSet = QryCadastro
+    Left = 496
+    Top = 88
   end
 end

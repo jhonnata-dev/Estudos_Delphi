@@ -63,7 +63,7 @@ implementation
 
 {$R *.dfm}
 
-uses uFuncoes, uPrincipal, uDtmConexao;
+uses uFuncoes, uPrincipal, uDtmConexao, uHerancaCadastro;
 
 procedure TfrmHerancaListagem.MudarCorGridIndice;
 var
@@ -147,6 +147,9 @@ procedure TfrmHerancaListagem.btnNovoClick(Sender: TObject);
 begin
   inherited;
   RefreshQuery(QryListagem);
+
+  frmHerancaCadastro := TfrmHerancaCadastro.Create(Self);
+  frmHerancaCadastro.ShowModal;
 end;
 
 procedure TfrmHerancaListagem.btnNovoMouseEnter(Sender: TObject);

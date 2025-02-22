@@ -158,8 +158,6 @@ inherited frmHerancaListagem: TfrmHerancaListagem
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitLeft = 6
-      ExplicitTop = 540
       DesignSize = (
         1011
         50)
