@@ -33,9 +33,13 @@ type
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
     procedure QryCadastroAfterPost(DataSet: TDataSet);
     procedure QryCadastroAfterDelete(DataSet: TDataSet);
+    procedure FormShow(Sender: TObject);
   private
     procedure PostOrDeleteWithCommitOrRollback(aConexao: TZConnection;
       aQry: TZQuery);
+    procedure ControleEstado(qry: TZQuery; EstadoDoCadastro: TEstadoCadastro;
+      BtnSalva, btnCancelar, BtnExclui: TBitBtn);
+
 
     { Private declarations }
   public
@@ -136,6 +140,12 @@ begin
     Close;
 
   end;
+end;
+
+procedure TfrmHerancaCadastro.FormShow(Sender: TObject);
+begin
+  inherited;
+  ControleEstado(QryCadastro, EstadoDoCadastro, btnGravar, btnCancelar, btnApagar);
 end;
 
 procedure TfrmHerancaCadastro.HabilitaDesabilitaTela(chave: boolean);
@@ -241,6 +251,26 @@ begin
   inherited;
   PostOrDeleteWithCommitOrRollback(dtmConexao.SQLConnection, QryCadastro);
   
+end;
+
+procedure TfrmHerancaCadastro.ControleEstado(qry: TZQuery; EstadoDoCadastro: TEstadoCadastro;
+  BtnSalva: TBitBtn; btnCancelar: TBitBtn; BtnExclui: TBitBtn);
+begin
+  if (EstadoDoCadastro = ecNovo) then begin
+    BtnExclui.Visible := False;
+    qry.Append;
+  end
+  else if (EstadoDoCadastro = ecModificar) then begin
+    BtnExclui.Visible := False;
+    qry.Edit;
+  end
+  else begin
+    BtnExclui.Left := btnCancelar.Left;
+    BtnSalva.Visible := False;
+    btnCancelar.Visible := False;
+    BtnExclui.Visible := True;
+
+  end;
 end;
 
 end.

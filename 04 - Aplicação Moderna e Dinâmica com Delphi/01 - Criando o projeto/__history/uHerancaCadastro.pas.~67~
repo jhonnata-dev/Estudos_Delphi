@@ -31,7 +31,14 @@ type
     procedure btnGravarClick(Sender: TObject);
     procedure btnApagarClick(Sender: TObject);
     procedure FormKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure QryCadastroAfterPost(DataSet: TDataSet);
+    procedure QryCadastroAfterDelete(DataSet: TDataSet);
   private
+    procedure PostOrDeleteWithCommitOrRollback(aConexao: TZConnection;
+      aQry: TZQuery);
+    procedure ControleEstado(qry: TZQuery; EstadoDoCadastro: TEstadoCadastro;
+      BtnSalva, btnCancelar, BtnExclui: TBitBtn);
+
 
     { Private declarations }
   public
@@ -47,6 +54,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses uPrincipal;
 
 procedure TfrmHerancaCadastro.btnApagarClick(Sender: TObject);
 begin
@@ -212,6 +221,49 @@ end;
 
 procedure TfrmHerancaCadastro.PostOrDeleteWithCommitOrRollback(aConexao: TZConnection; aQry: TZQuery);
 begin
+  try
+    aConexao.StartTransaction;
+    aQry.ApplyUpdates;
+    aConexao.Commit;
+    aQry.Refresh;
+  except
+    aConexao.Rollback;
+  end;
+
+end;
+
+procedure TfrmHerancaCadastro.QryCadastroAfterDelete(DataSet: TDataSet);
+begin
+  inherited;
+  PostOrDeleteWithCommitOrRollback(dtmConexao.SQLConnection, QryCadastro);
+  
+end;
+
+procedure TfrmHerancaCadastro.QryCadastroAfterPost(DataSet: TDataSet);
+begin
+  inherited;
+  PostOrDeleteWithCommitOrRollback(dtmConexao.SQLConnection, QryCadastro);
+  
+end;
+
+procedure TfrmHerancaCadastro.ControleEstado(qry: TZQuery; EstadoDoCadastro: TEstadoCadastro;
+  BtnSalva: TBitBtn; btnCancelar: TBitBtn; BtnExclui: TBitBtn);
+begin
+  if (EstadoDoCadastro = ecNovo) then begin
+    BtnExclui.Visible := False;
+    qry.Append;
+  end
+  else if (EstadoDoCadastro = ecModificar) then begin
+    BtnExclui.Visible := False;
+    qry.Edit;
+  end
+  else begin
+    BtnExclui.Left := btnCancelar.Left;
+    BtnSalva.Visible := False;
+    BtnExclui.Visible := True;
+    btnCancelar.Visible := False;
+  end;
+
 
 end;
 

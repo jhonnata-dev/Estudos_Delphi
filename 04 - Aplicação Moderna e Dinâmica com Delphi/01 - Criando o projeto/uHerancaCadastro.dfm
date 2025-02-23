@@ -1,5 +1,6 @@
 inherited frmHerancaCadastro: TfrmHerancaCadastro
   Caption = 'frmHerancaCadastro'
+  KeyPreview = True
   StyleElements = [seFont, seClient, seBorder]
   OnKeyDown = FormKeyDown
   TextHeight = 15
