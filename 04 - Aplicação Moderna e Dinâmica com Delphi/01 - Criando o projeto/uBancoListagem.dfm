@@ -45,6 +45,12 @@ inherited frmBancoListagem: TfrmBancoListagem
       inherited mskPesquisar: TMaskEdit
         StyleElements = [seFont, seClient, seBorder]
       end
+      inherited btnModificar: TBitBtn
+        OnClick = btnModificarClick
+      end
+      inherited btnApagar: TBitBtn
+        OnClick = btnApagarClick
+      end
     end
     inherited pnlFormPrincipalBottom: TPanel
       StyleElements = [seFont, seClient, seBorder]
@@ -56,6 +62,7 @@ inherited frmBancoListagem: TfrmBancoListagem
       end
     end
     inherited grdListagem: TDBGrid
+      OnDblClick = btnModificarClick
       Columns = <
         item
           Expanded = False

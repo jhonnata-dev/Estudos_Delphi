@@ -258,13 +258,16 @@ procedure TfrmHerancaCadastro.ControleEstado(qry: TZQuery; EstadoDoCadastro: TEs
 begin
   if (EstadoDoCadastro = ecNovo) then begin
     BtnExclui.Visible := False;
+    lblTitulo.Caption := lblTitulo.Caption + ' - [NOVO]';
     qry.Append;
   end
   else if (EstadoDoCadastro = ecModificar) then begin
     BtnExclui.Visible := False;
+    lblTitulo.Caption := lblTitulo.Caption + ' - [Modificar]';
     qry.Edit;
   end
   else begin
+    lblTitulo.Caption := lblTitulo.Caption + ' - [Apagar]';
     BtnExclui.Left := btnCancelar.Left;
     BtnSalva.Visible := False;
     btnCancelar.Visible := False;

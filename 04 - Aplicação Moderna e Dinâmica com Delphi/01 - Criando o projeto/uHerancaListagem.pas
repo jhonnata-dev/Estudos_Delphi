@@ -248,18 +248,18 @@ begin
 end;
 
 procedure TfrmHerancaListagem.RefreshQuery(aQry: TZQuery);
-var
-  aBookMark : TBookmark;
+//var
+//  aBookMark : TBookmark;
 begin
   try
     aQry.DisableControls;
-    aBookMark := aQry.Bookmark;
+    //aBookMark := aQry.Bookmark;
     aQry.Refresh;
 
   finally
-    aQry.GotoBookmark(aBookMark);
+    //aQry.GotoBookmark(aBookMark);
     aQry.EnableControls;
-    aQry.FreeBookmark(aBookMark);
+    //aQry.FreeBookmark(aBookMark);
   end;
 
 end;
