@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
   System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Buttons, Vcl.ExtCtrls,
-  Vcl.ComCtrls, uDtmConexao;
+  Vcl.ComCtrls, uDtmConexao, Vcl.Imaging.pngimage, System.ImageList, Vcl.ImgList;
 
 type
   TfrmPrincipal = class(TForm)
@@ -19,12 +19,20 @@ type
     pnlPrincipalCenterBottom: TPanel;
     pgcPrincipal: TPageControl;
     tbsMenu: TTabSheet;
+    pnlPrincipalTop: TPanel;
+    Image1: TImage;
+    btnFechar: TBitBtn;
+    imgButtons: TImageList;
+    btnCriarMenu: TBitBtn;
+    scbIcones: TScrollBox;
     procedure FormShow(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btnCriarMenuClick(Sender: TObject);
   private
     { Private declarations }
+    pnlAcao: TPanel;
   public
     { Public declarations }
   end;
@@ -44,6 +52,40 @@ begin
 
   CriarAba(TfrmBancoListagem, pgcPrincipal, -1);
 
+end;
+
+procedure TfrmPrincipal.btnCriarMenuClick(Sender: TObject);
+var
+  i, iLeft, iTop : Integer;
+begin
+  iLeft := 6;
+  iTop := 6;
+  i := 0;
+
+  while i <= 120 do begin
+    pnlAcao := TPanel.Create(scbIcones);
+    pnlAcao.Parent := scbIcones;
+    pnlAcao.BevelOuter := bvNone;
+    pnlAcao.Height := 82;
+    pnlAcao.Left := iLeft;
+    pnlAcao.Width := 130;
+    pnlAcao.Name := '___pnl___' + IntToStr(i);
+    pnlAcao.Top := iTop;
+    pnlAcao.Caption := EmptyStr;
+    pnlAcao.Tag := 9999;
+    pnlAcao.Color := clWhite;
+    pnlAcao.ParentBackground := False;
+
+    iLeft := iLeft + pnlAcao.Width + 6;
+
+    if iLeft > (self.Width - (pnlPrincipalLeft.Width + pnlAcao.Width) ) then begin
+      iLeft := 6;
+      itop := iTop + pnlAcao.Height + 6;
+    end;
+
+    Inc(i);
+
+  end;
 end;
 
 procedure TfrmPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
