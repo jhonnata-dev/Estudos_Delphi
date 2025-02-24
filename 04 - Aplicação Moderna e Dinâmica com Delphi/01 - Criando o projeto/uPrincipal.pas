@@ -33,6 +33,12 @@ type
   private
     { Private declarations }
     pnlAcao: TPanel;
+    pnlDescAcao: TPanel;
+    pnlLeft: TPanel;
+    pnlRight: TPanel;
+    pnlTop: TPanel;
+    lblDescAcao: TLabel;
+    imgIcone: TImage;
   public
     { Public declarations }
   end;
@@ -57,24 +63,94 @@ end;
 procedure TfrmPrincipal.btnCriarMenuClick(Sender: TObject);
 var
   i, iLeft, iTop : Integer;
+  cColorPanelIcone : TColor;
+  png : TPngImage;
 begin
   iLeft := 6;
-  iTop := 6;
-  i := 0;
+  iTop  := 6;
+  i     := 0;
 
-  while i <= 120 do begin
-    pnlAcao := TPanel.Create(scbIcones);
-    pnlAcao.Parent := scbIcones;
-    pnlAcao.BevelOuter := bvNone;
-    pnlAcao.Height := 82;
-    pnlAcao.Left := iLeft;
-    pnlAcao.Width := 130;
-    pnlAcao.Name := '___pnl___' + IntToStr(i);
-    pnlAcao.Top := iTop;
-    pnlAcao.Caption := EmptyStr;
-    pnlAcao.Tag := 9999;
-    pnlAcao.Color := clWhite;
+  cColorPanelIcone := clBlack;
+
+  while i <= 5 do begin
+    pnlAcao                  := TPanel.Create(scbIcones);
+    pnlAcao.Parent           := scbIcones;
+    pnlAcao.BevelOuter       := bvNone;
+    pnlAcao.Height           := 82;
+    pnlAcao.Left             := iLeft;
+    pnlAcao.Width            := 130;
+    pnlAcao.Name             := '___pnl___' + IntToStr(i);
+    pnlAcao.Top              := iTop;
+    pnlAcao.Caption          := EmptyStr;
+    pnlAcao.Tag              := 9999;
+    pnlAcao.Color            := clWhite;
     pnlAcao.ParentBackground := False;
+
+    pnlDescAcao                  := TPanel.Create(Application);
+    pnlDescAcao.Parent           := pnlAcao;
+    pnlDescAcao.Color            := cColorPanelIcone;
+    pnlDescAcao.Height           := 15;
+    pnlDescAcao.Align            := alBottom;
+    pnlDescAcao.BevelOuter       := bvNone;
+    pnlDescAcao.ParentBackground := False;
+
+    pnlLeft                  := TPanel.Create(Application);
+    pnlLeft.Parent           := pnlAcao;
+    pnlLeft.Align            := alLeft;
+    pnlLeft.Width            := 1;
+    pnlLeft.Color            := cColorPanelIcone;
+    pnlLeft.BevelOuter       := bvNone;
+    pnlLeft.ParentBackground := False;
+
+    pnlRight                  := TPanel.Create(Application);
+    pnlRight.Parent           := pnlAcao;
+    pnlRight.Align            := alRight;
+    pnlRight.Width            := 1;
+    pnlRight.Color            := cColorPanelIcone;
+    pnlRight.BevelOuter       := bvNone;
+    pnlRight.ParentBackground := False;
+
+    pnlTop                  := TPanel.Create(Application);
+    pnlTop.Parent           := pnlAcao;
+    pnlTop.Align            := alTop;
+    pnlTop.Height           := 1;
+    pnlTop.Color            := cColorPanelIcone;
+    pnlTop.BevelOuter       := bvNone;
+    pnlTop.ParentBackground := False;
+
+    lblDescAcao             := TLabel.Create(Application);
+    lblDescAcao.Parent      := pnlDescAcao;
+    lblDescAcao.Align       := alClient;
+    lblDescAcao.Alignment   := taCenter;
+    lblDescAcao.Font.Style  := [TFontStyle.fsUnderline, TFontStyle.fsBold];
+    lblDescAcao.Font.Name   := 'Tahoma';
+    lblDescAcao.Font.Size   := 8;
+    lblDescAcao.Font.Color  := clWhite;
+    lblDescAcao.Cursor      := crHandPoint;
+    lblDescAcao.Caption     := 'Cadastro de Banco';
+    lblDescAcao.Hint        := 'TfrmBancoListagem';
+    lblDescAcao.HelpKeyword := '1';
+    lblDescAcao.ShowHint    := False;
+    lblDescAcao.OnClick     := nil;
+
+    imgIcone             := TImage.Create(Application);
+    png                  := TPngImage.Create;
+    imgIcone.Parent      := pnlAcao;
+    imgIcone.Align       := alClient;
+    imgIcone.Transparent := True;
+    imgIcone.Center      := True;
+
+    try
+      png.LoadFromFile('D:\\Programação\\Cursos Delphi\\04 - Aplicação Moderna e Dinâmica com Delphi\\images\\BancoFebraban.png');
+      imgIcone.Picture.Assign(png);
+    finally
+      png.Free;
+    end;
+
+    imgIcone.Hint        := 'TfrmbancoListagem';
+    imgIcone.HelpKeyword := '1';
+    imgIcone.ShowHint    := False;
+    imgIcone.OnClick     := nil;
 
     iLeft := iLeft + pnlAcao.Width + 6;
 
