@@ -7,6 +7,7 @@ object dtmConexao: TdtmConexao
     Properties.Strings = (
       'RawStringEncoding=DB_CP')
     TransactIsolationLevel = tiReadCommitted
+    Connected = True
     DisableSavepoints = False
     HostName = ''
     Port = 0
@@ -19,5 +20,19 @@ object dtmConexao: TdtmConexao
     Protocol = 'ado'
     Left = 80
     Top = 48
+  end
+  object QryMenu: TZQuery
+    Connection = SQLConnection
+    SQL.Strings = (
+      'SELECT TOP (1000) [menuId],'
+      #9'[titulo],'
+      #9'[nomeImagem],'
+      #9'[nomeFormulario],'
+      #9'[processo]'
+      ''
+      ' FROM [dbLayoutModerno].[dbo].[Menu]')
+    Params = <>
+    Left = 288
+    Top = 56
   end
 end
