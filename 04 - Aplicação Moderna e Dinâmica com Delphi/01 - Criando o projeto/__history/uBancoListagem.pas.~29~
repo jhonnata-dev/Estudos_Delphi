@@ -45,7 +45,7 @@ begin
     case estadoCadastro of
       ecNovo: begin
         frmBancoCadastro.QryCadastro.ParamByName('BancoId').AsInteger := -1;
-        Close;
+
         frmBancoCadastro.QryCadastro.Open;
         frmBancoCadastro.QryCadastro.Append;
       end;

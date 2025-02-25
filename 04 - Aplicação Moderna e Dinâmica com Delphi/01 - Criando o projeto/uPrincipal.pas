@@ -39,6 +39,9 @@ type
     pnlTop: TPanel;
     lblDescAcao: TLabel;
     imgIcone: TImage;
+    procedure ClickChamada(Sender: TObject);
+    procedure ControleMouseEnterTimage(Sender: TObject);
+    procedure ControleMouseLeaveTimage(Sender: TObject);
   public
     { Public declarations }
   end;
@@ -131,7 +134,7 @@ begin
     lblDescAcao.Hint        := 'TfrmBancoListagem';
     lblDescAcao.HelpKeyword := '1';
     lblDescAcao.ShowHint    := False;
-    lblDescAcao.OnClick     := nil;
+    lblDescAcao.OnClick     := ClickChamada;
 
     imgIcone             := TImage.Create(Application);
     png                  := TPngImage.Create;
@@ -150,7 +153,10 @@ begin
     imgIcone.Hint        := 'TfrmbancoListagem';
     imgIcone.HelpKeyword := '1';
     imgIcone.ShowHint    := False;
-    imgIcone.OnClick     := nil;
+    imgIcone.OnClick     := ClickChamada;
+
+    imgIcone.OnMouseEnter   := ControleMouseEnterTimage;
+    imgIcone.OnMouseLeave   := ControleMouseLeaveTimage;
 
     iLeft := iLeft + pnlAcao.Width + 6;
 
@@ -161,6 +167,44 @@ begin
 
     Inc(i);
 
+  end;
+end;
+
+procedure TfrmPrincipal.ControleMouseEnterTimage(Sender: TObject);
+var
+  ControleAtivo: TWinControl;
+begin
+  ControleAtivo := TImage(Sender).Parent;
+  
+  if ControleAtivo is TPanel then begin
+    TPanel(ControleAtivo).Color := $006CC2F0;
+    TPanel(ControleAtivo).ParentBackground := False;
+    
+  end;
+end;
+
+procedure TfrmPrincipal.ControleMouseLeaveTimage(Sender: TObject);
+var
+  ControleAtivo: TWinControl;
+begin
+  ControleAtivo := TImage(Sender).Parent;
+
+  if (ControleAtivo is TPanel) then begin
+    TPanel(ControleAtivo).Color := clWhite;
+    TPanel(ControleAtivo).ParentBackground := False;
+    
+  end;
+end;
+                                                  
+procedure TfrmPrincipal.ClickChamada(Sender: TObject);
+begin
+  if (Sender is TLabel) then begin
+    CriarAba(TFormClass(FindClass(TLabel(Sender).Hint)), pgcPrincipal, -1);
+
+  end
+  else if (Sender is TImage) then begin
+    CriarAba(TFormClass(FindClass(TImage(Sender).Hint)), pgcPrincipal, -1);
+      
   end;
 end;
 
