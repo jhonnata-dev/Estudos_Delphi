@@ -17,14 +17,14 @@ object frmPrincipal: TfrmPrincipal
   TextHeight = 15
   object pnlPrincipalLeft: TPanel
     Left = 0
-    Top = 57
+    Top = 87
     Width = 185
-    Height = 622
+    Height = 592
     Align = alLeft
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitTop = 45
-    ExplicitHeight = 634
+    ExplicitTop = 57
+    ExplicitHeight = 622
     object btnCriarMenu: TBitBtn
       Left = 40
       Top = 36
@@ -46,33 +46,33 @@ object frmPrincipal: TfrmPrincipal
   end
   object pnlPrincipalCenter: TPanel
     Left = 185
-    Top = 57
+    Top = 87
     Width = 699
-    Height = 622
+    Height = 592
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitTop = 45
-    ExplicitHeight = 634
+    ExplicitTop = 57
+    ExplicitHeight = 622
     object pnlPrincipalCenterLeft: TPanel
       Left = 0
       Top = 10
       Width = 10
-      Height = 602
+      Height = 572
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitHeight = 614
+      ExplicitHeight = 602
     end
     object pnlPrincipalCenterRight: TPanel
       Left = 689
       Top = 10
       Width = 10
-      Height = 602
+      Height = 572
       Align = alRight
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitHeight = 614
+      ExplicitHeight = 602
     end
     object pnlPrincipalCenterTop: TPanel
       Left = 0
@@ -85,37 +85,37 @@ object frmPrincipal: TfrmPrincipal
     end
     object pnlPrincipalCenterBottom: TPanel
       Left = 0
-      Top = 612
+      Top = 582
       Width = 699
       Height = 10
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitTop = 624
+      ExplicitTop = 612
     end
     object pgcPrincipal: TPageControl
       Left = 10
       Top = 10
       Width = 679
-      Height = 602
+      Height = 572
       ActivePage = tbsMenu
       Align = alClient
       TabOrder = 4
-      ExplicitHeight = 614
+      ExplicitHeight = 602
       object tbsMenu: TTabSheet
         Caption = 'MENU'
         object scbIcones: TScrollBox
           Left = 0
           Top = 0
           Width = 671
-          Height = 572
+          Height = 542
           Align = alClient
           BevelInner = bvNone
           BevelOuter = bvNone
           Ctl3D = False
           ParentCtl3D = False
           TabOrder = 0
-          ExplicitHeight = 584
+          ExplicitHeight = 572
         end
       end
     end
@@ -124,16 +124,15 @@ object frmPrincipal: TfrmPrincipal
     Left = 0
     Top = 0
     Width = 884
-    Height = 57
+    Height = 87
     Align = alTop
     BevelOuter = bvNone
-    Color = clBlue
+    Color = 4533029
     ParentBackground = False
     TabOrder = 2
-    ExplicitTop = 4
     DesignSize = (
       884
-      57)
+      87)
     object Image1: TImage
       Left = 9
       Top = 5
@@ -223,7 +222,7 @@ object frmPrincipal: TfrmPrincipal
     end
     object Panel1: TPanel
       Left = 0
-      Top = 49
+      Top = 56
       Width = 884
       Height = 8
       Align = alBottom
@@ -231,7 +230,20 @@ object frmPrincipal: TfrmPrincipal
       Color = clSilver
       ParentBackground = False
       TabOrder = 1
-      ExplicitTop = 52
+      ExplicitTop = 47
+    end
+    object edtLocalizaMenu: TSearchBox
+      Left = 0
+      Top = 64
+      Width = 884
+      Height = 23
+      Align = alBottom
+      TabOrder = 2
+      TextHint = 'DIGITE O QUE VOC'#202' DESEJA FAZER'
+      OnInvokeSearch = edtLocalizaMenuInvokeSearch
+      ExplicitLeft = 384
+      ExplicitTop = 42
+      ExplicitWidth = 121
     end
   end
   object imgButtons: TImageList

@@ -17,12 +17,14 @@ object frmPrincipal: TfrmPrincipal
   TextHeight = 15
   object pnlPrincipalLeft: TPanel
     Left = 0
-    Top = 45
+    Top = 87
     Width = 185
-    Height = 634
+    Height = 592
     Align = alLeft
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitTop = 57
+    ExplicitHeight = 622
     object btnCriarMenu: TBitBtn
       Left = 40
       Top = 36
@@ -44,29 +46,33 @@ object frmPrincipal: TfrmPrincipal
   end
   object pnlPrincipalCenter: TPanel
     Left = 185
-    Top = 45
+    Top = 87
     Width = 699
-    Height = 634
+    Height = 592
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
+    ExplicitTop = 57
+    ExplicitHeight = 622
     object pnlPrincipalCenterLeft: TPanel
       Left = 0
       Top = 10
       Width = 10
-      Height = 614
+      Height = 572
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitHeight = 602
     end
     object pnlPrincipalCenterRight: TPanel
       Left = 689
       Top = 10
       Width = 10
-      Height = 614
+      Height = 572
       Align = alRight
       BevelOuter = bvNone
       TabOrder = 1
+      ExplicitHeight = 602
     end
     object pnlPrincipalCenterTop: TPanel
       Left = 0
@@ -79,34 +85,37 @@ object frmPrincipal: TfrmPrincipal
     end
     object pnlPrincipalCenterBottom: TPanel
       Left = 0
-      Top = 624
+      Top = 582
       Width = 699
       Height = 10
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 3
+      ExplicitTop = 612
     end
     object pgcPrincipal: TPageControl
       Left = 10
       Top = 10
       Width = 679
-      Height = 614
+      Height = 572
       ActivePage = tbsMenu
       Align = alClient
       TabOrder = 4
+      ExplicitHeight = 602
       object tbsMenu: TTabSheet
         Caption = 'MENU'
         object scbIcones: TScrollBox
           Left = 0
           Top = 0
           Width = 671
-          Height = 584
+          Height = 542
           Align = alClient
           BevelInner = bvNone
           BevelOuter = bvNone
           Ctl3D = False
           ParentCtl3D = False
           TabOrder = 0
+          ExplicitHeight = 572
         end
       end
     end
@@ -115,15 +124,15 @@ object frmPrincipal: TfrmPrincipal
     Left = 0
     Top = 0
     Width = 884
-    Height = 45
+    Height = 87
     Align = alTop
     BevelOuter = bvNone
-    Color = clBlack
+    Color = 4533029
     ParentBackground = False
     TabOrder = 2
     DesignSize = (
       884
-      45)
+      87)
     object Image1: TImage
       Left = 9
       Top = 5
@@ -187,6 +196,19 @@ object frmPrincipal: TfrmPrincipal
         7259F2F730C21419AB32A6E61FE53408D64E0E7B8BD85DFCED789FC6BF00F925
         6032D8E676DC0000000049454E44AE426082}
     end
+    object Label1: TLabel
+      Left = 47
+      Top = 3
+      Width = 340
+      Height = 33
+      Caption = 'GERENCIADOR FINANCEIRO'
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clWhite
+      Font.Height = -27
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
     object btnFechar: TBitBtn
       Left = 778
       Top = 5
@@ -196,6 +218,31 @@ object frmPrincipal: TfrmPrincipal
       ImageIndex = 1
       Images = imgButtons
       TabOrder = 0
+      OnClick = btnFecharClick
+    end
+    object Panel1: TPanel
+      Left = 0
+      Top = 56
+      Width = 884
+      Height = 8
+      Align = alBottom
+      BevelOuter = bvNone
+      Color = clSilver
+      ParentBackground = False
+      TabOrder = 1
+      ExplicitTop = 47
+    end
+    object edtLocalizaMenu: TSearchBox
+      Left = 0
+      Top = 64
+      Width = 884
+      Height = 23
+      Align = alBottom
+      TabOrder = 2
+      TextHint = 'DIGITE O QUE VOC'#202' DESEJA FAZER'
+      ExplicitLeft = 384
+      ExplicitTop = 42
+      ExplicitWidth = 121
     end
   end
   object imgButtons: TImageList
