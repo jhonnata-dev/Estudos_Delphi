@@ -11,7 +11,6 @@ uses
 type
   TfrmPrincipal = class(TForm)
     pnlPrincipalLeft: TPanel;
-    BitBtn1: TBitBtn;
     pnlPrincipalCenter: TPanel;
     pnlPrincipalCenterLeft: TPanel;
     pnlPrincipalCenterRight: TPanel;
@@ -27,7 +26,6 @@ type
     scbIcones: TScrollBox;
     btnConfiguracoes: TBitBtn;
     procedure FormShow(Sender: TObject);
-    procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnCriarMenuClick(Sender: TObject);
@@ -60,13 +58,6 @@ implementation
 
 uses uSplash, uHerancaBase, uFuncoes, uBancoListagem;
 
-procedure TfrmPrincipal.BitBtn1Click(Sender: TObject);
-begin
-
-  CriarAba(TfrmBancoListagem, pgcPrincipal, -1);
-
-end;
-
 procedure TfrmPrincipal.btnConfiguracoesClick(Sender: TObject);
 begin
   MontarMenu('CNF');
@@ -91,7 +82,7 @@ begin
   DestroyIconesMenuDinamico;
 
   dtmConexao.QryMenu.Close;
-  dtmConexao.QryMenu.ParamByName('processo').AsString := 'FIN';
+  dtmConexao.QryMenu.ParamByName('processo').AsString := aProcesso;
   dtmConexao.QryMenu.Open;
 
   while not dtmConexao.QryMenu.Eof do begin
@@ -268,7 +259,10 @@ begin
   frmSplash := TfrmSplash.Create(self);
   frmSplash.Show;
   frmSplash.Refresh;
-  Sleep(5000);
+
+  MontarMenu('FIN');
+
+  Sleep(1000);
 
   if Assigned(frmSplash) then
   begin

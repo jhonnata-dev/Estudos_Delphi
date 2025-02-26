@@ -11,7 +11,6 @@ uses
 type
   TfrmPrincipal = class(TForm)
     pnlPrincipalLeft: TPanel;
-    BitBtn1: TBitBtn;
     pnlPrincipalCenter: TPanel;
     pnlPrincipalCenterLeft: TPanel;
     pnlPrincipalCenterRight: TPanel;
@@ -25,11 +24,13 @@ type
     imgButtons: TImageList;
     btnCriarMenu: TBitBtn;
     scbIcones: TScrollBox;
+    btnConfiguracoes: TBitBtn;
     procedure FormShow(Sender: TObject);
-    procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnCriarMenuClick(Sender: TObject);
+    procedure btnConfiguracoesClick(Sender: TObject);
+    procedure btnFecharClick(Sender: TObject);
   private
     { Private declarations }
     pnlAcao: TPanel;
@@ -43,6 +44,7 @@ type
     procedure ControleMouseEnterTimage(Sender: TObject);
     procedure ControleMouseLeaveTimage(Sender: TObject);
     procedure DestroyIconesMenuDinamico;
+    procedure MontarMenu(aProcesso: string);
   public
     { Public declarations }
   end;
@@ -57,14 +59,22 @@ implementation
 
 uses uSplash, uHerancaBase, uFuncoes, uBancoListagem;
 
-procedure TfrmPrincipal.BitBtn1Click(Sender: TObject);
+procedure TfrmPrincipal.btnConfiguracoesClick(Sender: TObject);
 begin
-
-  CriarAba(TfrmBancoListagem, pgcPrincipal, -1);
-
+  MontarMenu('CNF');
 end;
 
 procedure TfrmPrincipal.btnCriarMenuClick(Sender: TObject);
+begin
+  MontarMenu('FIN');
+end;
+
+procedure TfrmPrincipal.btnFecharClick(Sender: TObject);
+begin
+  Application.Terminate;
+end;
+
+procedure TfrmPrincipal.MontarMenu(aProcesso: string);
 var
   iLeft, iTop : Integer;
   cColorPanelIcone : TColor;
@@ -78,7 +88,7 @@ begin
   DestroyIconesMenuDinamico;
 
   dtmConexao.QryMenu.Close;
-  dtmConexao.QryMenu.ParamByName('processo').AsString := 'FIN';
+  dtmConexao.QryMenu.ParamByName('processo').AsString := aProcesso;
   dtmConexao.QryMenu.Open;
 
   while not dtmConexao.QryMenu.Eof do begin
@@ -217,7 +227,8 @@ begin
     
   end;
 end;
-                                                  
+
+
 procedure TfrmPrincipal.ClickChamada(Sender: TObject);
 begin
   if (Sender is TLabel) then begin
@@ -242,7 +253,7 @@ procedure TfrmPrincipal.FormCreate(Sender: TObject);
 begin
   try
     dtmConexao := TdtmConexao.Create(Self);
-    dtmConexao.SQLConnection.Connected := True;  
+    dtmConexao.SQLConnection.Connected := True;
   except
     ShowMessage('Erro ao conectar o banco de dados');
   end;
@@ -254,7 +265,10 @@ begin
   frmSplash := TfrmSplash.Create(self);
   frmSplash.Show;
   frmSplash.Refresh;
-  Sleep(5000);
+
+  MontarMenu('FIN');
+
+  Sleep(1000);
 
   if Assigned(frmSplash) then
   begin

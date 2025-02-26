@@ -91,7 +91,7 @@ begin
   DestroyIconesMenuDinamico;
 
   dtmConexao.QryMenu.Close;
-  dtmConexao.QryMenu.ParamByName('processo').AsString := 'FIN';
+  dtmConexao.QryMenu.ParamByName('processo').AsString := aProcesso;
   dtmConexao.QryMenu.Open;
 
   while not dtmConexao.QryMenu.Eof do begin

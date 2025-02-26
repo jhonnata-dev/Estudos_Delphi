@@ -37,9 +37,18 @@ object frmPrincipal: TfrmPrincipal
       Top = 120
       Width = 75
       Height = 25
-      Caption = 'Criar menu'
+      Caption = 'Financeiro'
       TabOrder = 1
       OnClick = btnCriarMenuClick
+    end
+    object btnConfiguracoes: TBitBtn
+      Left = 40
+      Top = 168
+      Width = 91
+      Height = 25
+      Caption = 'Configura'#231#245'es'
+      TabOrder = 2
+      OnClick = btnConfiguracoesClick
     end
   end
   object pnlPrincipalCenter: TPanel

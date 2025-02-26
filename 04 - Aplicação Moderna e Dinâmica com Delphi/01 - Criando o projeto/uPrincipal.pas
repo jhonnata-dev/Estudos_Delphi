@@ -11,7 +11,6 @@ uses
 type
   TfrmPrincipal = class(TForm)
     pnlPrincipalLeft: TPanel;
-    BitBtn1: TBitBtn;
     pnlPrincipalCenter: TPanel;
     pnlPrincipalCenterLeft: TPanel;
     pnlPrincipalCenterRight: TPanel;
@@ -26,12 +25,14 @@ type
     btnCriarMenu: TBitBtn;
     scbIcones: TScrollBox;
     btnConfiguracoes: TBitBtn;
+    Panel1: TPanel;
+    Label1: TLabel;
     procedure FormShow(Sender: TObject);
-    procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnCriarMenuClick(Sender: TObject);
     procedure btnConfiguracoesClick(Sender: TObject);
+    procedure btnFecharClick(Sender: TObject);
   private
     { Private declarations }
     pnlAcao: TPanel;
@@ -60,13 +61,6 @@ implementation
 
 uses uSplash, uHerancaBase, uFuncoes, uBancoListagem;
 
-procedure TfrmPrincipal.BitBtn1Click(Sender: TObject);
-begin
-
-  CriarAba(TfrmBancoListagem, pgcPrincipal, -1);
-
-end;
-
 procedure TfrmPrincipal.btnConfiguracoesClick(Sender: TObject);
 begin
   MontarMenu('CNF');
@@ -75,6 +69,11 @@ end;
 procedure TfrmPrincipal.btnCriarMenuClick(Sender: TObject);
 begin
   MontarMenu('FIN');
+end;
+
+procedure TfrmPrincipal.btnFecharClick(Sender: TObject);
+begin
+  Application.Terminate;
 end;
 
 procedure TfrmPrincipal.MontarMenu(aProcesso: string);
@@ -86,7 +85,7 @@ begin
   iLeft := 6;
   iTop  := 6;
 
-  cColorPanelIcone := clBlack;
+  cColorPanelIcone := $00EBDDDA;
 
   DestroyIconesMenuDinamico;
 
@@ -147,7 +146,7 @@ begin
     lblDescAcao.Font.Style  := [TFontStyle.fsUnderline, TFontStyle.fsBold];
     lblDescAcao.Font.Name   := 'Tahoma';
     lblDescAcao.Font.Size   := 8;
-    lblDescAcao.Font.Color  := clWhite;
+    lblDescAcao.Font.Color  := clBlack;
     lblDescAcao.Cursor      := crHandPoint;
     lblDescAcao.Caption     := dtmConexao.QryMenu.FieldByName('titulo').AsString;
     lblDescAcao.Hint        := dtmConexao.QryMenu.FieldByName('nomeFormulario').AsString;
@@ -256,7 +255,7 @@ procedure TfrmPrincipal.FormCreate(Sender: TObject);
 begin
   try
     dtmConexao := TdtmConexao.Create(Self);
-    dtmConexao.SQLConnection.Connected := True;  
+    dtmConexao.SQLConnection.Connected := True;
   except
     ShowMessage('Erro ao conectar o banco de dados');
   end;
@@ -268,7 +267,10 @@ begin
   frmSplash := TfrmSplash.Create(self);
   frmSplash.Show;
   frmSplash.Refresh;
-  Sleep(5000);
+
+  MontarMenu('FIN');
+
+  Sleep(1000);
 
   if Assigned(frmSplash) then
   begin
