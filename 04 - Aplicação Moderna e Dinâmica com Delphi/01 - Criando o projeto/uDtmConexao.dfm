@@ -30,9 +30,17 @@ object dtmConexao: TdtmConexao
       #9'[nomeFormulario],'
       #9'[processo]'
       ''
-      ' FROM [dbLayoutModerno].[dbo].[Menu]')
-    Params = <>
+      ' FROM [dbLayoutModerno].[dbo].[Menu]'
+      ' WHERE processo = :processo')
+    Params = <
+      item
+        Name = 'processo'
+      end>
     Left = 288
     Top = 56
+    ParamData = <
+      item
+        Name = 'processo'
+      end>
   end
 end

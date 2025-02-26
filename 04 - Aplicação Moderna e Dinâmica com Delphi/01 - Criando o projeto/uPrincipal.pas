@@ -25,11 +25,13 @@ type
     imgButtons: TImageList;
     btnCriarMenu: TBitBtn;
     scbIcones: TScrollBox;
+    btnConfiguracoes: TBitBtn;
     procedure FormShow(Sender: TObject);
     procedure BitBtn1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnCriarMenuClick(Sender: TObject);
+    procedure btnConfiguracoesClick(Sender: TObject);
   private
     { Private declarations }
     pnlAcao: TPanel;
@@ -42,6 +44,8 @@ type
     procedure ClickChamada(Sender: TObject);
     procedure ControleMouseEnterTimage(Sender: TObject);
     procedure ControleMouseLeaveTimage(Sender: TObject);
+    procedure DestroyIconesMenuDinamico;
+    procedure MontarMenu(aProcesso: string);
   public
     { Public declarations }
   end;
@@ -63,7 +67,17 @@ begin
 
 end;
 
+procedure TfrmPrincipal.btnConfiguracoesClick(Sender: TObject);
+begin
+  MontarMenu('CNF');
+end;
+
 procedure TfrmPrincipal.btnCriarMenuClick(Sender: TObject);
+begin
+  MontarMenu('FIN');
+end;
+
+procedure TfrmPrincipal.MontarMenu(aProcesso: string);
 var
   iLeft, iTop : Integer;
   cColorPanelIcone : TColor;
@@ -74,6 +88,10 @@ begin
 
   cColorPanelIcone := clBlack;
 
+  DestroyIconesMenuDinamico;
+
+  dtmConexao.QryMenu.Close;
+  dtmConexao.QryMenu.ParamByName('processo').AsString := aProcesso;
   dtmConexao.QryMenu.Open;
 
   while not dtmConexao.QryMenu.Eof do begin
@@ -173,6 +191,20 @@ begin
 
 end;
 
+procedure TfrmPrincipal.DestroyIconesMenuDinamico;
+var
+  i: Integer;
+begin
+  i := scbIcones.ComponentCount;
+  while i > 0 do begin
+    Dec(i);
+    if TComponent (scbIcones.Components[i]).Tag = 9999 then begin
+       TComponent (scbIcones.Components[i]).Destroy;
+    end;
+  end;
+
+end;
+
 procedure TfrmPrincipal.ControleMouseEnterTimage(Sender: TObject);
 var
   ControleAtivo: TWinControl;
@@ -198,7 +230,8 @@ begin
     
   end;
 end;
-                                                  
+
+
 procedure TfrmPrincipal.ClickChamada(Sender: TObject);
 begin
   if (Sender is TLabel) then begin

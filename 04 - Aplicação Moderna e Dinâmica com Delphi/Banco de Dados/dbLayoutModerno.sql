@@ -15,6 +15,6 @@ SELECT TOP (1000) [menuId],
 	[titulo],
 	[nomeImagem],
 	[nomeFormulario],
-	[processo],
+	[processo]
 
-   FROM [dbLa
+   FROM [dbLayoutModerno].[dbo].[Menu]
