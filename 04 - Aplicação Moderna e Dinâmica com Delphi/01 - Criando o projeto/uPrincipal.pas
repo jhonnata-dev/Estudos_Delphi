@@ -21,21 +21,34 @@ type
     tbsMenu: TTabSheet;
     pnlPrincipalTop: TPanel;
     Image1: TImage;
-    btnFechar: TBitBtn;
     imgButtons: TImageList;
-    btnCriarMenu: TBitBtn;
     scbIcones: TScrollBox;
-    btnConfiguracoes: TBitBtn;
     Panel1: TPanel;
     Label1: TLabel;
+    imgBtnClose: TImage;
+    pnlPesquisaIcone: TPanel;
     edtLocalizaMenu: TSearchBox;
+    pnlMenu: TPanel;
+    Panel2: TPanel;
+    Image2: TImage;
+    Label2: TLabel;
+    btnFinanceiro: TBitBtn;
+    btnVendas: TBitBtn;
+    btnConfiguracao: TBitBtn;
     procedure FormShow(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure btnCriarMenuClick(Sender: TObject);
-    procedure btnConfiguracoesClick(Sender: TObject);
-    procedure btnFecharClick(Sender: TObject);
     procedure edtLocalizaMenuInvokeSearch(Sender: TObject);
+    procedure imgBtnCloseClick(Sender: TObject);
+    procedure btnFinanceiroClick(Sender: TObject);
+    procedure btnVendasClick(Sender: TObject);
+    procedure btnConfiguracaoClick(Sender: TObject);
+    procedure btnFinanceiroMouseEnter(Sender: TObject);
+    procedure btnFinanceiroMouseLeave(Sender: TObject);
+    procedure btnVendasMouseEnter(Sender: TObject);
+    procedure btnVendasMouseLeave(Sender: TObject);
+    procedure btnConfiguracaoMouseEnter(Sender: TObject);
+    procedure btnConfiguracaoMouseLeave(Sender: TObject);
   private
     { Private declarations }
     pnlAcao: TPanel;
@@ -66,19 +79,55 @@ implementation
 
 uses uSplash, uHerancaBase, uFuncoes, uBancoListagem;
 
-procedure TfrmPrincipal.btnConfiguracoesClick(Sender: TObject);
+procedure TfrmPrincipal.btnConfiguracaoClick(Sender: TObject);
 begin
   FiltrarMenuProcesso('CNF');
 end;
 
-procedure TfrmPrincipal.btnCriarMenuClick(Sender: TObject);
+procedure TfrmPrincipal.btnConfiguracaoMouseEnter(Sender: TObject);
+begin
+  (Sender as TBitBtn).ImageIndex := 4;
+  (Sender as TBitBtn).Cursor := crHandPoint;
+end;
+
+procedure TfrmPrincipal.btnConfiguracaoMouseLeave(Sender: TObject);
+begin
+  (Sender as TBitBtn).ImageIndex := 5;
+  (Sender as TBitBtn).Cursor := crDefault;
+end;
+
+procedure TfrmPrincipal.btnFinanceiroClick(Sender: TObject);
 begin
   FiltrarMenuProcesso('FIN');
 end;
 
-procedure TfrmPrincipal.btnFecharClick(Sender: TObject);
+procedure TfrmPrincipal.btnFinanceiroMouseEnter(Sender: TObject);
 begin
-  Application.Terminate;
+  (Sender as TBitBtn).ImageIndex := 0;
+  (Sender as TBitBtn).Cursor := crHandPoint;
+end;
+
+procedure TfrmPrincipal.btnFinanceiroMouseLeave(Sender: TObject);
+begin
+  (Sender as TBitBtn).ImageIndex := 1;
+  (Sender as TBitBtn).Cursor := crDefault;
+end;
+
+procedure TfrmPrincipal.btnVendasClick(Sender: TObject);
+begin
+  FiltrarMenuProcesso('VEN');
+end;
+
+procedure TfrmPrincipal.btnVendasMouseEnter(Sender: TObject);
+begin
+  (Sender as TBitBtn).ImageIndex := 2;
+  (Sender as TBitBtn).Cursor := crHandPoint;
+end;
+
+procedure TfrmPrincipal.btnVendasMouseLeave(Sender: TObject);
+begin
+  (Sender as TBitBtn).ImageIndex := 3;
+  (Sender as TBitBtn).Cursor := crDefault;
 end;
 
 procedure TfrmPrincipal.FiltrarMenuProcesso(aProcesso: string);
@@ -304,6 +353,11 @@ begin
   begin
     frmSplash.Free;
   end;
+end;
+
+procedure TfrmPrincipal.imgBtnCloseClick(Sender: TObject);
+begin
+  Application.Terminate;
 end;
 
 end.
