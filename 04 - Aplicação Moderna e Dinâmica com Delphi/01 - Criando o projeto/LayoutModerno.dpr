@@ -11,7 +11,9 @@ uses
   uDtmConexao in 'uDtmConexao.pas' {dtmConexao: TDataModule},
   uBancoListagem in 'uBancoListagem.pas' {frmBancoListagem},
   uEnum in 'uEnum.pas',
-  uBancoCadastro in 'uBancoCadastro.pas' {frmBancoCadastro};
+  uBancoCadastro in 'uBancoCadastro.pas' {frmBancoCadastro},
+  uCartaoCadastro in 'uCartaoCadastro.pas' {frmCartaoCadastro},
+  uCartaoListagem in 'uCartaoListagem.pas' {frmCartaoListagem};
 
 {$R *.res}
 
@@ -19,5 +21,7 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
+  Application.CreateForm(TfrmCartaoCadastro, frmCartaoCadastro);
+  Application.CreateForm(TfrmCartaoListagem, frmCartaoListagem);
   Application.Run;
 end.

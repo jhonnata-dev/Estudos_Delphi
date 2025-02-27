@@ -1,0 +1,64 @@
+unit uCartaoListagem;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uHerancaListagem, Data.DB,
+  ZAbstractRODataset, ZAbstractDataset, ZDataset, System.ImageList, Vcl.ImgList,
+  Vcl.Grids, Vcl.DBGrids, Vcl.Buttons, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.Imaging.pngimage, Vcl.ExtCtrls;
+
+type
+  TfrmCartaoListagem = class(TfrmHerancaListagem)
+    QryListagemcartaoId: TZIntegerField;
+    QryListagemdecricaoCartao: TZUnicodeStringField;
+  private
+
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCartaoListagem: TfrmCartaoListagem;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfrmBancoListagem.AbrirCadastro(estadoCadastro: TEstadoCadastro);
+begin
+  try
+    frmBancoCadastro := TfrmBancoCadastro.Create(Self);
+    frmBancoCadastro.EstadoDoCadastro := estadoCadastro;
+    case estadoCadastro of
+      ecNovo: begin
+        frmBancoCadastro.QryCadastro.ParamByName('BancoId').AsInteger := -1;
+
+        frmBancoCadastro.QryCadastro.Open;
+        frmBancoCadastro.QryCadastro.Append;
+      end;
+
+      ecModificar: begin
+        frmBancoCadastro.QryCadastro.ParamByName('BancoId').AsInteger := QryListagemBancoId.AsInteger;
+        frmBancoCadastro.QryCadastro.Open;
+        frmBancoCadastro.QryCadastro.Edit;
+      end;
+
+      ecApagar: begin
+        frmBancoCadastro.QryCadastro.ParamByName('BancoId').AsInteger := QryListagemBancoId.AsInteger;
+        frmBancoCadastro.QryCadastro.Open;
+        frmBancoCadastro.HabilitaDesabilitaTela(False)
+      end;
+    end;
+
+    frmBancoCadastro.ShowModal;
+
+  finally
+    frmBancoCadastro.Release;
+    Self.RefreshQuery(QryListagem);
+  end;
+end;
+
+end.

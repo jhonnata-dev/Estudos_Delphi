@@ -10,6 +10,9 @@ inherited frmBancoCadastro: TfrmBancoCadastro
     Width = 774
     StyleElements = [seFont, seClient, seBorder]
     ExplicitWidth = 774
+    DesignSize = (
+      774
+      35)
     inherited lblTitulo: TLabel
       Width = 102
       Caption = 'Cadastro de Banco'
@@ -147,6 +150,7 @@ inherited frmBancoCadastro: TfrmBancoCadastro
     Top = 128
   end
   inherited QryCadastro: TZQuery
+    Tag = 81
     Connection = dtmConexao.SQLConnection
     SQL.Strings = (
       

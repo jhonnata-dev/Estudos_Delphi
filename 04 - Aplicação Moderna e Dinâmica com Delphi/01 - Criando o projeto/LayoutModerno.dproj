@@ -160,6 +160,14 @@
             <Form>frmBancoCadastro</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="uCartaoCadastro.pas">
+            <Form>frmCartaoCadastro</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="uCartaoListagem.pas">
+            <Form>frmCartaoListagem</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

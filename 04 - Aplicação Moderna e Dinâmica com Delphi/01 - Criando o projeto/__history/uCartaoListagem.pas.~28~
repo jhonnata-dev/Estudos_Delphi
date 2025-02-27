@@ -1,0 +1,32 @@
+unit uCartaoListagem;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uHerancaListagem, Data.DB,
+  ZAbstractRODataset, ZAbstractDataset, ZDataset, System.ImageList, Vcl.ImgList,
+  Vcl.Grids, Vcl.DBGrids, Vcl.Buttons, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.Mask,
+  Vcl.Imaging.pngimage, Vcl.ExtCtrls, uEnum;
+
+type
+  TfrmCartaoListagem = class(TfrmHerancaListagem)
+    QryListagemcartaoId: TZIntegerField;
+    QryListagemdecricaoCartao: TZUnicodeStringField;
+  private
+
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCartaoListagem: TfrmCartaoListagem;
+
+implementation
+
+{$R *.dfm}
+
+
+
+end.

@@ -69,7 +69,6 @@ begin
     frmBancoCadastro.Release;
     Self.RefreshQuery(QryListagem);
   end;
-
 end;
 
 procedure TfrmBancoListagem.btnApagarClick(Sender: TObject);

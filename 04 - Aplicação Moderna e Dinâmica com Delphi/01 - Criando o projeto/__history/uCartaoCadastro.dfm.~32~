@@ -1,0 +1,43 @@
+inherited frmHerancaCadastro1: TfrmHerancaCadastro1
+  Caption = 'frmHerancaCadastro1'
+  StyleElements = [seFont, seClient, seBorder]
+  TextHeight = 15
+  inherited pnlHeader: TPanel
+    StyleElements = [seFont, seClient, seBorder]
+    inherited lblTitulo: TLabel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited pnlHeaderLineTop: TPanel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited pnlHeaderLineLeft: TPanel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited pnlHeaderLineRight: TPanel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited pnlHeaderLineGray: TPanel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+  end
+  inherited pnlFormLineLeft: TPanel
+    StyleElements = [seFont, seClient, seBorder]
+  end
+  inherited pnlFormLineRight: TPanel
+    StyleElements = [seFont, seClient, seBorder]
+  end
+  inherited pnlFormLineBotom: TPanel
+    StyleElements = [seFont, seClient, seBorder]
+  end
+  inherited pnlPrincipal: TPanel
+    StyleElements = [seFont, seClient, seBorder]
+    inherited pnlPrincipalBottom: TPanel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+  end
+  inherited QryCadastro: TZQuery
+    Connection = dtmConexao.SQLConnection
+    SQL.Strings = (
+      'SELECT cartaoId, decricaoCartao FROM Cartao')
+  end
+end

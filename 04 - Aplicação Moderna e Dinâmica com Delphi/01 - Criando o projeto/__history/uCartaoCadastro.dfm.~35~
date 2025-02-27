@@ -1,0 +1,82 @@
+inherited frmHerancaCadastro1: TfrmHerancaCadastro1
+  Caption = 'frmHerancaCadastro1'
+  StyleElements = [seFont, seClient, seBorder]
+  TextHeight = 15
+  inherited pnlHeader: TPanel
+    StyleElements = [seFont, seClient, seBorder]
+    inherited lblTitulo: TLabel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited pnlHeaderLineTop: TPanel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited pnlHeaderLineLeft: TPanel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited pnlHeaderLineRight: TPanel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+    inherited pnlHeaderLineGray: TPanel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+  end
+  inherited pnlFormLineLeft: TPanel
+    StyleElements = [seFont, seClient, seBorder]
+  end
+  inherited pnlFormLineRight: TPanel
+    StyleElements = [seFont, seClient, seBorder]
+  end
+  inherited pnlFormLineBotom: TPanel
+    StyleElements = [seFont, seClient, seBorder]
+  end
+  inherited pnlPrincipal: TPanel
+    StyleElements = [seFont, seClient, seBorder]
+    inherited pnlPrincipalBottom: TPanel
+      StyleElements = [seFont, seClient, seBorder]
+    end
+  end
+  inherited QryCadastro: TZQuery
+    Connection = dtmConexao.SQLConnection
+    SQL.Strings = (
+      'SELECT cartaoId, decricaoCartao FROM Cartao')
+    object QryCadastrocartaoId: TZIntegerField
+      DisplayLabel = '#ID'
+      FieldName = 'cartaoId'
+      ReadOnly = True
+    end
+    object QryCadastrodecricaoCartao: TZUnicodeStringField
+      DisplayLabel = 'Descri'#231#227'o'
+      FieldName = 'decricaoCartao'
+      Required = True
+      FixedChar = True
+      Size = 30
+    end
+  end
+  inherited updCadastro: TZUpdateSQL
+    DeleteSQL.Strings = (
+      'DELETE FROM Cartao'
+      'WHERE'
+      
+        '  ((Cartao.cartaoId IS NULL AND :OLD_cartaoId IS NULL) OR (Carta' +
+        'o.cartaoId = :OLD_cartaoId))')
+    InsertSQL.Strings = (
+      'INSERT INTO Cartao'
+      '  (decricaoCartao)'
+      'VALUES'
+      '  (:decricaoCartao)')
+    ModifySQL.Strings = (
+      'UPDATE Cartao SET'
+      '  decricaoCartao = :decricaoCartao'
+      'WHERE'
+      
+        '  ((Cartao.cartaoId IS NULL AND :OLD_cartaoId IS NULL) OR (Carta' +
+        'o.cartaoId = :OLD_cartaoId))')
+    ParamData = <
+      item
+        Name = 'decricaoCartao'
+      end
+      item
+        Name = 'OLD_cartaoId'
+      end>
+  end
+end
