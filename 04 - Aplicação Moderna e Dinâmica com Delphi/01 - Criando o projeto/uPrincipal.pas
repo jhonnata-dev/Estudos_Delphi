@@ -350,6 +350,9 @@ begin
   begin
     frmSplash.Free;
   end;
+
+  self.FormStyle := fsStayOnTop;
+
 end;
 
 procedure TfrmPrincipal.imgBtnCloseClick(Sender: TObject);
