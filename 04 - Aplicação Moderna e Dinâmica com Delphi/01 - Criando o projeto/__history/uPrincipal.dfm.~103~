@@ -24,24 +24,6 @@ object frmPrincipal: TfrmPrincipal
     Align = alLeft
     BevelOuter = bvNone
     TabOrder = 0
-    object btnCriarMenu: TBitBtn
-      Left = 32
-      Top = 484
-      Width = 91
-      Height = 25
-      Caption = 'Financeiro'
-      TabOrder = 0
-      OnClick = btnCriarMenuClick
-    end
-    object btnConfiguracoes: TBitBtn
-      Left = 32
-      Top = 540
-      Width = 91
-      Height = 25
-      Caption = 'Configura'#231#245'es'
-      TabOrder = 1
-      OnClick = btnConfiguracoesClick
-    end
     object pnlMenu: TPanel
       Left = 10
       Top = 10
@@ -50,7 +32,7 @@ object frmPrincipal: TfrmPrincipal
       BevelOuter = bvNone
       Color = 4533029
       ParentBackground = False
-      TabOrder = 2
+      TabOrder = 0
       object Image2: TImage
         Left = 6
         Top = 10
@@ -92,7 +74,7 @@ object frmPrincipal: TfrmPrincipal
       Height = 661
       Align = alLeft
       BevelOuter = bvNone
-      TabOrder = 3
+      TabOrder = 1
       ExplicitLeft = 8
     end
     object btnFinanceiro: TBitBtn
@@ -102,8 +84,10 @@ object frmPrincipal: TfrmPrincipal
       Height = 129
       ImageIndex = 1
       Images = imgButtons
-      TabOrder = 4
+      TabOrder = 2
       OnClick = btnFinanceiroClick
+      OnMouseEnter = btnFinanceiroMouseEnter
+      OnMouseLeave = btnFinanceiroMouseLeave
     end
     object btnVendas: TBitBtn
       Left = 9
@@ -112,8 +96,10 @@ object frmPrincipal: TfrmPrincipal
       Height = 129
       ImageIndex = 3
       Images = imgButtons
-      TabOrder = 5
+      TabOrder = 3
       OnClick = btnVendasClick
+      OnMouseEnter = btnVendasMouseEnter
+      OnMouseLeave = btnVendasMouseLeave
     end
     object btnConfiguracao: TBitBtn
       Left = 9
@@ -122,7 +108,10 @@ object frmPrincipal: TfrmPrincipal
       Height = 129
       ImageIndex = 5
       Images = imgButtons
-      TabOrder = 6
+      TabOrder = 4
+      OnClick = btnConfiguracaoClick
+      OnMouseEnter = btnConfiguracaoMouseEnter
+      OnMouseLeave = btnConfiguracaoMouseLeave
     end
   end
   object pnlPrincipalCenter: TPanel
@@ -186,10 +175,8 @@ object frmPrincipal: TfrmPrincipal
       ActivePage = tbsMenu
       Align = alClient
       TabOrder = 4
-      ExplicitWidth = 679
-      ExplicitHeight = 602
       object tbsMenu: TTabSheet
-        Caption = 'MENU'
+        Caption = #205'CONES'
         object scbIcones: TScrollBox
           Left = 0
           Top = 23

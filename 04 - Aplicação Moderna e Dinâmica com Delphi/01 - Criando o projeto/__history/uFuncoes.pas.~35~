@@ -10,6 +10,9 @@ uses
 
   procedure CriarAba(aForm: TFormClass; aPageControl: TPageControl; aIndexImagem: Integer);
   function  AbaExiste(aNomeAba: string; aPageControl: TPageControl) : Boolean;
+  procedure  FecharAba(aNomeAba: string; aPageControl: TPageControl);
+  procedure ButtonMouseEnter(Sender: TObject; ImageIndex: Integer);
+  procedure ButtonMouseLeave(Sender: Tobject; ImageIndex: Integer);
 
 implementation
 
@@ -26,8 +29,9 @@ begin
     begin
       FreeAndNil(Form);
     end;
-  end;
+    exit;
 
+  end;
 
   TabSheet := TTabSheet.Create(nil);
   TabSheet.PageControl := aPageControl;
@@ -43,7 +47,7 @@ begin
 
 end;
 
-function  AbaExiste(aNomeAba: string; aPageControl: TPageControl) : Boolean;
+function AbaExiste(aNomeAba: string; aPageControl: TPageControl) : Boolean;
 var
   i : Integer;
 begin
@@ -56,11 +60,36 @@ begin
       aPageControl.ActivePage := aPageControl.Pages[i];
       aPageControl.TabIndex := i;
       Result := True;
-      Break;;
+      Break;
     end;
-
   end;
+end;
 
+procedure  FecharAba(aNomeAba: string; aPageControl: TPageControl);
+var
+  i : Integer;
+begin
+  for i := 0 to aPageControl.PageCount - 1 do
+  begin
+    if LowerCase(aPageControl.Pages[i].Caption) = LowerCase(aNomeAba) then
+    begin
+      aPageControl.Pages[i].Destroy;
+      aPageControl.ActivePageIndex := 0;
+      Break;
+    end;
+  end;
+end;
+
+procedure ButtonMouseEnter(Sender: TObject; ImageIndex: Integer);
+begin
+  (Sender as TBitBtn).ImageIndex := ImageIndex;
+  (Sender as TBitBtn).Cursor := crHandPoint;
+end;
+
+procedure ButtonMouseLeave(Sender: Tobject; ImageIndex: Integer);
+begin
+  (Sender as TBitBtn).ImageIndex := ImageIndex;
+  (Sender as TBitBtn).Cursor := crDefault;
 end;
 
 end.

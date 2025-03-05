@@ -86,14 +86,12 @@ end;
 
 procedure TfrmPrincipal.btnConfiguracaoMouseEnter(Sender: TObject);
 begin
-  (Sender as TBitBtn).ImageIndex := 4;
-  (Sender as TBitBtn).Cursor := crHandPoint;
+  ButtonMouseEnter(Sender, 4);
 end;
 
 procedure TfrmPrincipal.btnConfiguracaoMouseLeave(Sender: TObject);
 begin
-  (Sender as TBitBtn).ImageIndex := 5;
-  (Sender as TBitBtn).Cursor := crDefault;
+  ButtonMouseLeave(Sender, 5);
 end;
 
 procedure TfrmPrincipal.btnFinanceiroClick(Sender: TObject);
@@ -103,14 +101,12 @@ end;
 
 procedure TfrmPrincipal.btnFinanceiroMouseEnter(Sender: TObject);
 begin
-  (Sender as TBitBtn).ImageIndex := 0;
-  (Sender as TBitBtn).Cursor := crHandPoint;
+  ButtonMouseEnter(Sender, 0);
 end;
 
 procedure TfrmPrincipal.btnFinanceiroMouseLeave(Sender: TObject);
 begin
-  (Sender as TBitBtn).ImageIndex := 1;
-  (Sender as TBitBtn).Cursor := crDefault;
+  ButtonMouseLeave(Sender, 1);
 end;
 
 procedure TfrmPrincipal.btnVendasClick(Sender: TObject);
@@ -120,15 +116,16 @@ end;
 
 procedure TfrmPrincipal.btnVendasMouseEnter(Sender: TObject);
 begin
-  (Sender as TBitBtn).ImageIndex := 2;
-  (Sender as TBitBtn).Cursor := crHandPoint;
+  ButtonMouseEnter(Sender, 2);
 end;
 
 procedure TfrmPrincipal.btnVendasMouseLeave(Sender: TObject);
 begin
-  (Sender as TBitBtn).ImageIndex := 3;
-  (Sender as TBitBtn).Cursor := crDefault;
+  ButtonMouseLeave(Sender, 3);
 end;
+
+// ButtonMouseEnter(Sender,
+// ButtonMouseLeave(Sender,
 
 procedure TfrmPrincipal.FiltrarMenuProcesso(aProcesso: string);
 begin

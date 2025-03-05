@@ -4,13 +4,15 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, uHerancaBase, Vcl.Imaging.pngimage,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.pngimage,
   Vcl.ExtCtrls, Vcl.StdCtrls, Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.Mask,
   System.ImageList, Vcl.ImgList, Vcl.Buttons, Vcl.DBCtrls, Vcl.ComCtrls;
 
   procedure CriarAba(aForm: TFormClass; aPageControl: TPageControl; aIndexImagem: Integer);
   function  AbaExiste(aNomeAba: string; aPageControl: TPageControl) : Boolean;
   procedure  FecharAba(aNomeAba: string; aPageControl: TPageControl);
+  procedure ButtonMouseEnter(Sender: TObject; ImageIndex: Integer);
+  procedure ButtonMouseLeave(Sender: Tobject; ImageIndex: Integer);
 
 implementation
 
@@ -76,6 +78,18 @@ begin
       Break;
     end;
   end;
+end;
+
+procedure ButtonMouseEnter(Sender: TObject; ImageIndex: Integer);
+begin
+  (Sender as TBitBtn).ImageIndex := ImageIndex;
+  (Sender as TBitBtn).Cursor := crHandPoint;
+end;
+
+procedure ButtonMouseLeave(Sender: Tobject; ImageIndex: Integer);
+begin
+  (Sender as TBitBtn).ImageIndex := ImageIndex;
+  (Sender as TBitBtn).Cursor := crDefault;
 end;
 
 end.

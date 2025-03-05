@@ -56,7 +56,7 @@ object frmPrincipal: TfrmPrincipal
       object Label2: TLabel
         Left = 36
         Top = 9
-        Width = 69
+        Width = 64
         Height = 25
         Caption = 'MENU'
         Font.Charset = ANSI_CHARSET
@@ -75,7 +75,6 @@ object frmPrincipal: TfrmPrincipal
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitLeft = 8
     end
     object btnFinanceiro: TBitBtn
       Left = 9
@@ -122,9 +121,6 @@ object frmPrincipal: TfrmPrincipal
     Align = alClient
     BevelOuter = bvNone
     TabOrder = 1
-    ExplicitLeft = 185
-    ExplicitWidth = 699
-    ExplicitHeight = 622
     object pnlPrincipalCenterLeft: TPanel
       Left = 0
       Top = 10
@@ -133,7 +129,6 @@ object frmPrincipal: TfrmPrincipal
       Align = alLeft
       BevelOuter = bvNone
       TabOrder = 0
-      ExplicitHeight = 602
     end
     object pnlPrincipalCenterRight: TPanel
       Left = 652
@@ -143,8 +138,6 @@ object frmPrincipal: TfrmPrincipal
       Align = alRight
       BevelOuter = bvNone
       TabOrder = 1
-      ExplicitLeft = 689
-      ExplicitHeight = 602
     end
     object pnlPrincipalCenterTop: TPanel
       Left = 0
@@ -154,7 +147,6 @@ object frmPrincipal: TfrmPrincipal
       Align = alTop
       BevelOuter = bvNone
       TabOrder = 2
-      ExplicitWidth = 699
     end
     object pnlPrincipalCenterBottom: TPanel
       Left = 0
@@ -164,8 +156,6 @@ object frmPrincipal: TfrmPrincipal
       Align = alBottom
       BevelOuter = bvNone
       TabOrder = 3
-      ExplicitTop = 612
-      ExplicitWidth = 699
     end
     object pgcPrincipal: TPageControl
       Left = 10
@@ -188,8 +178,6 @@ object frmPrincipal: TfrmPrincipal
           Ctl3D = False
           ParentCtl3D = False
           TabOrder = 0
-          ExplicitLeft = -2
-          ExplicitTop = 21
         end
         object pnlPesquisaIcone: TPanel
           Left = 0
@@ -199,7 +187,6 @@ object frmPrincipal: TfrmPrincipal
           Align = alTop
           BevelOuter = bvNone
           TabOrder = 1
-          ExplicitWidth = 689
           object edtLocalizaMenu: TSearchBox
             Left = 0
             Top = 0
@@ -209,9 +196,6 @@ object frmPrincipal: TfrmPrincipal
             TabOrder = 0
             TextHint = 'DIGITE O QUE VOC'#202' DESEJA FAZER'
             OnInvokeSearch = edtLocalizaMenuInvokeSearch
-            ExplicitLeft = 384
-            ExplicitTop = 42
-            ExplicitWidth = 121
           end
         end
       end
@@ -318,8 +302,6 @@ object frmPrincipal: TfrmPrincipal
       Color = clSilver
       ParentBackground = False
       TabOrder = 0
-      ExplicitTop = 47
-      ExplicitWidth = 884
     end
   end
   object imgButtons: TImageList

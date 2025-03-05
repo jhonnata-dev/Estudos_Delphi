@@ -56,7 +56,7 @@ implementation
 
 {$R *.dfm}
 
-uses uPrincipal;
+uses uPrincipal, uFuncoes;
 
 procedure TfrmHerancaCadastro.btnApagarClick(Sender: TObject);
 begin
