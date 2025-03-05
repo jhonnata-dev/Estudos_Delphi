@@ -77,7 +77,7 @@ implementation
 
 {$R *.dfm}
 
-uses uSplash, uHerancaBase, uFuncoes, uBancoListagem;
+uses uSplash, uHerancaBase, uFuncoes, uBancoListagem, uLogin;
 
 procedure TfrmPrincipal.btnConfiguracaoClick(Sender: TObject);
 begin
@@ -345,6 +345,10 @@ begin
   FiltrarMenuProcesso('FIN');
 
   Sleep(1000);
+
+  frmLogin := TfrmLogin.Create(Self);
+  frmLogin.ShowModal;
+  frmLogin.Release;
 
   if Assigned(frmSplash) then
   begin

@@ -13,7 +13,8 @@ uses
   uEnum in 'uEnum.pas',
   uBancoCadastro in 'uBancoCadastro.pas' {frmBancoCadastro},
   uCartaoCadastro in 'uCartaoCadastro.pas' {frmCartaoCadastro},
-  uCartaoListagem in 'uCartaoListagem.pas' {frmCartaoListagem};
+  uCartaoListagem in 'uCartaoListagem.pas' {frmCartaoListagem},
+  uLogin in 'uLogin.pas' {frmLogin};
 
 {$R *.res}
 
@@ -21,7 +22,5 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
-  Application.CreateForm(TfrmCartaoCadastro, frmCartaoCadastro);
-  Application.CreateForm(TfrmCartaoListagem, frmCartaoListagem);
   Application.Run;
 end.
