@@ -12,3 +12,7 @@ SELECT * FROM Usuario
 
 INSERT INTO Usuario (nomeUsuario, senha) VALUES ('teste', 'mudar@123')
 INSERT INTO Usuario (nomeUsuario, senha) VALUES ('teste2', 'mudar@123')
+
+SELECT usuarioId FROM Usuario
+	WHERE nomeUsuario = :nomeUsuario
+		AND senha = :senha
